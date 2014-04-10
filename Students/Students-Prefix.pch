@@ -1,0 +1,86 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+#import "PlistDataController.h"
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+	#import <UIKit/UIKit.h>
+	#import <Foundation/Foundation.h>
+#endif
+
+#pragma mark Short hand for wordy objects
+
+#define plistDC PlistDataController
+
+#pragma mark Data types used in Plists
+
+#define STUDENT_PLIST_TITLE @"Student"
+#define ID_NUMBER @"idNumber"
+#define FIRST_NAME @"firstName"
+#define LAST_NAME @"lastName"
+#define GENDER_IS_MALE @"isMale"
+#define STAFF_ID_FOR_STUDENT @"staffID"
+#define GUARDIAN_ARRAY_FOR_STUDENT @"guardianIDs"
+#define SCHEDULE_ID_FOR_STUDENT @"scheduleID"
+
+#define STAFF_PLIST_TITLE @"Staff"
+/* #define ID_NUMBER @"idNumber"
+#define FIRST_NAME @"firstName"
+#define LAST_NAME @"lastName"
+#define GENDER_IS_MALE @"isMale" */
+#define SUBJECT_TAUGHT @"subject"
+#define HOMEROOM_ID_FOR_STAFF @"roomID"
+#define SCHEDULE_ID_FOR_STAFF @"scheduleID"
+
+#define GUARDIAN_PLIST_TITLE @"Guardian"
+/* #define ID_NUMBER @"idNumber"
+ #define FIRST_NAME @"firstName"
+ #define LAST_NAME @"lastName"
+ #define GENDER_IS_MALE @"isMale" */
+#define PHONE_NUMBER_FOR_GUARDIAN @"phoneNumber"
+#define HOUSE_NUMBER_FOR_GUARDIAN_ADDRESS @"houseNumber"
+#define STREET_FOR_GUARDIAN_ADDRESS @"street"
+#define CITY_FOR_GUARDIAN_ADDRESS @"city"
+#define STATE_FOR_GUARDIAN_ADDRESS @"state"
+#define ZIPCODE_FOR_GUARDIAN_ADDRESS @"zipCode"
+#define IS_GUARDIAN_MAIN_CONTACT @"isMainContact"
+#define IS_GUARDIAN__EMERGENCY_CONTACT @"isEmergencyContact"
+#define IS_GUARDIAN_LIVING_WITH_STUDENT @"isResidenceOfStudent"
+
+
+#define ID_NUMBER_DATABASE_PLIST_TITLE @"IDNumDB"
+/* #define ID_NUMBER @"idNumber" */
+#define ID_TYPE @"idType"
+
+#define ROOM_PLIST_TITLE @"Room"
+/* #define ID_NUMBER @"idNumber" */
+#define ROOM_NAME @"name"
+#define ROOM_PHONE_NUMBER @"phoneNumber"
+
+#define SESSION_PLIST_TITLE @"Session"
+/* #define ID_NUMBER @"idNumber" */
+#define SESSION_NAME @"name"
+#define ROOM_SESSION_HELD_IN_ID @"roomID"
+#define STAFFING_ID_FOR_SESSION @"staffID"
+
+#define SCHEDULE_PLIST_TITLE @"Schedule"
+/* #define ID_NUMBER @"idNumber" */
+#define SCHEDULE_OWNER_ID @"personID"
+#define AM_HOMEROOM_SESSION_ID @"amHomeroom"
+#define PERIOD_1_SESSION_ID @"period1"
+#define PERIOD_2_SESSION_ID @"period2"
+#define PERIOD_3_SESSION_ID @"period3"
+#define PERIOD_4_SESSION_ID @"period4"
+#define PERIOD_5_SESSION_ID @"period5"
+#define PERIOD_6_SESSION_ID @"period6"
+#define PM_HOMEROOM_SESSION_ID @"pmHomeroom"
+// This whole period thing is a mess and should be fixed after the basic foundation is solid
+#warning Create a method that generates a new idNumber and type

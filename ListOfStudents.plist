@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>studentIDNumber</key>
+		<integer>1</integer>
+		<key>image</key>
+		<string>bart.jpg</string>
+		<key>homeroom</key>
+		<string>Ms. Crabapple</string>
+		<key>firstName</key>
+		<string>Bart</string>
+		<key>lastName</key>
+		<string>Simpson</string>
+		<key>birthdate</key>
+		<string>2003-02-23</string>
+		<key>gender</key>
+		<false/>
+		<key>gradTime</key>
+		<string>Spring 2019</string>
+		<key>gpa</key>
+		<real>1.85</real>
+		<key>county</key>
+		<string>Prince Georges</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>lisa.jpg</string>
+		<key>homeroom</key>
+		<string>Ms. Crabapple</string>
+		<key>studentIDNumber</key>
+		<integer>2</integer>
+		<key>firstName</key>
+		<string>Lisa</string>
+		<key>lastName</key>
+		<string>Simpson</string>
+		<key>birthdate</key>
+		<string>2005-02-23</string>
+		<key>gender</key>
+		<true/>
+		<key>gradTime</key>
+		<string>Spring 2019</string>
+		<key>gpa</key>
+		<real>4</real>
+		<key>county</key>
+		<string>Prince Georges</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>cartman.jpg</string>
+		<key>homeroom</key>
+		<string>Ms. Crabapple</string>
+		<key>studentIDNumber</key>
+		<integer>3</integer>
+		<key>firstName</key>
+		<string>Eric</string>
+		<key>lastName</key>
+		<string>Cartman</string>
+		<key>birthdate</key>
+		<string>2004-02-23</string>
+		<key>gender</key>
+		<false/>
+		<key>gradTime</key>
+		<string>Fall 2018</string>
+		<key>gpa</key>
+		<real>2.75</real>
+		<key>county</key>
+		<string>Fredrick</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>babs.jpg</string>
+		<key>homeroom</key>
+		<string>Ms. Crabapple</string>
+		<key>studentIDNumber</key>
+		<integer>4</integer>
+		<key>firstName</key>
+		<string>Babs</string>
+		<key>lastName</key>
+		<string>Bunny</string>
+		<key>birthdate</key>
+		<string>2006-03-05</string>
+		<key>gender</key>
+		<true/>
+		<key>gradTime</key>
+		<string>Spring 2020</string>
+		<key>gpa</key>
+		<real>3</real>
+		<key>county</key>
+		<string>Howard</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>buster.jpg</string>
+		<key>homeroom</key>
+		<string>Ms. Crabapple</string>
+		<key>studentIDNumber</key>
+		<integer>5</integer>
+		<key>firstName</key>
+		<string>Buster</string>
+		<key>lastName</key>
+		<string>Bunny</string>
+		<key>birthdate</key>
+		<string>2006-03-05</string>
+		<key>gender</key>
+		<false/>
+		<key>gradTime</key>
+		<string>Spring 2020</string>
+		<key>gpa</key>
+		<real>3.14</real>
+		<key>county</key>
+		<string>Howard</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>abe.jpg</string>
+		<key>homeroom</key>
+		<string>Ms. Crabapple</string>
+		<key>studentIDNumber</key>
+		<integer>6</integer>
+		<key>firstName</key>
+		<string>Abraham</string>
+		<key>lastName</key>
+		<string>Lincoln</string>
+		<key>birthdate</key>
+		<string>1998-02-23</string>
+		<key>gender</key>
+		<false/>
+		<key>gradTime</key>
+		<string>Spring 2015</string>
+		<key>gpa</key>
+		<real>3.75</real>
+		<key>county</key>
+		<string>Washington DC</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>joan.jpg</string>
+		<key>homeroom</key>
+		<string>Ms. Crabapple</string>
+		<key>studentIDNumber</key>
+		<integer>7</integer>
+		<key>firstName</key>
+		<string>Joan</string>
+		<key>lastName</key>
+		<string>Ofark</string>
+		<key>birthdate</key>
+		<string>1999-05-23</string>
+		<key>gender</key>
+		<true/>
+		<key>gradTime</key>
+		<string>Spring 2016</string>
+		<key>gpa</key>
+		<real>3.5</real>
+		<key>county</key>
+		<string>Baltimore</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>gandhi.jpg</string>
+		<key>homeroom</key>
+		<string>Ms. Crabapple</string>
+		<key>studentIDNumber</key>
+		<integer>8</integer>
+		<key>firstName</key>
+		<string>Mahatma</string>
+		<key>lastName</key>
+		<string>Gandhi</string>
+		<key>birthdate</key>
+		<string>1998-03-23</string>
+		<key>gender</key>
+		<false/>
+		<key>gradTime</key>
+		<string>Spring 2015</string>
+		<key>gpa</key>
+		<real>2.85</real>
+		<key>county</key>
+		<string>Fredrick</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>cleopatra.jpg</string>
+		<key>homeroom</key>
+		<string>Ms. Crabapple</string>
+		<key>studentIDNumber</key>
+		<integer>9</integer>
+		<key>firstName</key>
+		<string>Cleo</string>
+		<key>lastName</key>
+		<string>Patra</string>
+		<key>birthdate</key>
+		<string>2014-03-01</string>
+		<key>gender</key>
+		<true/>
+		<key>gradTime</key>
+		<string>Spring 2016</string>
+		<key>gpa</key>
+		<real>2.5</real>
+		<key>county</key>
+		<string>Anne Arundel</string>
+	</dict>
+</array>
+</plist>

@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>Period</key>
+			<integer>0</integer>
+			<key>Name</key>
+			<string>AM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>1</integer>
+			<key>Name</key>
+			<string>Music</string>
+			<key>Teacher</key>
+			<string>Ms. Triangle</string>
+			<key>RoomNumber</key>
+			<string>BO115</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>2</integer>
+			<key>Name</key>
+			<string>Brit Lit</string>
+			<key>Teacher</key>
+			<string>Ms. Rowling</string>
+			<key>RoomNumber</key>
+			<string>BU465</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>3</integer>
+			<key>Name</key>
+			<string>Algebra</string>
+			<key>Teacher</key>
+			<string>Mr. Matician</string>
+			<key>RoomNumber</key>
+			<string>BO135</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>4</integer>
+			<key>Name</key>
+			<string>Computer Science</string>
+			<key>Teacher</key>
+			<string>Mr. Wizard</string>
+			<key>RoomNumber</key>
+			<string>BU314</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>5</integer>
+			<key>Name</key>
+			<string>Lunch</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>CAFE</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>6</integer>
+			<key>Name</key>
+			<string>US Govt</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>7</integer>
+			<key>Name</key>
+			<string>Fingerpainting</string>
+			<key>Teacher</key>
+			<string>Ms. Pointer</string>
+			<key>RoomNumber</key>
+			<string>BU111</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>8</integer>
+			<key>Name</key>
+			<string>Biology</string>
+			<key>Teacher</key>
+			<string>Mr. Welch</string>
+			<key>RoomNumber</key>
+			<string>BO453</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>9</integer>
+			<key>Name</key>
+			<string>PM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>Period</key>
+			<integer>0</integer>
+			<key>Name</key>
+			<string>AM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>1</integer>
+			<key>Name</key>
+			<string>Music</string>
+			<key>Teacher</key>
+			<string>Ms. Triangle</string>
+			<key>RoomNumber</key>
+			<string>BO115</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>2</integer>
+			<key>Name</key>
+			<string>Brit Lit</string>
+			<key>Teacher</key>
+			<string>Ms. Rowling</string>
+			<key>RoomNumber</key>
+			<string>BU465</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>3</integer>
+			<key>Name</key>
+			<string>Algebra</string>
+			<key>Teacher</key>
+			<string>Mr. Matician</string>
+			<key>RoomNumber</key>
+			<string>BO135</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>4</integer>
+			<key>Name</key>
+			<string>Computer Science</string>
+			<key>Teacher</key>
+			<string>Mr. Wizard</string>
+			<key>RoomNumber</key>
+			<string>BU314</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>5</integer>
+			<key>Name</key>
+			<string>Lunch</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>CAFE</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>6</integer>
+			<key>Name</key>
+			<string>US Govt</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>7</integer>
+			<key>Name</key>
+			<string>Fingerpainting</string>
+			<key>Teacher</key>
+			<string>Ms. Pointer</string>
+			<key>RoomNumber</key>
+			<string>BU111</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>8</integer>
+			<key>Name</key>
+			<string>Biology</string>
+			<key>Teacher</key>
+			<string>Mr. Welch</string>
+			<key>RoomNumber</key>
+			<string>BO453</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>9</integer>
+			<key>Name</key>
+			<string>PM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>Period</key>
+			<integer>0</integer>
+			<key>Name</key>
+			<string>AM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>1</integer>
+			<key>Name</key>
+			<string>Music</string>
+			<key>Teacher</key>
+			<string>Ms. Triangle</string>
+			<key>RoomNumber</key>
+			<string>BO115</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>2</integer>
+			<key>Name</key>
+			<string>Brit Lit</string>
+			<key>Teacher</key>
+			<string>Ms. Rowling</string>
+			<key>RoomNumber</key>
+			<string>BU465</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>3</integer>
+			<key>Name</key>
+			<string>Algebra</string>
+			<key>Teacher</key>
+			<string>Mr. Matician</string>
+			<key>RoomNumber</key>
+			<string>BO135</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>4</integer>
+			<key>Name</key>
+			<string>Computer Science</string>
+			<key>Teacher</key>
+			<string>Mr. Wizard</string>
+			<key>RoomNumber</key>
+			<string>BU314</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>5</integer>
+			<key>Name</key>
+			<string>Lunch</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>CAFE</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>6</integer>
+			<key>Name</key>
+			<string>US Govt</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>7</integer>
+			<key>Name</key>
+			<string>Fingerpainting</string>
+			<key>Teacher</key>
+			<string>Ms. Pointer</string>
+			<key>RoomNumber</key>
+			<string>BU111</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>8</integer>
+			<key>Name</key>
+			<string>Biology</string>
+			<key>Teacher</key>
+			<string>Mr. Welch</string>
+			<key>RoomNumber</key>
+			<string>BO453</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>9</integer>
+			<key>Name</key>
+			<string>PM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>Period</key>
+			<integer>0</integer>
+			<key>Name</key>
+			<string>AM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>1</integer>
+			<key>Name</key>
+			<string>Music</string>
+			<key>Teacher</key>
+			<string>Ms. Triangle</string>
+			<key>RoomNumber</key>
+			<string>BO115</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>2</integer>
+			<key>Name</key>
+			<string>Brit Lit</string>
+			<key>Teacher</key>
+			<string>Ms. Rowling</string>
+			<key>RoomNumber</key>
+			<string>BU465</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>3</integer>
+			<key>Name</key>
+			<string>Algebra</string>
+			<key>Teacher</key>
+			<string>Mr. Matician</string>
+			<key>RoomNumber</key>
+			<string>BO135</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>4</integer>
+			<key>Name</key>
+			<string>Computer Science</string>
+			<key>Teacher</key>
+			<string>Mr. Wizard</string>
+			<key>RoomNumber</key>
+			<string>BU314</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>5</integer>
+			<key>Name</key>
+			<string>Lunch</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>CAFE</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>6</integer>
+			<key>Name</key>
+			<string>US Govt</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>7</integer>
+			<key>Name</key>
+			<string>Fingerpainting</string>
+			<key>Teacher</key>
+			<string>Ms. Pointer</string>
+			<key>RoomNumber</key>
+			<string>BU111</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>8</integer>
+			<key>Name</key>
+			<string>Biology</string>
+			<key>Teacher</key>
+			<string>Mr. Welch</string>
+			<key>RoomNumber</key>
+			<string>BO453</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>9</integer>
+			<key>Name</key>
+			<string>PM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>Period</key>
+			<integer>0</integer>
+			<key>Name</key>
+			<string>AM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>1</integer>
+			<key>Name</key>
+			<string>Music</string>
+			<key>Teacher</key>
+			<string>Ms. Triangle</string>
+			<key>RoomNumber</key>
+			<string>BO115</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>2</integer>
+			<key>Name</key>
+			<string>Brit Lit</string>
+			<key>Teacher</key>
+			<string>Ms. Rowling</string>
+			<key>RoomNumber</key>
+			<string>BU465</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>3</integer>
+			<key>Name</key>
+			<string>Algebra</string>
+			<key>Teacher</key>
+			<string>Mr. Matician</string>
+			<key>RoomNumber</key>
+			<string>BO135</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>4</integer>
+			<key>Name</key>
+			<string>Computer Science</string>
+			<key>Teacher</key>
+			<string>Mr. Wizard</string>
+			<key>RoomNumber</key>
+			<string>BU314</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>5</integer>
+			<key>Name</key>
+			<string>Lunch</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>CAFE</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>6</integer>
+			<key>Name</key>
+			<string>US Govt</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>7</integer>
+			<key>Name</key>
+			<string>Fingerpainting</string>
+			<key>Teacher</key>
+			<string>Ms. Pointer</string>
+			<key>RoomNumber</key>
+			<string>BU111</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>8</integer>
+			<key>Name</key>
+			<string>Biology</string>
+			<key>Teacher</key>
+			<string>Mr. Welch</string>
+			<key>RoomNumber</key>
+			<string>BO453</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>9</integer>
+			<key>Name</key>
+			<string>PM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>Period</key>
+			<integer>0</integer>
+			<key>Name</key>
+			<string>AM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>1</integer>
+			<key>Name</key>
+			<string>Music</string>
+			<key>Teacher</key>
+			<string>Ms. Triangle</string>
+			<key>RoomNumber</key>
+			<string>BO115</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>2</integer>
+			<key>Name</key>
+			<string>Brit Lit</string>
+			<key>Teacher</key>
+			<string>Ms. Rowling</string>
+			<key>RoomNumber</key>
+			<string>BU465</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>3</integer>
+			<key>Name</key>
+			<string>Algebra</string>
+			<key>Teacher</key>
+			<string>Mr. Matician</string>
+			<key>RoomNumber</key>
+			<string>BO135</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>4</integer>
+			<key>Name</key>
+			<string>Computer Science</string>
+			<key>Teacher</key>
+			<string>Mr. Wizard</string>
+			<key>RoomNumber</key>
+			<string>BU314</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>5</integer>
+			<key>Name</key>
+			<string>Lunch</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>CAFE</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>6</integer>
+			<key>Name</key>
+			<string>US Govt</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>7</integer>
+			<key>Name</key>
+			<string>Fingerpainting</string>
+			<key>Teacher</key>
+			<string>Ms. Pointer</string>
+			<key>RoomNumber</key>
+			<string>BU111</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>8</integer>
+			<key>Name</key>
+			<string>Biology</string>
+			<key>Teacher</key>
+			<string>Mr. Welch</string>
+			<key>RoomNumber</key>
+			<string>BO453</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>9</integer>
+			<key>Name</key>
+			<string>PM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>Period</key>
+			<integer>0</integer>
+			<key>Name</key>
+			<string>AM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>1</integer>
+			<key>Name</key>
+			<string>Music</string>
+			<key>Teacher</key>
+			<string>Ms. Triangle</string>
+			<key>RoomNumber</key>
+			<string>BO115</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>2</integer>
+			<key>Name</key>
+			<string>Brit Lit</string>
+			<key>Teacher</key>
+			<string>Ms. Rowling</string>
+			<key>RoomNumber</key>
+			<string>BU465</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>3</integer>
+			<key>Name</key>
+			<string>Algebra</string>
+			<key>Teacher</key>
+			<string>Mr. Matician</string>
+			<key>RoomNumber</key>
+			<string>BO135</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>4</integer>
+			<key>Name</key>
+			<string>Computer Science</string>
+			<key>Teacher</key>
+			<string>Mr. Wizard</string>
+			<key>RoomNumber</key>
+			<string>BU314</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>5</integer>
+			<key>Name</key>
+			<string>Lunch</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>CAFE</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>6</integer>
+			<key>Name</key>
+			<string>US Govt</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>7</integer>
+			<key>Name</key>
+			<string>Fingerpainting</string>
+			<key>Teacher</key>
+			<string>Ms. Pointer</string>
+			<key>RoomNumber</key>
+			<string>BU111</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>8</integer>
+			<key>Name</key>
+			<string>Biology</string>
+			<key>Teacher</key>
+			<string>Mr. Welch</string>
+			<key>RoomNumber</key>
+			<string>BO453</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>9</integer>
+			<key>Name</key>
+			<string>PM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>Period</key>
+			<integer>0</integer>
+			<key>Name</key>
+			<string>AM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>1</integer>
+			<key>Name</key>
+			<string>Music</string>
+			<key>Teacher</key>
+			<string>Ms. Triangle</string>
+			<key>RoomNumber</key>
+			<string>BO115</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>2</integer>
+			<key>Name</key>
+			<string>Brit Lit</string>
+			<key>Teacher</key>
+			<string>Ms. Rowling</string>
+			<key>RoomNumber</key>
+			<string>BU465</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>3</integer>
+			<key>Name</key>
+			<string>Algebra</string>
+			<key>Teacher</key>
+			<string>Mr. Matician</string>
+			<key>RoomNumber</key>
+			<string>BO135</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>4</integer>
+			<key>Name</key>
+			<string>Computer Science</string>
+			<key>Teacher</key>
+			<string>Mr. Wizard</string>
+			<key>RoomNumber</key>
+			<string>BU314</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>5</integer>
+			<key>Name</key>
+			<string>Lunch</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>CAFE</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>6</integer>
+			<key>Name</key>
+			<string>US Govt</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>7</integer>
+			<key>Name</key>
+			<string>Fingerpainting</string>
+			<key>Teacher</key>
+			<string>Ms. Pointer</string>
+			<key>RoomNumber</key>
+			<string>BU111</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>8</integer>
+			<key>Name</key>
+			<string>Biology</string>
+			<key>Teacher</key>
+			<string>Mr. Welch</string>
+			<key>RoomNumber</key>
+			<string>BO453</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>9</integer>
+			<key>Name</key>
+			<string>PM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>Period</key>
+			<integer>0</integer>
+			<key>Name</key>
+			<string>AM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>1</integer>
+			<key>Name</key>
+			<string>Music</string>
+			<key>Teacher</key>
+			<string>Ms. Triangle</string>
+			<key>RoomNumber</key>
+			<string>BO115</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>2</integer>
+			<key>Name</key>
+			<string>Brit Lit</string>
+			<key>Teacher</key>
+			<string>Ms. Rowling</string>
+			<key>RoomNumber</key>
+			<string>BU465</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>3</integer>
+			<key>Name</key>
+			<string>Algebra</string>
+			<key>Teacher</key>
+			<string>Mr. Matician</string>
+			<key>RoomNumber</key>
+			<string>BO135</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>4</integer>
+			<key>Name</key>
+			<string>Computer Science</string>
+			<key>Teacher</key>
+			<string>Mr. Wizard</string>
+			<key>RoomNumber</key>
+			<string>BU314</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>5</integer>
+			<key>Name</key>
+			<string>Lunch</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>CAFE</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>6</integer>
+			<key>Name</key>
+			<string>US Govt</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>7</integer>
+			<key>Name</key>
+			<string>Fingerpainting</string>
+			<key>Teacher</key>
+			<string>Ms. Pointer</string>
+			<key>RoomNumber</key>
+			<string>BU111</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>8</integer>
+			<key>Name</key>
+			<string>Biology</string>
+			<key>Teacher</key>
+			<string>Mr. Welch</string>
+			<key>RoomNumber</key>
+			<string>BO453</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>9</integer>
+			<key>Name</key>
+			<string>PM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>Period</key>
+			<integer>0</integer>
+			<key>Name</key>
+			<string>AM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>1</integer>
+			<key>Name</key>
+			<string>Music</string>
+			<key>Teacher</key>
+			<string>Ms. Triangle</string>
+			<key>RoomNumber</key>
+			<string>BO115</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>2</integer>
+			<key>Name</key>
+			<string>Brit Lit</string>
+			<key>Teacher</key>
+			<string>Ms. Rowling</string>
+			<key>RoomNumber</key>
+			<string>BU465</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>3</integer>
+			<key>Name</key>
+			<string>Algebra</string>
+			<key>Teacher</key>
+			<string>Mr. Matician</string>
+			<key>RoomNumber</key>
+			<string>BO135</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>4</integer>
+			<key>Name</key>
+			<string>Computer Science</string>
+			<key>Teacher</key>
+			<string>Mr. Wizard</string>
+			<key>RoomNumber</key>
+			<string>BU314</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>5</integer>
+			<key>Name</key>
+			<string>Lunch</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>CAFE</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>6</integer>
+			<key>Name</key>
+			<string>US Govt</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>7</integer>
+			<key>Name</key>
+			<string>Fingerpainting</string>
+			<key>Teacher</key>
+			<string>Ms. Pointer</string>
+			<key>RoomNumber</key>
+			<string>BU111</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>8</integer>
+			<key>Name</key>
+			<string>Biology</string>
+			<key>Teacher</key>
+			<string>Mr. Welch</string>
+			<key>RoomNumber</key>
+			<string>BO453</string>
+		</dict>
+		<dict>
+			<key>Period</key>
+			<integer>9</integer>
+			<key>Name</key>
+			<string>PM Homeroom</string>
+			<key>Teacher</key>
+			<string>Ms. Crabapple</string>
+			<key>RoomNumber</key>
+			<string>BU345</string>
+		</dict>
+	</array>
+</array>
+</plist>
