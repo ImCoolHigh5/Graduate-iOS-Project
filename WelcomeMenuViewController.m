@@ -13,6 +13,7 @@
 #import "Staff.h"
 #import "Schedule.h"
 #import "ScheduleDataController.h"
+#import "Student.h"
 
 #define MyLog if(0); else NSLog
 /****** ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ****/
@@ -48,17 +49,26 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-// Prints a log of each property of each Schedule Item in the schedule array of the first student
+
 - (IBAction)runTest:(id)sender {
-	StaffDataController *testing = [[StaffDataController alloc] init];
-	for (int i = 0; i < [testing staffCount]; i++) {
-		Staff *thisStaff = [[Staff alloc] init];
-		thisStaff = [testing staffAtIndex:i];
-		NSArray *thisSchedule = [[NSArray alloc] init];
-		thisSchedule = [ScheduleDataController createScheduleForScheduleID:thisStaff.scheduleID];
-		
-		MyLog(@"%@", thisStaff.lastName);
-	}
+//	StaffDataController *testing = [[StaffDataController alloc] init];
+//	for (int i = 0; i < [testing staffCount]; i++) {
+//		Staff *thisStaff = [[Staff alloc] init];
+//		thisStaff = [testing staffAtIndex:i];
+//		NSArray *thisSchedule = [[NSArray alloc] init];
+//		thisSchedule = [ScheduleDataController createScheduleForScheduleID:thisStaff.scheduleID];
+//		
+//		MyLog(@"%@", thisStaff.lastName);
+//	}
 //	MyLog(@"%@", testing.studentSchedule);
+	NSArray *newStudentGuardians = [[NSArray alloc] initWithObjects:@14, nil];
+	Student *newStudent = [[Student alloc] initWithStudentIDNumber:505 andFirstName:@"Paul" andLastName:@"Dean" andAreTheyMale:YES andHomeroomTeacherID:27 andGuardianIDArray:newStudentGuardians andScheduleID:16];
+	
+	
+//	NSArray *testArray = [[NSArray alloc] initWithArray:[newStudent prepareForUploadTest]];
+	[newStudent printStudent];
+	[plistDC addToPlistObject:newStudent];
+	
 }
+
 @end

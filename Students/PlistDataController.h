@@ -13,4 +13,7 @@
 +(NSDictionary *)getEntityWithIDNumber:(int)idNumber inPlist:(NSString*)sourcePList;
 +(id)getValueUsingKeyValue:(NSString*)key forEntityWithIDNumber:(int)idNumber inPlist:(NSString*)sourcePList;
 +(NSArray*)getIDsFromPlist:(NSString*)sourcePList;
++(NSArray*)makeNSArrayFromPlistTitle:(NSString*)plistTitle;
++(NSString*)makePlistPathWithTitle:(NSString*)plistTitle;
++(void)addToPlistObject:(id)newEntity;
 @end

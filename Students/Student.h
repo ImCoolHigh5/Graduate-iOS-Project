@@ -13,8 +13,8 @@
 @interface Student : NSObject
 
 @property (nonatomic, assign) int studentIDNumber;
-@property (nonatomic, copy) NSString* firstName;
-@property (nonatomic, copy) NSString* lastName;
+@property (nonatomic, strong) NSString* firstName;
+@property (nonatomic, strong) NSString* lastName;
 @property (nonatomic, assign) BOOL isMale;
 @property (nonatomic) int homeroomTeacherID;
 @property (nonatomic) NSArray *guardianIDArray;
@@ -29,4 +29,9 @@
 				andGuardianIDArray:(NSArray*) guardianIDArray
 				andScheduleID:(int) scheduleID;
 
+-(void) printStudent;
+-(NSDictionary*)prepareForUpload;
+
+
+-(NSArray*)prepareForUploadTest; /********/
 @end

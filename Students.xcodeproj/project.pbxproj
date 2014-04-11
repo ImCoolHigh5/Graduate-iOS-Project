@@ -15,6 +15,7 @@
 		960A72F218C25CD70096033A /* WelcomeMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960A72F018C25CD70096033A /* WelcomeMenuViewController.m */; };
 		960A72FB18C2848D0096033A /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960A72FA18C2848D0096033A /* ScheduleViewController.m */; };
 		960A72FC18C2848D0096033A /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960A72FA18C2848D0096033A /* ScheduleViewController.m */; };
+		9644250018F75A79002ABC59 /* IDNumberDatabaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 964424FF18F75A79002ABC59 /* IDNumberDatabaseController.m */; };
 		964B869C18BAD9E60022917D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964B869B18BAD9E60022917D /* Foundation.framework */; };
 		964B869E18BAD9E60022917D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964B869D18BAD9E60022917D /* CoreGraphics.framework */; };
 		964B86A018BAD9E60022917D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964B869F18BAD9E60022917D /* UIKit.framework */; };
@@ -88,6 +89,8 @@
 		960A72F018C25CD70096033A /* WelcomeMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeMenuViewController.m; sourceTree = "<group>"; };
 		960A72F918C2848D0096033A /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
 		960A72FA18C2848D0096033A /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
+		964424FE18F75A79002ABC59 /* IDNumberDatabaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDNumberDatabaseController.h; sourceTree = "<group>"; };
+		964424FF18F75A79002ABC59 /* IDNumberDatabaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDNumberDatabaseController.m; sourceTree = "<group>"; };
 		964B869818BAD9E60022917D /* Students.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Students.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		964B869B18BAD9E60022917D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		964B869D18BAD9E60022917D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -274,6 +277,8 @@
 				9682093F18F1E207008857C9 /* SessionDataController.m */,
 				9682094118F1E9BE008857C9 /* PlistDataController.h */,
 				9682094218F1E9BE008857C9 /* PlistDataController.m */,
+				964424FE18F75A79002ABC59 /* IDNumberDatabaseController.h */,
+				964424FF18F75A79002ABC59 /* IDNumberDatabaseController.m */,
 			);
 			name = Controllers;
 			path = Students;
@@ -496,6 +501,7 @@
 				9673039518C01A110075823E /* ScheduleDataController.m in Sources */,
 				9688560D18BFECD9002C6DCC /* StudentMenuViewController.m in Sources */,
 				9682093D18F1E1FD008857C9 /* RoomDataController.m in Sources */,
+				9644250018F75A79002ABC59 /* IDNumberDatabaseController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
