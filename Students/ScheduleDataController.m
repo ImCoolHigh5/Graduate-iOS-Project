@@ -14,74 +14,9 @@
 
 @interface ScheduleDataController ()
 
-/****** Old way *******
- // Used to fill with ScheduleItems, no matter how many there are
- @property (nonatomic, readonly) NSMutableArray *scheduleItemList;
- 
- ****** Old way *******/
-
 @end
 
 @implementation ScheduleDataController
-
-/****** Old way *******
- // Creates an array of schedule items belonging to the StudentIDNumber passed
- -(id) initWithStudentIDNumber:(int)studentIDNumber {
- 
- self = [super init];
- 
- if(self) {
- _scheduleItemList = [[NSMutableArray alloc] init];
- [self initializeScheduleItemsForStudent:studentIDNumber];
- 
- // After the list is filled with however many ScheduleItems, they are placed in a mutable array to be retained
- _studentSchedule = _scheduleItemList;
- //		[self printScheduleToLog:_scheduleItemList];
- return self;
- }
- return nil;
- }
- 
- // Looks in the array of items in the ScheduleItems.plist at the index of the student number, and converts its array (ScheduleItems) full of dictionaries (properties)
- -(void) initializeScheduleItemsForStudent:(int)studentIDNumber {
- NSString *pathToSchdeuleItemPList = [[NSBundle mainBundle] pathForResource:@"ScheduleItems" ofType:@"plist"];
- NSArray *defaultScheduleItemsPList = [NSArray arrayWithContentsOfFile:pathToSchdeuleItemPList];
- NSArray *scheduleItemsForStudent =[defaultScheduleItemsPList objectAtIndex:(NSUInteger)studentIDNumber];
- for (NSDictionary *scheduleItemInfo in scheduleItemsForStudent) {
- // Uses each dictionary to create a ScheduleItem and add it to the scheduleItemList
- [self addScheduleItemWithPeriod:[scheduleItemInfo[@"Period"] intValue]
- name:scheduleItemInfo[@"Name"]
- teacher:scheduleItemInfo[@"Teacher"]
- roomNumber:scheduleItemInfo[@"RoomNumber"]];
- }
- }
- 
- -(void) addScheduleItemWithPeriod:(int)aPeriod
- name:(NSString*)aName
- teacher:(NSString*)aTeacher
- roomNumber:(NSString*)aRoomNumber {
- 
- ScheduleItem *newScheduleItem = [[ScheduleItem alloc] initWithPeriod:(int)aPeriod name:(NSString*)aName teacher:(NSString*)aTeacher roomNumber:(NSString*)aRoomNumber];
- [self.scheduleItemList addObject:newScheduleItem];
- }
- 
- // Used to know exactly how many periods are in this school day
- -(NSUInteger)scheduleItemCount {
- return [self.scheduleItemList count];
- }
- 
- -(ScheduleItem *)scheduleItemAtIndex: (NSUInteger)index {
- return [self.studentSchedule objectAtIndex:index];
- }
- // When the Test button is pressed, it prints each Period on a student's schedule in the log
- #pragma mark - Testing Purposes
- -(void) printScheduleToLog:(NSArray *)printableSchedule {
- for (ScheduleItem *scheduleItem in printableSchedule) {
- MyLog(@"%d\n %@\n %@\n %@\n", scheduleItem.period, scheduleItem.name, scheduleItem.teacher, scheduleItem.roomNumber);
- }
- }
- ****** Old way *******/
-
 
 +(NSArray*)createScheduleForScheduleID:(int)idNumber {
 	
@@ -140,6 +75,74 @@
 	return newItem;
 	
 }
+
+#pragma mark Old Interface Code
+// Removed mm-dd-yyyy
+/****** Old way *******
+ // Used to fill with ScheduleItems, no matter how many there are
+ @property (nonatomic, readonly) NSMutableArray *scheduleItemList;
+ 
+ ****** Old way *******/
+
+#pragma mark Old Implementation Code
+// Removed mm-dd-yyyy
+/****** Old way *******
+ // Creates an array of schedule items belonging to the StudentIDNumber passed
+ -(id) initWithStudentIDNumber:(int)studentIDNumber {
+ 
+ self = [super init];
+ 
+ if(self) {
+ _scheduleItemList = [[NSMutableArray alloc] init];
+ [self initializeScheduleItemsForStudent:studentIDNumber];
+ 
+ // After the list is filled with however many ScheduleItems, they are placed in a mutable array to be retained
+ _studentSchedule = _scheduleItemList;
+ //		[self printScheduleToLog:_scheduleItemList];
+ return self;
+ }
+ return nil;
+ }
+ 
+ // Looks in the array of items in the ScheduleItems.plist at the index of the student number, and converts its array (ScheduleItems) full of dictionaries (properties)
+ -(void) initializeScheduleItemsForStudent:(int)studentIDNumber {
+ NSString *pathToSchdeuleItemPList = [[NSBundle mainBundle] pathForResource:@"ScheduleItems" ofType:@"plist"];
+ NSArray *defaultScheduleItemsPList = [NSArray arrayWithContentsOfFile:pathToSchdeuleItemPList];
+ NSArray *scheduleItemsForStudent =[defaultScheduleItemsPList objectAtIndex:(NSUInteger)studentIDNumber];
+ for (NSDictionary *scheduleItemInfo in scheduleItemsForStudent) {
+ // Uses each dictionary to create a ScheduleItem and add it to the scheduleItemList
+ [self addScheduleItemWithPeriod:[scheduleItemInfo[@"Period"] intValue]
+ name:scheduleItemInfo[@"Name"]
+ teacher:scheduleItemInfo[@"Teacher"]
+ roomNumber:scheduleItemInfo[@"RoomNumber"]];
+ }
+ }
+ 
+ -(void) addScheduleItemWithPeriod:(int)aPeriod
+ name:(NSString*)aName
+ teacher:(NSString*)aTeacher
+ roomNumber:(NSString*)aRoomNumber {
+ 
+ ScheduleItem *newScheduleItem = [[ScheduleItem alloc] initWithPeriod:(int)aPeriod name:(NSString*)aName teacher:(NSString*)aTeacher roomNumber:(NSString*)aRoomNumber];
+ [self.scheduleItemList addObject:newScheduleItem];
+ }
+ 
+ // Used to know exactly how many periods are in this school day
+ -(NSUInteger)scheduleItemCount {
+ return [self.scheduleItemList count];
+ }
+ 
+ -(ScheduleItem *)scheduleItemAtIndex: (NSUInteger)index {
+ return [self.studentSchedule objectAtIndex:index];
+ }
+ // When the Test button is pressed, it prints each Period on a student's schedule in the log
+ #pragma mark - Testing Purposes
+ -(void) printScheduleToLog:(NSArray *)printableSchedule {
+ for (ScheduleItem *scheduleItem in printableSchedule) {
+ MyLog(@"%d\n %@\n %@\n %@\n", scheduleItem.period, scheduleItem.name, scheduleItem.teacher, scheduleItem.roomNumber);
+ }
+ }
+ ****** Old way *******/
 
 @end
 

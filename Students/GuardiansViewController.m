@@ -18,7 +18,27 @@
 
 @implementation GuardiansViewController
 
+- (void)setSelectedStudent:(id)newDetailItem
+{
+    if (_selectedStudent != newDetailItem) {
+        _selectedStudent = newDetailItem;
+        
+        // Update the view.
+        [self configureView];
+    }
+}
+
+- (void)configureView
+{
+	// Update the user interface for the detail item.
+	
 	if (self.selectedStudent) {
+		_schedule = [ScheduleDataController createScheduleForScheduleID:_selectedStudent.scheduleID];
+		//		[_selectedStudent setUpSchedule];
+		
+		
+	}
+}
 
 - (void)awakeFromNib
 {
@@ -56,7 +76,7 @@
 	
 	Guardian *guardian = [self.guardianDC guardianAtIndex:indexPath.row];
 	
-	// Fills each row with a student in a Last, First format
+	// Fills each row with a guardian in a Last, First format
 	NSString *fullName = [NSString stringWithFormat:@"%@, %@", guardian.lastName, guardian.firstName];
 	cell.textLabel.text = fullName;
     return cell;

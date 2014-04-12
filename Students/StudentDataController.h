@@ -17,4 +17,6 @@
 
 -(Student*)makeStudentFromNSDictionary:(NSDictionary*)studentInfo;
 
+-(NSArray*)getStudentsInSession:(int)sessionID fromScheduleItem:(NSString*)sessionTime;
+
 @end

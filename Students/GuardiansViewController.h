@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Student.h"
 
 @interface GuardiansViewController : UITableViewController
+
+@property (strong, nonatomic) Student *selectedStudent;
 
 @end

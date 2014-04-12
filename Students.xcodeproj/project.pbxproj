@@ -15,6 +15,7 @@
 		960A72F218C25CD70096033A /* WelcomeMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960A72F018C25CD70096033A /* WelcomeMenuViewController.m */; };
 		960A72FB18C2848D0096033A /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960A72FA18C2848D0096033A /* ScheduleViewController.m */; };
 		960A72FC18C2848D0096033A /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960A72FA18C2848D0096033A /* ScheduleViewController.m */; };
+		9614298B18F994B000C48D4A /* TestButtonDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9614298A18F994B000C48D4A /* TestButtonDataController.m */; };
 		9644250018F75A79002ABC59 /* IDNumberDatabaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 964424FF18F75A79002ABC59 /* IDNumberDatabaseController.m */; };
 		964B869C18BAD9E60022917D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964B869B18BAD9E60022917D /* Foundation.framework */; };
 		964B869E18BAD9E60022917D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964B869D18BAD9E60022917D /* CoreGraphics.framework */; };
@@ -89,6 +90,8 @@
 		960A72F018C25CD70096033A /* WelcomeMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeMenuViewController.m; sourceTree = "<group>"; };
 		960A72F918C2848D0096033A /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
 		960A72FA18C2848D0096033A /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
+		9614298918F994B000C48D4A /* TestButtonDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestButtonDataController.h; sourceTree = "<group>"; };
+		9614298A18F994B000C48D4A /* TestButtonDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestButtonDataController.m; sourceTree = "<group>"; };
 		964424FE18F75A79002ABC59 /* IDNumberDatabaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDNumberDatabaseController.h; sourceTree = "<group>"; };
 		964424FF18F75A79002ABC59 /* IDNumberDatabaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDNumberDatabaseController.m; sourceTree = "<group>"; };
 		964B869818BAD9E60022917D /* Students.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Students.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +230,8 @@
 		964B868F18BAD9E60022917D = {
 			isa = PBXGroup;
 			children = (
+				9614298918F994B000C48D4A /* TestButtonDataController.h */,
+				9614298A18F994B000C48D4A /* TestButtonDataController.m */,
 				964B86AA18BAD9E60022917D /* AppDelegate.h */,
 				964B86AB18BAD9E60022917D /* AppDelegate.m */,
 				9673038A18C0112F0075823E /* Models */,
@@ -486,6 +491,7 @@
 				964B86E018BADAFC0022917D /* Student.m in Sources */,
 				960A72F118C25CD70096033A /* WelcomeMenuViewController.m in Sources */,
 				9682092E18F1D9D7008857C9 /* Guardian.m in Sources */,
+				9614298B18F994B000C48D4A /* TestButtonDataController.m in Sources */,
 				9682093718F1E1DA008857C9 /* StaffDataController.m in Sources */,
 				9673039218C016910075823E /* Schedule.m in Sources */,
 				9682094318F1E9BE008857C9 /* PlistDataController.m in Sources */,

@@ -33,5 +33,5 @@
 -(NSDictionary*)prepareForUpload;
 
 
--(NSArray*)prepareForUploadTest; /********/
+//-(NSArray*)prepareForUploadTest; /********/
 @end

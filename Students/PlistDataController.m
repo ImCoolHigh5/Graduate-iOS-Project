@@ -45,15 +45,15 @@
 }
 
 // Returns just the ID Numbers to be used for other Data Controllers
-#warning Might want to get rid of this (not in use) NSArray can't hold int values
 +(NSArray*)getIDsFromPlist:(NSString*)sourcePList {
 	if (sourcePList) {
-		NSString *pathToPList = [[NSBundle mainBundle] pathForResource:sourcePList ofType:@"plist"];
-		NSArray *defaultPList = [NSArray arrayWithContentsOfFile:pathToPList];
+		//	NSString *pathToPList = [[NSBundle mainBundle] pathForResource:sourcePList ofType:@"plist"];
+		NSArray *defaultPList = [[NSArray alloc] initWithArray:[self makeNSArrayFromPlistTitle:sourcePList]];
 		NSMutableArray *fillMeWithIDs = [[NSMutableArray alloc] init];
 		
 		for (NSDictionary *entity in defaultPList) {
-			[fillMeWithIDs addObject:entity[ID_NUMBER]];
+			//		NSString *idNumber = [NSString stringWithFormat@"%@", entity[ID_NUMBER]];
+			[fillMeWithIDs addObject:entity[ID_NUMBER]]; // Converty to NSString?
 		}
 		NSArray *finishedArray = [[NSArray alloc] initWithArray:fillMeWithIDs];
 		return finishedArray;
