@@ -18,6 +18,7 @@
 
 @implementation GuardiansViewController
 
+	if (self.selectedStudent) {
 
 - (void)awakeFromNib
 {
