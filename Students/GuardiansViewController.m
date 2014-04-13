@@ -17,7 +17,7 @@
 @end
 
 @implementation GuardiansViewController
-
+// Assigns selected Student object from preview view
 - (void)setSelectedStudent:(id)newDetailItem
 {
     if (_selectedStudent != newDetailItem) {
