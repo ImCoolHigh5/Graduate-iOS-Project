@@ -9,7 +9,7 @@
 #import "Schedule.h"
 
 @implementation Schedule
-
+/*
 -(id) initWithScheduleIDNumber:(int)scheduleIDNumber
 				   andPersonID:(int)personID
 				 andAMHomeroom:(ScheduleItem*)amHomeroom
@@ -38,6 +38,30 @@
     return nil;
 	
 }
+*/
+#warning Temporart
+-(NSArray*)getArrayOfSessionItemsWithPlistDictionary:(NSDictionary*)entity {
+
+	if ([entity count] != 0) {
+		_scheduleIDNumber = [entity[ID_NUMBER] intValue];
+		_personID = [entity[SCHEDULE_OWNER_ID] intValue];
+		_amHomeroomSessionID = [entity[AM_HOMEROOM_SESSION_ID] intValue];
+		_period1SessionID = [entity[PERIOD_1_SESSION_ID] intValue];
+		_period2SessionID = [entity[PERIOD_2_SESSION_ID] intValue];
+		_period3SessionID = [entity[PERIOD_3_SESSION_ID] intValue];
+		_period4SessionID = [entity[PERIOD_4_SESSION_ID] intValue];
+		_period5SessionID = [entity[PERIOD_5_SESSION_ID] intValue];
+		_period6SessionID = [entity[PERIOD_6_SESSION_ID] intValue];
+        	_pmHomeroomSessionID = [entity[PM_HOMEROOM_SESSION_ID] intValue];
+        	
+
+	return self;
+	}
+    }
+    return nil;
+
+}
+*/
 
 -(NSDictionary*)prepareForUpload {
 	
