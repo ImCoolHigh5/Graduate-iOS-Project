@@ -14,7 +14,7 @@
 
 @interface Schedule : NSObject
 
-/*
+
  @property (nonatomic, assign) int scheduleIDNumber;
  @property (nonatomic, assign) int personID;
  @property (nonatomic, assign) int amHomeroomSessionID;
@@ -25,8 +25,8 @@
  @property (nonatomic, assign) int period5SessionID;
  @property (nonatomic, assign) int period6SessionID;
  @property (nonatomic, assign) int pmHomeroomSessionID;
- */
 
+/*
 @property (nonatomic, assign) int scheduleIDNumber;
 @property (nonatomic, assign) int personID;
 @property (nonatomic, assign) ScheduleItem* amHomeroom;
@@ -51,7 +51,7 @@
 					andPeriod6:(ScheduleItem*)period6
 				 andPMHomeroom:(ScheduleItem*)pmHomeroom;
 
-/*
+*/
  -(id) initWithScheduleIDNumber:(int)scheduleIDNumber
  andPersonID:(int)personID
  andAMHomeroomSessionID:(int)amHomeroomSessionID
@@ -62,5 +62,5 @@
  andPeriod5SessionID:(int)period5SessionID
  andPeriod6SessionID:(int)period6SessionID
  andPMHomeroomSessionID:(int)pmHomeroomSessionID;
- */
+ 
 @end
