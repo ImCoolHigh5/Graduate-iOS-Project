@@ -35,4 +35,23 @@
 	
 }
 
+// Returns a full name with gender indicating prefix
+-(NSString*)getFullName {
+	
+	NSString *staffPrefix = [[NSString alloc] init];
+	if (self.isMale) {
+		staffPrefix = @"Mr. ";
+	} else {
+		staffPrefix = @"Ms. ";
+	}
+	// to avoid nil errors with the return string
+	if (!self.firstName) {
+		self.firstName = @"";
+	}
+	if (!self.lastName) {
+		self.lastName = @"";
+	}
+	return [NSString stringWithFormat:@"%@ %@ %@", staffPrefix, self.firstName, self.lastName];
+}
+
 @end

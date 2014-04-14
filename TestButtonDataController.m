@@ -17,6 +17,7 @@
 #import "ScheduleDataController.h"
 #import "Student.h"
 #import "StudentDataController.h"
+#import "IDNumberDatabaseController.h"
 
 #define MyLog if(0); else NSLog
 /****** ^^^^^^^^^^^^Change to 1 before launch^^^^^^^^^^^^^^^^^^ ****/
@@ -27,7 +28,7 @@
 // Any test methods should be called from here
 -(void)runTests {
 	
-	[self testGetStudentsInSession];
+	[self testIDGeneration];
 }
 
 
@@ -66,6 +67,13 @@
 	studentsInSession42 = [studentDC getStudentsInSession:42 fromScheduleItem:PERIOD_1_SESSION_ID];
 	MyLog(@"%@",studentsInSession42);
 	
+}
+
+-(void)testIDGeneration {
+	
+	IDNumberDatabaseController *idNumDB = [[IDNumberDatabaseController alloc] init]; // For new idNumber
+	int testNumber = [idNumDB getIDNumberForNewEntityWithType:STUDENT_PLIST_TITLE];
+	MyLog(@"%i",testNumber);
 }
 
 @end

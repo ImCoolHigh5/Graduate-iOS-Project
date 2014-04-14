@@ -83,4 +83,3 @@
 #define PERIOD_6_SESSION_ID @"period6"
 #define PM_HOMEROOM_SESSION_ID @"pmHomeroom"
 // This whole period thing is a mess and should be fixed after the basic foundation is solid
-#warning Create a method that generates a new idNumber and type

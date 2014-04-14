@@ -10,4 +10,6 @@
 
 @interface IDNumberDatabaseController : NSObject
 
+-(int)getIDNumberForNewEntityWithType:(NSString*)entityType;
+
 @end

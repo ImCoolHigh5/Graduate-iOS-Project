@@ -43,4 +43,8 @@
 	   andIsResidenceOfStudent:(BOOL) isResidenceOfStudent;
 
 -(id) initWithID:(int) idNumber;
+
+-(NSString*)getFullName;
+
+-(NSDictionary*)prepareForUpload;
 @end

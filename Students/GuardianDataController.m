@@ -46,7 +46,7 @@
 	//	}
 }
 
--(NSArray*)getGuardiansForStudentWithGuardianIDArray:(NSArray*)guardianIDs {
++(NSArray*)getGuardiansForStudentWithGuardianIDArray:(NSArray*)guardianIDs {
 	if (guardianIDs) {
 		
 		NSMutableArray *fillMeWithGuardians = [[NSMutableArray alloc] init];
@@ -56,7 +56,8 @@
 			// Gets an NSDictionary for the guardian with this idNumber
 			NSDictionary *newGuardian = [[NSDictionary alloc] initWithDictionary:[plistDC getEntityWithIDNumber:[guardianIDs[i] intValue] inPlist:GUARDIAN_PLIST_TITLE]];
 			//Turns the NSDictionary Item into a Guardian object and stuffs it in the MutableArray
-			[fillMeWithGuardians addObject:[self makeGuardianFromNSDictionary:newGuardian]];
+			GuardianDataController *forInstanceMethods = [[GuardianDataController alloc] init];
+			[fillMeWithGuardians addObject:[forInstanceMethods makeGuardianFromNSDictionary:newGuardian]];
 			
 		}
 		// Remove Mutability

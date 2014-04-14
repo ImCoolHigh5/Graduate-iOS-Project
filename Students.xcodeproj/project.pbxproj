@@ -47,6 +47,10 @@
 		964B86FA18BEA07A0022917D /* joan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 964B86F118BEA07A0022917D /* joan.jpg */; };
 		964B86FB18BEA07A0022917D /* gandhi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 964B86F218BEA07A0022917D /* gandhi.jpg */; };
 		964B86FC18BEA07A0022917D /* cleopatra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 964B86F318BEA07A0022917D /* cleopatra.jpg */; };
+		96687F3F18FAFB4200219905 /* AddStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96687F3E18FAFB4200219905 /* AddStudentViewController.m */; };
+		9669739218FB2FE7007AEC67 /* SelectAGuardianTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9669739118FB2FE7007AEC67 /* SelectAGuardianTableViewController.m */; };
+		9669739518FB5D32007AEC67 /* SelectAStaffTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9669739418FB5D32007AEC67 /* SelectAStaffTableViewController.m */; };
+		9669739818FB6CAC007AEC67 /* NewGuardianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9669739718FB6CAC007AEC67 /* NewGuardianViewController.m */; };
 		9673038C18C012500075823E /* ScheduleItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9673038B18C012500075823E /* ScheduleItems.plist */; };
 		9673038F18C0167D0075823E /* ScheduleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9673038E18C0167D0075823E /* ScheduleItem.m */; };
 		9673039218C016910075823E /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9673039118C016910075823E /* Schedule.m */; };
@@ -129,6 +133,14 @@
 		964B86F118BEA07A0022917D /* joan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = joan.jpg; sourceTree = "<group>"; };
 		964B86F218BEA07A0022917D /* gandhi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gandhi.jpg; sourceTree = "<group>"; };
 		964B86F318BEA07A0022917D /* cleopatra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cleopatra.jpg; sourceTree = "<group>"; };
+		96687F3D18FAFB4200219905 /* AddStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddStudentViewController.h; path = Students/AddStudentViewController.h; sourceTree = "<group>"; };
+		96687F3E18FAFB4200219905 /* AddStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddStudentViewController.m; path = Students/AddStudentViewController.m; sourceTree = "<group>"; };
+		9669739018FB2FE7007AEC67 /* SelectAGuardianTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectAGuardianTableViewController.h; sourceTree = "<group>"; };
+		9669739118FB2FE7007AEC67 /* SelectAGuardianTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectAGuardianTableViewController.m; sourceTree = "<group>"; };
+		9669739318FB5D32007AEC67 /* SelectAStaffTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectAStaffTableViewController.h; path = Students/SelectAStaffTableViewController.h; sourceTree = "<group>"; };
+		9669739418FB5D32007AEC67 /* SelectAStaffTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectAStaffTableViewController.m; path = Students/SelectAStaffTableViewController.m; sourceTree = "<group>"; };
+		9669739618FB6CAC007AEC67 /* NewGuardianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGuardianViewController.h; sourceTree = "<group>"; };
+		9669739718FB6CAC007AEC67 /* NewGuardianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGuardianViewController.m; sourceTree = "<group>"; };
 		9673038B18C012500075823E /* ScheduleItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ScheduleItems.plist; sourceTree = "<group>"; };
 		9673038D18C0167D0075823E /* ScheduleItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleItem.h; sourceTree = "<group>"; };
 		9673038E18C0167D0075823E /* ScheduleItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleItem.m; sourceTree = "<group>"; };
@@ -347,6 +359,8 @@
 			isa = PBXGroup;
 			children = (
 				964B86AD18BAD9E60022917D /* Main.storyboard */,
+				9669739618FB6CAC007AEC67 /* NewGuardianViewController.h */,
+				9669739718FB6CAC007AEC67 /* NewGuardianViewController.m */,
 				96855EAB18F61EBB00B80637 /* GuardiansViewController.h */,
 				96855EAC18F61EBB00B80637 /* GuardiansViewController.m */,
 				960A72F918C2848D0096033A /* ScheduleViewController.h */,
@@ -359,6 +373,12 @@
 				964B86B418BAD9E60022917D /* StudentDetailViewController.m */,
 				9688560B18BFECD9002C6DCC /* StudentMenuViewController.h */,
 				9688560C18BFECD9002C6DCC /* StudentMenuViewController.m */,
+				96687F3D18FAFB4200219905 /* AddStudentViewController.h */,
+				96687F3E18FAFB4200219905 /* AddStudentViewController.m */,
+				9669739018FB2FE7007AEC67 /* SelectAGuardianTableViewController.h */,
+				9669739118FB2FE7007AEC67 /* SelectAGuardianTableViewController.m */,
+				9669739318FB5D32007AEC67 /* SelectAStaffTableViewController.h */,
+				9669739418FB5D32007AEC67 /* SelectAStaffTableViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -486,12 +506,15 @@
 			files = (
 				9682093A18F1E1EE008857C9 /* GuardianDataController.m in Sources */,
 				9682093118F1D9E4008857C9 /* Room.m in Sources */,
+				9669739818FB6CAC007AEC67 /* NewGuardianViewController.m in Sources */,
+				9669739218FB2FE7007AEC67 /* SelectAGuardianTableViewController.m in Sources */,
 				964B86AC18BAD9E60022917D /* AppDelegate.m in Sources */,
 				964B86B218BAD9E60022917D /* StudentListViewController.m in Sources */,
 				964B86E018BADAFC0022917D /* Student.m in Sources */,
 				960A72F118C25CD70096033A /* WelcomeMenuViewController.m in Sources */,
 				9682092E18F1D9D7008857C9 /* Guardian.m in Sources */,
 				9614298B18F994B000C48D4A /* TestButtonDataController.m in Sources */,
+				9669739518FB5D32007AEC67 /* SelectAStaffTableViewController.m in Sources */,
 				9682093718F1E1DA008857C9 /* StaffDataController.m in Sources */,
 				9673039218C016910075823E /* Schedule.m in Sources */,
 				9682094318F1E9BE008857C9 /* PlistDataController.m in Sources */,
@@ -507,6 +530,7 @@
 				9673039518C01A110075823E /* ScheduleDataController.m in Sources */,
 				9688560D18BFECD9002C6DCC /* StudentMenuViewController.m in Sources */,
 				9682093D18F1E1FD008857C9 /* RoomDataController.m in Sources */,
+				96687F3F18FAFB4200219905 /* AddStudentViewController.m in Sources */,
 				9644250018F75A79002ABC59 /* IDNumberDatabaseController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

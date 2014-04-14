@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddStudentViewController.h"
 
-@interface StudentListViewController : UITableViewController
+@interface StudentListViewController : UITableViewController <AddStudentViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
+
+
+- (IBAction)addStudentBarButtonPressed:(UIBarButtonItem *)sender;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

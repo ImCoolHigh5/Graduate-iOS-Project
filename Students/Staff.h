@@ -29,4 +29,6 @@
 		   andSubjectTaught:(NSString*) subject
 			  andRoomID:(int) roomID
 			  andScheduleID:(int) scheduleID;
+
+-(NSString*)getFullName;
 @end

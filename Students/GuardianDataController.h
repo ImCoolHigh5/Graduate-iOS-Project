@@ -17,6 +17,8 @@
 
 -(Guardian*)makeGuardianFromNSDictionary:(NSDictionary*)guardianRaw;
 
++(NSArray*)getGuardiansForStudentWithGuardianIDArray:(NSArray*)guardianIDs;
+
 //-(void) addGuardianWithGuardianIDNumber:(int)guardianIDNumber
 //						   andFirstName:(NSString*)firstName
 //							andLastName: (NSString*) lastName

@@ -51,6 +51,8 @@
         [[segue destinationViewController] setDetailItem:_selectedStudent];
     } else if ([[segue identifier] isEqualToString:@"ShowStudentSchedule"]) {
 		[[segue destinationViewController] setSelectedStudent:_selectedStudent];
+	} else if ([[segue identifier] isEqualToString:@"ShowStudentGuardians"]) {
+		[[segue destinationViewController] setSelectedStudent:_selectedStudent];
 	}
 }
 
