@@ -39,9 +39,11 @@
 	
 }
 */
-#warning Temporart
--(NSArray*)getArrayOfSessionItemsWithPlistDictionary:(NSDictionary*)entity {
 
+-(id)initWithPlistDictionary:(NSDictionary*)entity {
+	self = [super init];
+	if (self) {
+	
 	if ([entity count] != 0) {
 		_scheduleIDNumber = [entity[ID_NUMBER] intValue];
 		_personID = [entity[SCHEDULE_OWNER_ID] intValue];
@@ -55,13 +57,12 @@
         	_pmHomeroomSessionID = [entity[PM_HOMEROOM_SESSION_ID] intValue];
         	
 
-	return self;
+		return self;
 	}
     }
     return nil;
 
 }
-*/
 
 -(NSDictionary*)prepareForUpload {
 	
