@@ -26,4 +26,15 @@
 	
 }
 
+-(NSDictionary *)prepareForUpload {
+
+	NSNumber *roomIDNumber = [[NSNumber alloc] initWithInt:_roomIDNumber];
+
+NSArray *keys = [[NSArray alloc] initWithObjects: ID_NUMBER, ROOM_NAME, ROOM_PHONE_NUMBER, nil];
+	NSArray *objects = [[NSArray alloc] initWithObjects: roomIDNumber, _name, _phoneNumber, nil];
+	NSDictionary *newRoomForPlist = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
+
+	return  newRoomForPlist;
+}
+
 @end
