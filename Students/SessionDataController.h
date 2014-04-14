@@ -8,21 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SessionDataController : NSObject
-#warning Format from Student Template
+@class Session;
 
-//@class Student;
-//@interface StudentDataController : NSObject
-//
-//-(NSUInteger)studentCount;
-//
-//-(Student *)studentAtIndex: (NSUInteger)index;
-//
-//-(void) addStudentWtihStudentIDNumber:(int)studentIDNumber
-//						 andFirstName:(NSString*)firstName
-//						  andLastName: (NSString*) lastName
-//					   andAreTheyMale:(BOOL)isMale
-//				 andHomeroomTeacherID:(int) homeroomTeacherID
-//						andGuardianID:(int) guardianID
-//						andScheduleID:(int) scheduleID;
+@interface SessionDataController : NSObject
+
+-(Session*)makeSessionFromNSDictionary:(NSDictionary*)sessionInfo;
+
++(NSArray*)getArrayOfSessions;
+
+-(NSUInteger)sessionCount;
+
+-(Session *)sessionAtIndex:(NSUInteger)index;
+
 @end
