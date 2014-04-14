@@ -43,7 +43,6 @@
     NSLog(@"\n FirstName: %@ \n LastName: %@ \n IsMale: %@ \n StaffID: %d \n ScheduleID: %d \n GuardianID(s): %@", _firstName, _lastName, maleOrNo, _homeroomTeacherID, _scheduleID, _guardianIDArray);
 }
 
-#warning prepareForUpload should be created for all Entity Objects
 -(NSDictionary*)prepareForUpload {
     // Create a dictionary with all the right keys
 	NSNumber *studentIDNumber = [[NSNumber alloc] initWithInt:_studentIDNumber];
@@ -51,7 +50,7 @@
 	NSNumber *homeroomTeacherID = [[NSNumber alloc] initWithInt:_homeroomTeacherID];
 	NSNumber *scheduleID = [[NSNumber alloc] initWithInt:_scheduleID];
 	
-    NSMutableArray *objects = [[NSMutableArray alloc] initWithObjects:studentIDNumber, self.firstName, self.lastName, isMale, homeroomTeacherID, scheduleID, self.guardianIDArray, nil];
+    NSArray *objects = [[NSArray alloc] initWithObjects:studentIDNumber, self.firstName, self.lastName, isMale, homeroomTeacherID, scheduleID, self.guardianIDArray, nil];
 	NSArray *keys = [[NSArray alloc] initWithObjects: ID_NUMBER, FIRST_NAME, LAST_NAME, GENDER_IS_MALE, STAFF_ID_FOR_STUDENT, SCHEDULE_ID_FOR_STUDENT, GUARDIAN_ARRAY_FOR_STUDENT, nil];
 	NSDictionary *newStudentForPlist = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
     
