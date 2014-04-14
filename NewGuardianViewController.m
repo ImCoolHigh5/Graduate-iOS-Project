@@ -71,7 +71,7 @@
 	
 	IDNumberDatabaseController *idNumDB = [[IDNumberDatabaseController alloc] init]; // For new idNumber
 	
-	createdGuardian.guardianIDNumber = [idNumDB getIDNumberForNewEntityWithType:GUARDIAN_PLIST_TITLE];
+	createdGuardian.guardianIDNumber = [idNumDB getIDNumberForNewEntityWithType:@"person"];
 	createdGuardian.firstName = self.firstNameTextField.text;
 	createdGuardian.lastName = self.lastNameTextField.text;
 	switch (self.genderSegmentedControl.selectedSegmentIndex) {

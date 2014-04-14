@@ -62,5 +62,7 @@
  andPeriod5SessionID:(int)period5SessionID
  andPeriod6SessionID:(int)period6SessionID
  andPMHomeroomSessionID:(int)pmHomeroomSessionID;
+
+-(id)initWithPlistDictionary:(NSDictionary*)entity;
  
 @end

@@ -15,6 +15,7 @@
 @interface StudentListViewController ()
 
 	@property (nonatomic, strong) StudentDataController *studentDataController;
+@property (nonatomic, strong) NSMutableArray *studentArray;
 
 @end
 
@@ -24,6 +25,7 @@
 {
     [super awakeFromNib];
 	self.studentDataController = [[StudentDataController alloc] init];
+	self.studentArray = [[NSMutableArray alloc] initWithArray:[_studentDataController getArrayOfStudents]];
 }
 
 - (void)viewDidLoad
@@ -50,14 +52,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [self.studentDataController studentCount];
+	return [self.studentArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 	
-	Student *student = [self.studentDataController studentAtIndex:indexPath.row];
+	Student *student = self.studentArray[indexPath.row];
 
 	// Fills each row with a student in a Last, First format
 	NSString *fullName = [NSString stringWithFormat:@"%@, %@", student.lastName, student.firstName];
@@ -67,7 +69,7 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return NO;
+    return YES;
 }
 
 // Sends the selected Student object to the StudentMenuView
@@ -80,9 +82,34 @@
 	}
 	else if ([[segue identifier] isEqualToString:@"ShowStudentMenu"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-		Student *student = [self.studentDataController studentAtIndex:indexPath.row];
+		Student *student = self.studentArray[indexPath.row];
         [[segue destinationViewController] setSelectedStudent:student];
     }
+}
+
+// Allows items in the list to be deleted by swiping
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	if (editingStyle == UITableViewCellEditingStyleDelete) { // if the motion is for deleting a cell
+		[self.studentArray removeObjectAtIndex:indexPath.row]; // remove that object from our array
+		
+		NSMutableArray *newStudentData = [[NSMutableArray alloc] init];
+		
+		for (Student *student in self.studentArray) {
+			// Take each student and turn it into a dictionary for updating the plist
+			[newStudentData addObject:[student prepareForUpload]];
+		}
+		// Pack it into an NSArray for uploading
+		NSArray *updatedArray = [[NSArray alloc] initWithArray:newStudentData];
+		// Find a place to put our new array (Student.plist)
+		NSString *plistPath = [plistDC makePlistPathWithTitle:STUDENT_PLIST_TITLE];
+		// Replace old plist with new one
+		[updatedArray writeToFile:plistPath atomically:YES];
+
+		
+		// Make the delete look fancy instead of just reloading the table
+		[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+	}
 }
 
 #pragma mark - AddStudentViewControllerDelegate

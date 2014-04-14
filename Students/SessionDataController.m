@@ -7,8 +7,9 @@
 //
 
 #import "SessionDataController.h"
+#import "Session.h"
 
-@interface SessionDataController : NSObject
+@interface SessionDataController ()
 
 @property (nonatomic, readonly) NSMutableArray *sessionList;
 
@@ -31,14 +32,14 @@ return nil;
 
 -(void) initializeDefaultSessions {
 	//NSString *pathToStudentPList = [[NSBundle mainBundle] pathForResource:STUDENT_PLIST_TITLE ofType:@"plist"];
-	NSArray *defaultSessionPList = [[NSArray alloc] initWithArray [plistDC makeNSArrayFromPlistTitle:SESSION_PLIST_TITLE]];
+	NSArray *defaultSessionPList = [[NSArray alloc] initWithArray: [plistDC makeNSArrayFromPlistTitle:SESSION_PLIST_TITLE]];
 	for (NSDictionary *sessionInfo in defaultSessionPList) {
 		[_sessionList addObject:[self makeSessionFromNSDictionary:sessionInfo]];
 	}
 }
 
 -(Session*)makeSessionFromNSDictionary:(NSDictionary*)sessionInfo {
-	Session *newSession = [[Session alloc]  initWithPlistDictionary:sessionInfo;
+	Session *newSession = [[Session alloc]  initWithPlistDictionary:sessionInfo];
 
 	return newSession;
 
@@ -49,13 +50,13 @@ return nil;
 	// Since the class method does not have access to private instance properties
 	NSMutableArray *sessionList = [[NSMutableArray alloc] init];
 	// Use PlistDataController to create an array of dictionaries
-	NSArray *defaultStudentPList = [[NSArray alloc] initWithArray [plistDC makeNSArrayFromPlistTitle:SESSION_PLIST_TITLE]];
+	NSArray *defaultStudentPList = [[NSArray alloc] initWithArray: [plistDC makeNSArrayFromPlistTitle:SESSION_PLIST_TITLE]];
 	// Cycle through each dictionary to convert to a session and add to our sessionList
 	for (NSDictionary *sessionInfo in defaultStudentPList) {
   		// Use the Session instance to create a new object using the dictionary
-  		Session *newSession = [[Session alloc]  initWithPlistDictionary:sessionInfo;
+  		Session *newSession = [[Session alloc]  initWithPlistDictionary:sessionInfo];
   		// And add that object to our sessionList
-		[sessionList addObject:newSession;
+		[sessionList addObject:newSession];
 	}
 	// transer to an NSArray for better memory management
 	NSArray *arrayOfSessions = [[NSArray alloc] initWithArray:sessionList];
@@ -74,14 +75,15 @@ return [self.sessionList objectAtIndex:index];
 }
 
 #warning Add period property to Sessions
--(void)printSessionIDsWithTheirPeriodNumbers {
-	
-	NSArray *scheduleIDs = [[NSArray alloc] initWithArray:[plistDC getIDsFromPlist:SCHEDULE_PLIST_TITLE]];
-	for (int i =0; i < [scheduleIDs count]; i++) {
-		NSArray *thisSchedule = [[NSArray alloc] initWithArray:[ScheduleDataController createScheduleForScheduleID:[scheduleIDs[i] intValue]];
-		for (int i =0; i < [thisSchedule count]; i++) {
-			ScheduleItem *thisScheduleItem = [[ScheduleItem alloc] init];
-			thisScheduleItem = thisSchedule[i];
-	}
-}
+//-(void)printSessionIDsWithTheirPeriodNumbers {
+//	
+//	NSArray *scheduleIDs = [[NSArray alloc] initWithArray:[plistDC getIDsFromPlist:SCHEDULE_PLIST_TITLE]];
+//	for (int i =0; i < [scheduleIDs count]; i++) {
+//		NSArray *thisSchedule = [[NSArray alloc] initWithArray:[ScheduleDataController createScheduleForScheduleID:[scheduleIDs[i] intValue]];
+//		for (int i =0; i < [thisSchedule count]; i++) {
+//			ScheduleItem *thisScheduleItem = [[ScheduleItem alloc] init];
+//			thisScheduleItem = thisSchedule[i];
+//	}
+//}
+
 @end

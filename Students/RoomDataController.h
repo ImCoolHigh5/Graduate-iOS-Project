@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface RoomDataController : NSObject
-#warning Format from Sutdent Template
+#warning Format from Student Template
 
 //@class Student;
 //@interface StudentDataController : NSObject

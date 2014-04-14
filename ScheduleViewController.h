@@ -10,9 +10,11 @@
 #import "Student.h"
 #import "ScheduleDataController.h"
 #import "ScheduleItem.h"
+#import "Staff.h"
 
 @interface ScheduleViewController : UITableViewController
 
 @property (strong, nonatomic) Student *selectedStudent;
+@property (strong, nonatomic) Staff *selectedStaff;
 
 @end

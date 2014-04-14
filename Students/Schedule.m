@@ -66,16 +66,16 @@
 
 -(NSDictionary*)prepareForUpload {
 	
-	NSNumber *scheduleIDNumber [[NSNumber alloc] initWithInt:_scheduleIDNumber];
-	NSNumber *personID [[NSNumber alloc] initWithInt:_personID];
-	NSNumber *amHomeroom [[NSNumber alloc] initWithInt:_amHomeroom];
-	NSNumber *period1 [[NSNumber alloc] initWithInt:_period1];
-	NSNumber *period2 [[NSNumber alloc] initWithInt:_period2];
-	NSNumber *period3 [[NSNumber alloc] initWithInt:_period3];
-	NSNumber *period4 [[NSNumber alloc] initWithInt:_period4];
-	NSNumber *period5 [[NSNumber alloc] initWithInt:_period5];
-	NSNumber *period6 [[NSNumber alloc] initWithInt:_period6];
-	NSNumber *pmHomeroom [[NSNumber alloc] initWithInt:_pmHomeroom];
+	NSNumber *scheduleIDNumber = [[NSNumber alloc] initWithInt:_scheduleIDNumber];
+	NSNumber *personID = [[NSNumber alloc] initWithInt:_personID];
+	NSNumber *amHomeroom = [[NSNumber alloc] initWithInt:_amHomeroomSessionID];
+	NSNumber *period1 = [[NSNumber alloc] initWithInt:_period1SessionID];
+	NSNumber *period2 = [[NSNumber alloc] initWithInt:_period2SessionID];
+	NSNumber *period3 = [[NSNumber alloc] initWithInt:_period3SessionID];
+	NSNumber *period4 = [[NSNumber alloc] initWithInt:_period4SessionID];
+	NSNumber *period5 = [[NSNumber alloc] initWithInt:_period5SessionID];
+	NSNumber *period6 = [[NSNumber alloc] initWithInt:_period6SessionID];
+	NSNumber *pmHomeroom = [[NSNumber alloc] initWithInt:_pmHomeroomSessionID];
 	
 	NSArray *keys = [[NSArray alloc] initWithObjects: ID_NUMBER, SCHEDULE_OWNER_ID, AM_HOMEROOM_SESSION_ID, PERIOD_1_SESSION_ID, PERIOD_2_SESSION_ID, PERIOD_3_SESSION_ID, PERIOD_4_SESSION_ID, PERIOD_5_SESSION_ID, PERIOD_6_SESSION_ID, PM_HOMEROOM_SESSION_ID, nil];
 	NSArray*objects = [[NSArray alloc] initWithObjects: scheduleIDNumber, personID, amHomeroom, period1, period2, period3, period4, period5, period6, pmHomeroom, nil];
@@ -84,7 +84,7 @@
 	return newSchedule;
 }
 
-/*
+
 -(id) initWithScheduleIDNumber:(int)scheduleIDNumber
 				   andPersonID:(int)personID
 		andAMHomeroomSessionID:(int)amHomeroomSessionID
@@ -114,5 +114,5 @@
     return nil;
 	
 }
-*/
+
 @end

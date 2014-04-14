@@ -31,14 +31,25 @@
     }
 }
 
+- (void)setSelectedStaff:(id)newDetailItem
+{
+    if (_selectedStaff != newDetailItem) {
+        _selectedStaff = newDetailItem;
+        
+        // Update the view.
+        [self configureView];
+    }
+}
+
 - (void)configureView
 {
 	// Update the user interface for the detail item.
 	
 	if (self.selectedStudent) {
 		_schedule = [ScheduleDataController createScheduleForScheduleID:_selectedStudent.scheduleID];
-		//		[_selectedStudent setUpSchedule];
 		
+	} else if (self.selectedStaff) {
+		_schedule = [ScheduleDataController createScheduleForScheduleID:_selectedStaff.scheduleID];
 		
 	}
 }

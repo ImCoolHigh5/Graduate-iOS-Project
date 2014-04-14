@@ -30,13 +30,21 @@
 	return nil;
 }
 
-#warning Update to utilize PlistDataController
 -(void) initializeDefaultStudents {
 	NSString *pathToStudentPList = [[NSBundle mainBundle] pathForResource:STUDENT_PLIST_TITLE ofType:@"plist"];
 	NSArray *defaultStudentPList = [NSArray arrayWithContentsOfFile:pathToStudentPList];
 	for (NSDictionary *studentInfo in defaultStudentPList) {
 		[_studentList addObject:[self makeStudentFromNSDictionary:studentInfo]];
 	}
+}
+
+-(NSArray*) getArrayOfStudents {
+	if (_studentList) {
+		NSArray *studentArray = [[NSArray alloc] initWithArray:_studentList];
+		return studentArray;
+	} else
+		return nil;
+	
 }
 
 -(Student*)makeStudentFromNSDictionary:(NSDictionary*)studentInfo {

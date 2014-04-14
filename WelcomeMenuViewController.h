@@ -11,6 +11,7 @@
 @interface WelcomeMenuViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *studentsMenuButton;
+@property (strong, nonatomic) IBOutlet UIButton *staffMenuButton;
 @property (weak, nonatomic) IBOutlet UIButton *testMenuButton;
 
 - (IBAction)runTest:(id)sender;

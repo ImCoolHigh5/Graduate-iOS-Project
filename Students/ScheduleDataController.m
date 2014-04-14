@@ -10,36 +10,40 @@
 #import "ScheduleItem.h"
 #import "Session.h"
 #import "StaffDataController.h"
+#import "Schedule.h"
 
 
 @interface ScheduleDataController ()
 
+@property (nonatomic, readonly) NSMutableArray *scheduleList;
+
 @end
 
 @implementation ScheduleDataController
--(id) init {
-self = [super init];
 
-if(self) {
-self.scheduleList = [[NSMutableArray alloc] init];
-[self initializeDefaultSchedules];
-return self;
-}
-return nil;
+-(id) init {
+	self = [super init];
+	
+	if(self) {
+		_scheduleList = [[NSMutableArray alloc] init];
+		[self initializeDefaultSchedules];
+		return self;
+	}
+	return nil;
 }
 
 -(void) initializeDefaultSchedules {
-	NSArray *defaultSchedulePList = [[NSArray alloc] initWithArray [plistDC makeNSArrayFromPlistTitle:SCHEDULE_PLIST_TITLE]];
+	NSArray *defaultSchedulePList = [[NSArray alloc] initWithArray:[plistDC makeNSArrayFromPlistTitle:SCHEDULE_PLIST_TITLE]];
 	for (NSDictionary *scheduleInfo in defaultSchedulePList) {
-		[scheduleList addObject:[self makeScheduleFromNSDictionary:scheduleInfo]];
+		[_scheduleList addObject:[self makeScheduleFromNSDictionary:scheduleInfo]];
 	}
 }
 
 -(Session*)makeScheduleFromNSDictionary:(NSDictionary*)scheduleInfo {
-	Session *newSchedule = [[Session alloc]  initWithPlistDictionary:scheduleInfo;
-
+	Session *newSchedule = [[Session alloc]  initWithPlistDictionary:scheduleInfo];
+	
 	return newSchedule;
-
+	
 }
 
 // If just creating an NSArray is easier...
@@ -47,17 +51,17 @@ return nil;
 	// Since the class method does not have access to private instance properties
 	NSMutableArray *scheduleList = [[NSMutableArray alloc] init];
 	// Use PlistDataController to create an array of dictionaries
-	NSArray *defaultSchedulePList = [[NSArray alloc] initWithArray [plistDC makeNSArrayFromPlistTitle:SCHEDULE_PLIST_TITLE]];
+	NSArray *defaultSchedulePList = [[NSArray alloc] initWithArray:[plistDC makeNSArrayFromPlistTitle:SCHEDULE_PLIST_TITLE]];
 	// Cycle through each dictionary to convert to a session and add to our sessionList
 	for (NSDictionary *scheduleInfo in defaultSchedulePList) {
 		// Use the Session instance to create a new object using the dictionary
-		Schedule *newSchedule = [[Schedule alloc] initWithPlistDictionary:scheduleInfo;
+		Schedule *newSchedule = [[Schedule alloc]initWithPlistDictionary:scheduleInfo];
 		// And add that object to our sessionList
 		[scheduleList addObject:newSchedule];
-}
-
-// transer to an NSArray for better memory management
-NSArray *arrayOfSessions = [[NSArray alloc] initWithArray:sessionList];
+	}
+	
+	// transer to an NSArray for better memory management
+	NSArray *arrayOfSessions = [[NSArray alloc] initWithArray:scheduleList];
 	// and send it on back full of Sessions from Session.plist
 	return arrayOfSessions;
 }
@@ -78,7 +82,7 @@ NSArray *arrayOfSessions = [[NSArray alloc] initWithArray:sessionList];
 	
 	NSDictionary *scheduleFromPlist = [[NSDictionary alloc] initWithDictionary:[plistDC getEntityWithIDNumber:idNumber inPlist:SCHEDULE_PLIST_TITLE]]; // uses the Schedule ID number passed in (taken from the Person object in question) to find the coorsponding schedule in the "Schedule.plist"
 	
-// Accouting for the extra properties of Schedule (idNumber and personID)
+	// Accouting for the extra properties of Schedule (idNumber and personID)
 	int totalSessions = (int)[scheduleFromPlist count];
 	totalSessions -= 2;
 	
@@ -111,7 +115,7 @@ NSArray *arrayOfSessions = [[NSArray alloc] initWithArray:sessionList];
 	NSLog(@"%i total sessions added",totalSessions);// For testing purposes
 	
 	NSArray *toBeReturned = [[NSArray alloc] initWithArray:scheduleItems]; // put into an array for memory conservation
-
+	
 	return toBeReturned;
 }
 

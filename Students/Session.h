@@ -16,7 +16,6 @@
 @property (nonatomic, assign) int roomID;
 @property (nonatomic, assign) int staffID;
 
-#warning staffID added
 -(id) initWithSessionIDNumber:(int)sessionIDNumber
 				 andName:(NSString*)name
 				andRoomID:(int) roomID

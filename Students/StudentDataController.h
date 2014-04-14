@@ -19,4 +19,6 @@
 
 -(NSArray*)getStudentsInSession:(int)sessionID fromScheduleItem:(NSString*)sessionTime;
 
+-(NSArray*) getArrayOfStudents;
+
 @end
