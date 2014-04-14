@@ -31,9 +31,9 @@ return nil;
 
 -(void) initializeDefaultSessions {
 	//NSString *pathToStudentPList = [[NSBundle mainBundle] pathForResource:STUDENT_PLIST_TITLE ofType:@"plist"];
-	NSArray *defaultStudentPList = [[NSArray alloc] initWithArray [plistDC makeNSArrayFromPlistTitle:SESSION_PLIST_TITLE]];
-	for (NSDictionary *sessionInfo in defaultStudentPList) {
-		[_sessionList addObject:[self makeStudentFromNSDictionary:sessionInfo]];
+	NSArray *defaultSessionPList = [[NSArray alloc] initWithArray [plistDC makeNSArrayFromPlistTitle:SESSION_PLIST_TITLE]];
+	for (NSDictionary *sessionInfo in defaultSessionPList) {
+		[_sessionList addObject:[self makeSessionFromNSDictionary:sessionInfo]];
 	}
 }
 
@@ -71,5 +71,17 @@ return [self.sessionList count];
 // which student is this??
 -(Session *)sessionAtIndex:(NSUInteger)index {
 return [self.sessionList objectAtIndex:index];
+}
+
+#warning Add period property to Sessions
+-(void)printSessionIDsWithTheirPeriodNumbers {
+	
+	NSArray *scheduleIDs = [[NSArray alloc] initWithArray:[plistDC getIDsFromPlist:SCHEDULE_PLIST_TITLE]];
+	for (int i =0; i < [scheduleIDs count]; i++) {
+		NSArray *thisSchedule = [[NSArray alloc] initWithArray:[ScheduleDataController createScheduleForScheduleID:[scheduleIDs[i] intValue]];
+		for (int i =0; i < [thisSchedule count]; i++) {
+			ScheduleItem *thisScheduleItem = [[ScheduleItem alloc] init];
+			thisScheduleItem = thisSchedule[i];
+	}
 }
 @end
