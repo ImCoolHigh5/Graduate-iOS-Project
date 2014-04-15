@@ -16,4 +16,6 @@
 +(NSArray*)makeNSArrayFromPlistTitle:(NSString*)plistTitle;
 +(NSString*)makePlistPathWithTitle:(NSString*)plistTitle;
 +(void)addToPlistObject:(id)newEntity;
+
++(void)convertPListsToNSUserDefaults:(NSString*)plistTitle;
 @end

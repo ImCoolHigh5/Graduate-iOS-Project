@@ -113,4 +113,11 @@
 	NSArray *defaultPList = [NSArray arrayWithContentsOfFile:plistPath];
 	return defaultPList;
 }
+
++(void)convertPListsToNSUserDefaults:(NSString*)plistTitle{
+	
+	NSArray *plistArray = [[NSArray alloc] initWithArray:[self makeNSArrayFromPlistTitle:plistTitle]];
+	[[NSUserDefaults standardUserDefaults] setObject:plistArray forKey:plistTitle];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+}
 @end

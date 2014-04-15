@@ -75,5 +75,15 @@
 	int testNumber = [idNumDB getIDNumberForNewEntityWithType:STUDENT_PLIST_TITLE];
 	MyLog(@"%i",testNumber);
 }
+-(void)makeNSUerDefaults {
+	
+	[plistDC convertPListsToNSUserDefaults:(NSString*)STUDENT_PLIST_TITLE];
+	[plistDC convertPListsToNSUserDefaults:(NSString*)STAFF_PLIST_TITLE];
+	[plistDC convertPListsToNSUserDefaults:(NSString*)GUARDIAN_PLIST_TITLE];
+	[plistDC convertPListsToNSUserDefaults:(NSString*)ID_NUMBER_DATABASE_PLIST_TITLE];
+	[plistDC convertPListsToNSUserDefaults:(NSString*)ROOM_PLIST_TITLE];
+	[plistDC convertPListsToNSUserDefaults:(NSString*)SESSION_PLIST_TITLE];
+	[plistDC convertPListsToNSUserDefaults:(NSString*)SCHEDULE_PLIST_TITLE];
+}
 
 @end
