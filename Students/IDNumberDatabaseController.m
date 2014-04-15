@@ -27,8 +27,7 @@
 	[idNumDB addObject:newLastEntity];
 	
 	NSArray *newIDNumDB = [[NSArray alloc] initWithArray:idNumDB];
-	[newIDNumDB writeToFile:[plistDC makePlistPathWithTitle:ID_NUMBER_DATABASE_PLIST_TITLE] atomically:YES];
-    /*** write new entity to IDNumDB ***/
+	[[NSUserDefaults standardUserDefaults] setObject:newIDNumDB forKey:ID_NUMBER_DATABASE_PLIST_TITLE];    /*** write new entity to IDNumDB ***/
     return newIDNumber;
 }
 

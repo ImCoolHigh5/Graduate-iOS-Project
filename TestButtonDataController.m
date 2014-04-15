@@ -28,7 +28,7 @@
 // Any test methods should be called from here
 -(void)runTests {
 	
-	[self testIDGeneration];
+	[self makeNSUerDefaults];
 }
 
 

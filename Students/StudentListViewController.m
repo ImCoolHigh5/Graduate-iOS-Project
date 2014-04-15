@@ -14,7 +14,7 @@
 
 @interface StudentListViewController ()
 
-	@property (nonatomic, strong) StudentDataController *studentDataController;
+@property (nonatomic, strong) StudentDataController *studentDataController;
 @property (nonatomic, strong) NSMutableArray *studentArray;
 
 @end
@@ -24,8 +24,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-	self.studentDataController = [[StudentDataController alloc] init];
-	self.studentArray = [[NSMutableArray alloc] initWithArray:[_studentDataController getArrayOfStudents]];
+	[self configureView];
 }
 
 - (void)viewDidLoad
@@ -41,6 +40,10 @@
     [super didReceiveMemoryWarning];
 }
 
+-(void)configureView {
+	self.studentDataController = [[StudentDataController alloc] init];
+	self.studentArray = [[NSMutableArray alloc] initWithArray:[_studentDataController getArrayOfStudents]];
+}
 
 #pragma mark - Table View
 
@@ -60,7 +63,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 	
 	Student *student = self.studentArray[indexPath.row];
-
+	
 	// Fills each row with a student in a Last, First format
 	NSString *fullName = [NSString stringWithFormat:@"%@, %@", student.lastName, student.firstName];
 	cell.textLabel.text = fullName;
@@ -101,36 +104,38 @@
 		}
 		// Pack it into an NSArray for uploading
 		NSArray *updatedArray = [[NSArray alloc] initWithArray:newStudentData];
-		// Find a place to put our new array (Student.plist)
-		NSString *plistPath = [plistDC makePlistPathWithTitle:STUDENT_PLIST_TITLE];
-		// Replace old plist with new one
-		[updatedArray writeToFile:plistPath atomically:YES];
-
+		
+		// Upload the new data to replace the old list
+		[[NSUserDefaults standardUserDefaults] setObject:updatedArray forKey:STUDENT_PLIST_TITLE];
+		[[NSUserDefaults standardUserDefaults] synchronize];
+		
 		
 		// Make the delete look fancy instead of just reloading the table
 		[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 	}
+	//				[plistDC removeObjectFromObjectArray:self.studentArray  atIndex:index];
 }
+
 
 #pragma mark - AddStudentViewControllerDelegate
 
 -(void)didAddStudent:(Student *)student {
-
+	
 	// Add student sent from AddStudentView
 	[plistDC addToPlistObject:student];
 	// dismisses this view from the stack
 	[self dismissViewControllerAnimated:YES completion:nil];
 	// Refreshes the Main View to display the added Task object
-	self.studentDataController = [[StudentDataController alloc] init];
+	[self configureView];
 	[self.tableView reloadData];
 	
 }
 
 -(void)didCancel {
-		[self dismissViewControllerAnimated:YES completion:nil];
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)addStudentBarButtonPressed:(UIBarButtonItem *)sender {
-		[self performSegueWithIdentifier:@"toAddStudentViewSegue" sender:nil];
+	[self performSegueWithIdentifier:@"toAddStudentViewSegue" sender:nil];
 }
 @end

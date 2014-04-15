@@ -31,8 +31,7 @@
 }
 
 -(void) initializeDefaultStudents {
-	NSString *pathToStudentPList = [[NSBundle mainBundle] pathForResource:STUDENT_PLIST_TITLE ofType:@"plist"];
-	NSArray *defaultStudentPList = [NSArray arrayWithContentsOfFile:pathToStudentPList];
+	NSArray *defaultStudentPList = [[NSArray alloc] initWithArray:[plistDC makeNSArrayFromPlistTitle:STUDENT_PLIST_TITLE]];
 	for (NSDictionary *studentInfo in defaultStudentPList) {
 		[_studentList addObject:[self makeStudentFromNSDictionary:studentInfo]];
 	}

@@ -48,9 +48,9 @@
 {
     if ([[segue identifier] isEqualToString:@"toStaffDetailViewSegue"]) {
         [[segue destinationViewController] setDetailItem:_selectedStaff];
-    } /*else if ([[segue identifier] isEqualToString:@"toScheduleViewForStaffSegue"]) {
-	   //		[[segue destinationViewController] setSelectedStaff:_selectedStaff];
-	   //	}
+    } else if ([[segue identifier] isEqualToString:@"toScheduleViewForStaffSegue"]) {
+	   		[[segue destinationViewController] setSelectedStaff:_selectedStaff];
+	   	} /*
 	   //	else if ([[segue identifier] isEqualToString:@"ShowStudentGuardians"]) {
 	   //		[[segue destinationViewController] setSelectedStudent:_selectedStaff];
 	   //	} */

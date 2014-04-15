@@ -14,8 +14,9 @@
 +(id)getValueUsingKeyValue:(NSString*)key forEntityWithIDNumber:(int)idNumber inPlist:(NSString*)sourcePList;
 +(NSArray*)getIDsFromPlist:(NSString*)sourcePList;
 +(NSArray*)makeNSArrayFromPlistTitle:(NSString*)plistTitle;
-+(NSString*)makePlistPathWithTitle:(NSString*)plistTitle;
+//+(NSString*)makePlistPathWithTitle:(NSString*)plistTitle;
 +(void)addToPlistObject:(id)newEntity;
 
 +(void)convertPListsToNSUserDefaults:(NSString*)plistTitle;
++(void)removeObjectFromObjectArray:(NSArray*)objectArray atIndex:(int)index;
 @end
