@@ -29,7 +29,6 @@
 - (void)configureView
 {
 	
-	
 	if (self.detailItem) {
 	    self.staffNameLabel.text = [NSString stringWithFormat:@"%@ %@", self.detailItem.firstName, self.detailItem.lastName];
 		self.staffNumberLabel.text = [NSString stringWithFormat:@"%01.0d", self.detailItem.staffIDNumber];

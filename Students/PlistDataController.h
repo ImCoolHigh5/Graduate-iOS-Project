@@ -10,13 +10,14 @@
 
 @interface PlistDataController : NSObject
 
+#pragma mark - Public Methods
+
 +(NSDictionary *)getEntityWithIDNumber:(int)idNumber inPlist:(NSString*)sourcePList;
 +(id)getValueUsingKeyValue:(NSString*)key forEntityWithIDNumber:(int)idNumber inPlist:(NSString*)sourcePList;
-+(NSArray*)getIDsFromPlist:(NSString*)sourcePList;
 +(NSArray*)makeNSArrayFromPlistTitle:(NSString*)plistTitle;
-//+(NSString*)makePlistPathWithTitle:(NSString*)plistTitle;
 +(void)addToPlistObject:(id)newEntity;
-
 +(void)convertPListsToNSUserDefaults:(NSString*)plistTitle;
-+(void)removeObjectFromObjectArray:(NSArray*)objectArray atIndex:(int)index;
+
++(NSArray*)getIDsFromPlist:(NSString*)sourcePList;
+//+(void)removeObjectFromObjectArray:(NSArray*)objectArray atIndex:(int)index;
 @end

@@ -13,7 +13,12 @@
 
 @interface StaffMenuTableViewController : UITableViewController
 
-@property (strong, nonatomic) Staff *selectedStaff;
+#pragma mark - IBOutlets
+
 @property (weak, nonatomic) IBOutlet UINavigationItem *staffMenuNavBar;
+
+#pragma mark - Public Properties
+
+@property (strong, nonatomic) Staff *selectedStaff;
 
 @end

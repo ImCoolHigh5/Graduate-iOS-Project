@@ -17,6 +17,8 @@
 
 @implementation StaffDataController
 
+#pragma mark - Custom Initialization
+// Initialization is overridden to make in instance something like an array
 -(id) init {
 	self = [super init];
 	
@@ -28,13 +30,13 @@
 	return nil;
 }
 
-#warning Update to utilize PlistDataController
 -(void) initializeDefaultStaff {
-	NSString *pathToStaffPList = [[NSBundle mainBundle] pathForResource:STAFF_PLIST_TITLE ofType:@"plist"];
-	NSArray *defaultStaffPList = [NSArray arrayWithContentsOfFile:pathToStaffPList];
+	
+	NSArray *defaultStaffPList = [[NSArray alloc] initWithArray:
+								  [plistDC makeNSArrayFromPlistTitle:STAFF_PLIST_TITLE]];
+	
 	for (NSDictionary *staffInfo in defaultStaffPList) {
-		
-		
+
 		[self addStaffWithStaffIDNumber:[staffInfo[ID_NUMBER] intValue]
 						   andFirstName:staffInfo[FIRST_NAME]
 							andLastName:staffInfo[LAST_NAME]
@@ -45,6 +47,21 @@
 	}
 	
 }
+
+// The staff list is kept private, but data can be accessed through the following methods
+#pragma mark - Instance Methods
+
+// how many staff are there?
+-(NSUInteger)staffCount {
+	return [self.staffList count];
+}
+
+// which staff is this??
+-(Staff *)staffAtIndex:(NSUInteger)index {
+	return [self.staffList objectAtIndex:index];
+}
+
+#pragma mark - Helper Methods
 
 -(void) addStaffWithStaffIDNumber:(int)staffIDNumber
 					 andFirstName:(NSString*)firstName
@@ -63,21 +80,18 @@
 											 andScheduleID:scheduleID  ];
 	[self.staffList addObject:newStaff];
 }
+#pragma mark - Class Method
 
-// how many students are there?
--(NSUInteger)staffCount {
-	return [self.staffList count];
-}
-
-// which student is this??
--(Staff *)staffAtIndex:(NSUInteger)index {
-	return [self.staffList objectAtIndex:index];
-}
-
+// Dynamically creates a string for the staff name, avoiding the creation of a complex Staff object
+// during the generate of a schedule display
 +(NSString*)getStaffNameWithID:(int)staffID {
+
+	// Finding the gender of the staff member listed for this session
+	BOOL isStaffMale = [plistDC getValueUsingKeyValue:GENDER_IS_MALE
+								forEntityWithIDNumber:staffID
+											  inPlist:STAFF_PLIST_TITLE];
 	
-	// Dynamically creates a string for the staff name, avoiding the creation of a complex Staff object
-	BOOL isStaffMale = [plistDC getValueUsingKeyValue:GENDER_IS_MALE forEntityWithIDNumber:staffID inPlist:STAFF_PLIST_TITLE]; // finding the gender of the staff member listed for this session
+	// Using the gender, the prefix of the name is generated
 	NSString *staffName = [[NSString alloc] init];
 	if (isStaffMale) {
 		staffName = @"Mr. ";
@@ -85,10 +99,12 @@
 		staffName = @"Ms. ";
 	}
 	
+	// Finding the last name of the staff member listed for this session
 	NSString *staffLastName = [[NSString alloc] init];
 	staffLastName = [plistDC getValueUsingKeyValue:LAST_NAME forEntityWithIDNumber:staffID inPlist:STAFF_PLIST_TITLE];
 	
-	// stringByAppendingString can't work with a nil value so in the case of lunch we must test first
+	// stringByAppendingString can't work with a nil value so in the case of
+	// a period being 'Lunch' we must test first
 	if (staffLastName) {
 		staffName = [staffName stringByAppendingString:staffLastName];
 	} else

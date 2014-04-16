@@ -10,6 +10,8 @@
 
 @implementation Session
 
+#pragma mark - Custom Initialization
+// Initializing by passing each value
 -(id) initWithSessionIDNumber:(int)sessionIDNumber
 					  andName:(NSString*)name
 					andRoomID:(int) roomID
@@ -25,9 +27,10 @@
         return self;
     }
     return nil;
-	
 }
 
+//Create a new instance using the appropriate Dictionay
+// An alternative to having the DataController handling the brunt of the work
 -(id) initWithPlistDictionary:(NSDictionary*)entity {
 	
 	self = [super init];
@@ -44,16 +47,25 @@
     return nil;
 	
 }
+
+#pragma mark - Data Reversion
+
 -(NSDictionary *)prepareForUpload {
+
 	// Must turn primatives into objects
 	NSNumber *sessionIDNumber = [[NSNumber alloc] initWithInt:_sessionIDNumber];
 	NSNumber *roomID = [[NSNumber alloc] initWithInt:_roomID];
 	NSNumber *staffID = [[NSNumber alloc] initWithInt:_staffID];
+	
 	// Create keys and corisponding objects
-	NSArray *keys = [[NSArray alloc] initWithObjects:ID_NUMBER, SESSION_NAME, ROOM_SESSION_HELD_IN_ID, STAFFING_ID_FOR_SESSION, nil];
-	NSArray *objects = [[NSArray alloc] initWithObjects: sessionIDNumber, _name, roomID, staffID, nil];
+	NSArray *keys = [[NSArray alloc] initWithObjects:
+					 ID_NUMBER, SESSION_NAME, ROOM_SESSION_HELD_IN_ID, STAFFING_ID_FOR_SESSION, nil];
+	NSArray *objects = [[NSArray alloc] initWithObjects:
+						sessionIDNumber, _name, roomID, staffID, nil];
+	
 	// Fill the dictionary with the objects and their keys
 	NSDictionary *newSessionForPlist = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
+	
 	// Return with a Dictionary item fit for a plist
 	return newSessionForPlist;
 

@@ -19,8 +19,8 @@
 #import "StudentDataController.h"
 #import "IDNumberDatabaseController.h"
 
+#warning Change MyLog value to 1 before release
 #define MyLog if(0); else NSLog
-/****** ^^^^^^^^^^^^Change to 1 before launch^^^^^^^^^^^^^^^^^^ ****/
 
 @implementation TestButtonDataController
 
@@ -28,7 +28,8 @@
 // Any test methods should be called from here
 -(void)runTests {
 	
-	[self makeNSUerDefaults];
+	[self makeNSUerDefaults]; // The test button has been repurposed for generating sample data within in the app
+	[self testRosterCreation];
 }
 
 
@@ -49,16 +50,25 @@
 	NSArray *newStudentGuardians = [[NSArray alloc] initWithObjects:@14, nil];
 	Student *newStudent = [[Student alloc] initWithStudentIDNumber:505 andFirstName:@"Paul" andLastName:@"Dean" andAreTheyMale:YES andHomeroomTeacherID:27 andGuardianIDArray:newStudentGuardians andScheduleID:16];
 	
-	
-	//	NSArray *testArray = [[NSArray alloc] initWithArray:[newStudent prepareForUploadTest]];
-	[newStudent printStudent];
+	[self printStudent:newStudent];
 	[plistDC addToPlistObject:newStudent];
 }
+
+// Prints all of the elements of a Student to MyLog
+-(void) printStudent:(Student*)student {
+	
+	// Since BOOL is primitave, we need to convert _isMale to an NSString
+	NSString *maleOrNo = [student stringForIsMale];
+	
+    NSLog(@"\n FirstName: %@ \n LastName: %@ \n IsMale: %@ \n StaffID: %d \n ScheduleID: %d \n GuardianID(s): %@",
+		  student.firstName, student.lastName, maleOrNo, student.homeroomTeacherID, student.scheduleID, student.guardianIDArray);
+}
+
 
 -(void)testRosterCreation {
 	NSArray *idListArray = [[NSArray alloc] initWithArray:[plistDC getIDsFromPlist:STUDENT_PLIST_TITLE]];
 	MyLog(@"%@",idListArray);
-	
+	// More programming needed
 }
 
 -(void)testGetStudentsInSession {

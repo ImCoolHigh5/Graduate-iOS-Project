@@ -8,9 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-@class ScheduleItem;
+@class Schedule;
 
 @interface ScheduleDataController : NSObject
+
+#pragma mark - Public Method
+
+-(NSUInteger)scheduleCount;
+-(Schedule*)scheduleAtIndex:(NSUInteger)index;
+
++(NSArray*)createScheduleForScheduleID:(int)idNumber;
++(NSArray*)getArrayOfSchedules;
 
 /****** Old way *******
 @property (nonatomic, copy) NSArray *studentSchedule;
@@ -28,6 +36,5 @@
 ****** Old way *******/
 
 /* Returns the array that was once the Schedule property of a Person */
-+(NSArray*)createScheduleForScheduleID:(int)idNumber;
 
 @end

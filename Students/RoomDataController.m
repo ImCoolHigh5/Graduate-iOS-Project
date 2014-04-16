@@ -17,11 +17,6 @@
 //
 //-(void) initializeDefaultStudents;
 //
-///*********testing purposes******/
-//#define MyLog if(0); else NSLog
-//
-///****** ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ****/
-//
 //@end
 //
 //@implementation StudentDataController

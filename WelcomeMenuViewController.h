@@ -10,9 +10,13 @@
 
 @interface WelcomeMenuViewController : UIViewController
 
+#pragma mark - IBOutlets
+
 @property (weak, nonatomic) IBOutlet UIButton *studentsMenuButton;
 @property (strong, nonatomic) IBOutlet UIButton *staffMenuButton;
 @property (weak, nonatomic) IBOutlet UIButton *testMenuButton;
+
+#pragma mark - IBActions
 
 - (IBAction)runTest:(id)sender;
 @end

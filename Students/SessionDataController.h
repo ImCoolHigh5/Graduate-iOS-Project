@@ -12,12 +12,14 @@
 
 @interface SessionDataController : NSObject
 
--(Session*)makeSessionFromNSDictionary:(NSDictionary*)sessionInfo;
+#pragma mark - Public Methods
 
-+(NSArray*)getArrayOfSessions;
+-(Session*)makeSessionFromNSDictionary:(NSDictionary*)sessionInfo;
 
 -(NSUInteger)sessionCount;
 
 -(Session *)sessionAtIndex:(NSUInteger)index;
+
++(NSArray*)getArrayOfSessions;
 
 @end

@@ -10,6 +10,9 @@
 #import "GuardianDataController.h"
 #import "Guardian.h"
 
+// For the use of SelectAGuardianTableViewController
+
+#pragma mark - Protocols
 @protocol NewGuardianViewControllerDelegate <NSObject>
 
 -(void)didCancelNewGuardian;
@@ -17,7 +20,8 @@
 
 @end
 
-@interface NewGuardianViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
+@interface NewGuardianViewController : UIViewController <UITextFieldDelegate>
+
 #pragma mark - IBOutlets
 
 @property (strong, nonatomic) IBOutlet UITextField *firstNameTextField;
@@ -41,10 +45,5 @@
 
 - (IBAction)addBarButtonPressed:(UIBarButtonItem *)sender;
 - (IBAction)cancelBarButtonPressed:(UIBarButtonItem *)sender;
-
-#pragma mark - Public Methods
-
-
-
 
 @end

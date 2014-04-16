@@ -12,9 +12,12 @@
 #import "ScheduleViewController.h"
 
 @interface StudentMenuViewController : UITableViewController
+#pragma mark - IBOutlets
 
-@property (strong, nonatomic) Student *selectedStudent;
 @property (weak, nonatomic) IBOutlet UINavigationItem *studentMenuNavBar;
 
+#pragma mark - Public Properties
+
+@property (strong, nonatomic) Student *selectedStudent;
 
 @end

@@ -10,6 +10,8 @@
 
 @implementation Guardian
 
+#pragma mark - Custom Initialization
+// Initializing by passing each value
 -(id) initWithGuardianIDNumber:(int)guardianIDNumber
 				  andFirstName:(NSString*)firstName
 				   andLastName: (NSString*) lastName
@@ -54,15 +56,17 @@
 	}
 	return nil;
 }
+
+#pragma mark - Helper Methods
 // Returns a full name with gender indicating prefix
 -(NSString*)getFullName {
 	
-		NSString *guardianPrefix = [[NSString alloc] init];
-		if (self.isMale) {
-			guardianPrefix = @"Mr. ";
-		} else {
-			guardianPrefix = @"Ms. ";
-		}
+	NSString *guardianPrefix = [[NSString alloc] init];
+	if (self.isMale) {
+		guardianPrefix = @"Mr. ";
+	} else {
+		guardianPrefix = @"Ms. ";
+	}
 	// to avoid nil errors with the return string
 	if (!self.firstName) {
 		self.firstName = @"";
@@ -73,22 +77,7 @@
 	return [NSString stringWithFormat:@"%@ %@ %@", guardianPrefix, self.firstName, self.lastName];
 }
 
--(NSDictionary *)prepareForUpload {
-	NSNumber *guardianIDNumber = [[NSNumber alloc] initWithInt:_guardianIDNumber];
-	NSNumber *zipcode = [[NSNumber alloc] initWithInt:_zipCode];
-	NSString *isMale = [self stringForBool:_isMale];
-	NSString *isMainContact = [self stringForBool:_isMainContact];
-	NSString *isEmergencyContact = [self stringForBool:_isEmergencyContact];
-	NSString *isResident = [self stringForBool:_isResidenceOfStudent];
-	
-	NSArray *keys = [[NSArray alloc] initWithObjects:ID_NUMBER, FIRST_NAME, LAST_NAME, GENDER_IS_MALE,PHONE_NUMBER_FOR_GUARDIAN, HOUSE_NUMBER_FOR_GUARDIAN_ADDRESS, STREET_FOR_GUARDIAN_ADDRESS, CITY_FOR_GUARDIAN_ADDRESS, STATE_FOR_GUARDIAN_ADDRESS, ZIPCODE_FOR_GUARDIAN_ADDRESS, IS_GUARDIAN_MAIN_CONTACT, IS_GUARDIAN__EMERGENCY_CONTACT, IS_GUARDIAN_LIVING_WITH_STUDENT, nil];
-	NSArray *objects = [[NSArray alloc] initWithObjects:guardianIDNumber, _firstName, _lastName, isMale, _phoneNumber, _houseNumber, _street, _city, _state, zipcode, isMainContact, isEmergencyContact, isResident, nil];
-	NSDictionary *newGuardianForPlist = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
-	
-	return  newGuardianForPlist;
-	
-}
-
+// Converting bools into objects
 -(NSString*)stringForBool:(BOOL)boolValue {
 	
 	if (boolValue) {
@@ -96,7 +85,32 @@
 	} else {
 		return @"NO";
 	}
-	
 }
+
+#pragma mark - Data Reversion
+// Transforms the Guardian instance into an NSDictionary object to upload
+-(NSDictionary *)prepareForUpload {
+	
+	// First primatives must be turned into objects that the NSDictionary can work with
+	NSNumber *guardianIDNumber = [[NSNumber alloc] initWithInt:_guardianIDNumber];
+	NSNumber *zipcode = [[NSNumber alloc] initWithInt:_zipCode];
+	NSString *isMale = [self stringForBool:_isMale];
+	NSString *isMainContact = [self stringForBool:_isMainContact];
+	NSString *isEmergencyContact = [self stringForBool:_isEmergencyContact];
+	NSString *isResident = [self stringForBool:_isResidenceOfStudent];
+	
+	// Each object is then put into an array in the same order as their keys, placed in another array
+	NSArray *keys = [[NSArray alloc] initWithObjects:
+					 ID_NUMBER, FIRST_NAME, LAST_NAME, GENDER_IS_MALE,PHONE_NUMBER_FOR_GUARDIAN, HOUSE_NUMBER_FOR_GUARDIAN_ADDRESS, STREET_FOR_GUARDIAN_ADDRESS, CITY_FOR_GUARDIAN_ADDRESS, STATE_FOR_GUARDIAN_ADDRESS, ZIPCODE_FOR_GUARDIAN_ADDRESS, IS_GUARDIAN_MAIN_CONTACT, IS_GUARDIAN__EMERGENCY_CONTACT, IS_GUARDIAN_LIVING_WITH_STUDENT, nil];
+	NSArray *objects = [[NSArray alloc] initWithObjects:
+						guardianIDNumber, _firstName, _lastName, isMale, _phoneNumber, _houseNumber, _street, _city, _state, zipcode, isMainContact, isEmergencyContact, isResident, nil];
+	
+	// These two arrays are used to make a new NSDictionary...
+	NSDictionary *newGuardianForPlist = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
+	
+	// ...which is sent back to be used for uploading to a Plist
+	return  newGuardianForPlist;
+}
+
 
 @end

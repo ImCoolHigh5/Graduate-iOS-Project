@@ -10,7 +10,8 @@
 
 @implementation ScheduleItem
 
-
+#pragma mark - Custom Initialization
+// Initializing by passing each value
 -(id) initWithPeriod:(int)aPeriod
 				name:(NSString*)aName
 			 teacher:(NSString*)aTeacher
@@ -24,8 +25,6 @@
         return self;
     }
     return nil;
-
 }
 
- 
 @end

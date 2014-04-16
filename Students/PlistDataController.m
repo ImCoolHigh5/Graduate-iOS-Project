@@ -14,8 +14,10 @@
 #import "Schedule.h"
 #import "Room.h"
 
-
+// A universal Data Controller, imported in the .PCH file and defined as 'plistDC' for easier access
 @implementation PlistDataController
+
+#pragma mark - Universal Class Methods
 
 // Returns an NSDictionary of the entity in the passed Plist with the matching IDNumber...if one exists
 +(NSDictionary *)getEntityWithIDNumber:(int)idNumber inPlist:(NSString*)sourcePList {
@@ -43,62 +45,57 @@
 	return nil;
 }
 
+// Both a helper method and for use with other data controllers
+// Used to retrieve raw data from NSUserDefaults
++(NSArray*)makeNSArrayFromPlistTitle:(NSString*)plistTitle {
+	
+	NSArray *defaultPList = [[[NSUserDefaults standardUserDefaults] arrayForKey:plistTitle] copy];
+	return defaultPList;
+}
+
+// Allows any object to be passed in and added to the appropriate Plist
+// Will use the getPlistNameForObject to find the correct Plist to get and replace
++(void)addToPlistObject:(id)newEntity {
+    
+	// The following instance method returns a dictionary version of the object
+    NSDictionary *addToArray = [[NSDictionary alloc] init];
+    addToArray = [newEntity prepareForUpload]; // All objects should have this method (create superclass?)
+    
+	// The right Plist title is chosen
+	NSString *plistTitle = [self getPlistNameForObject:newEntity];
+	
+	// Updates the array of items pulled from the appropriate Plist...
+    NSMutableArray *originalPlist = [[NSMutableArray alloc] initWithArray:[self makeNSArrayFromPlistTitle:plistTitle]];
+    [originalPlist addObject:addToArray];
+    NSArray *updatedArray = [[NSArray alloc] initWithArray:originalPlist];
+	
+	// ...and is stuffed right back in that Plist in its updated condition
+	[[NSUserDefaults standardUserDefaults] setObject:updatedArray forKey:plistTitle];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 // Returns just the ID Numbers to be used for other Data Controllers
+// Intended for use with a Class Roster feature
 +(NSArray*)getIDsFromPlist:(NSString*)sourcePList {
+	
+	// Makes sure a Plist Title was passed
 	if (sourcePList) {
-		//	NSString *pathToPList = [[NSBundle mainBundle] pathForResource:sourcePList ofType:@"plist"];
+		// Creates an array from the passed Plist type
 		NSArray *defaultPList = [[NSArray alloc] initWithArray:[self makeNSArrayFromPlistTitle:sourcePList]];
-		NSMutableArray *fillMeWithIDs = [[NSMutableArray alloc] init];
 		
+		// A mutable array is then filled with the idNumbers of the retrieved entities
+		NSMutableArray *fillMeWithIDs = [[NSMutableArray alloc] init];
 		for (NSDictionary *entity in defaultPList) {
-			//		NSString *idNumber = [NSString stringWithFormat@"%@", entity[ID_NUMBER]];
-			[fillMeWithIDs addObject:entity[ID_NUMBER]]; // Converty to NSString?
+			[fillMeWithIDs addObject:entity[ID_NUMBER]];
 		}
+		// The array is made unmutable for memory conservation before it is returned
 		NSArray *finishedArray = [[NSArray alloc] initWithArray:fillMeWithIDs];
 		return finishedArray;
 	}
 	return nil;
 }
 
-+(void)addToPlistObject:(id)newEntity {
-    // Will use the getPlistNameForObject to find the correct Plist to get and replace
-    NSDictionary *addToArray = [[NSDictionary alloc] init];
-	// The following instance method returns a dictionary version of the object
-    addToArray = [newEntity prepareForUpload]; // All objects should have this method (create protocol?)
-    
-	NSString *plistTitle = [self getPlistNameForObject:newEntity];
-//	NSString *plistPath = [self makePlistPathWithTitle:plistTitle];
-	
-    NSMutableArray *originalPlist = [[NSMutableArray alloc] initWithArray:[self makeNSArrayFromPlistTitle:plistTitle]];
-    [originalPlist addObject:addToArray];
-    NSArray *updatedArray = [[NSArray alloc] initWithArray:originalPlist];
-	
-	[[NSUserDefaults standardUserDefaults] setObject:updatedArray forKey:plistTitle];
-	[[NSUserDefaults standardUserDefaults] synchronize];
-//    [updatedArray writeToFile:plistPath atomically:YES];
-}
-
-+(void)removeObjectFromObjectArray:(NSArray*)objectArray atIndex:(int)index {
-	NSMutableArray *oldArray = [[NSMutableArray alloc] initWithArray:objectArray];
-	[oldArray removeObjectAtIndex:index]; // remove that object from our array
-	
-	NSMutableArray *newObjectsData = [[NSMutableArray alloc] init];
-	NSString *objectKey = [[NSString alloc] init];
-	
-	for (id object in oldArray) { // put each task object from the modified array into this new one
-		[newObjectsData addObject:[object prepareForUpload]];
-		// Use the last object in the array to determine what the object key should be
-		if ([newObjectsData count] == [oldArray count]) {
-			objectKey = [self getPlistNameForObject:object];
-		}
-	}
-
-	
-	// Upload the new data to replace the old list
-	[[NSUserDefaults standardUserDefaults] setObject:newObjectsData forKey:objectKey];
-	[[NSUserDefaults standardUserDefaults] synchronize];
-	
-}
+#pragma mark - Helper Methods
 
 +(NSString*)getPlistNameForObject:(id)questionableClass {
     if ([questionableClass isKindOfClass:[Student class]]) {
@@ -118,26 +115,9 @@
     return nil;
 }
 
+#pragma mark - Preset Data Generation
 
-// At first I was worried that having all three of these was a tad redundant but each is used independently at least once through the application
-//+(NSString*)makePlistPathWithTitle:(NSString*)plistTitle {
-//    return [[NSBundle mainBundle] pathForResource:plistTitle ofType:@"plist"];
-//}
-//
-//+(NSArray*)makeNSArrayFromPlistPath:(NSString*)plistPath {
-//	
-//	NSArray *defaultPList = [NSArray arrayWithContentsOfFile:plistPath];
-//	return defaultPList;
-//}
-
-+(NSArray*)makeNSArrayFromPlistTitle:(NSString*)plistTitle {
-	
-//	NSString *plistPath = [[NSString alloc] init];
-//	plistPath = [self makePlistPathWithTitle:plistTitle];
-	NSArray *defaultPList = [[[NSUserDefaults standardUserDefaults] arrayForKey:plistTitle] copy];
-	return defaultPList;
-}
-
+// Uses stored Plists to fill NSUserDefaults with prefabricated Entities
 +(void)convertPListsToNSUserDefaults:(NSString*)plistTitle{
 	
 	NSArray *defaultPList = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:plistTitle ofType:@"plist"]];
@@ -145,4 +125,29 @@
 	[[NSUserDefaults standardUserDefaults] setObject:plistArray forKey:plistTitle];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
+
+// Passing the index to the method below was an issue so the update is done locally instead
+/*
+ +(void)removeObjectFromObjectArray:(NSArray*)objectArray atIndex:(int)index {
+ 
+ NSMutableArray *oldArray = [[NSMutableArray alloc] initWithArray:objectArray];
+ [oldArray removeObjectAtIndex:index]; // remove that object from our array
+ 
+ NSMutableArray *newObjectsData = [[NSMutableArray alloc] init];
+ NSString *objectKey = [[NSString alloc] init];
+ 
+ for (id object in oldArray) { // put each task object from the modified array into this new one
+ [newObjectsData addObject:[object prepareForUpload]];
+ // Use the last object in the array to determine what the object key should be
+ if ([newObjectsData count] == [oldArray count]) {
+ objectKey = [self getPlistNameForObject:object];
+ }
+ }
+ 
+ // Upload the new data to replace the old list
+ [[NSUserDefaults standardUserDefaults] setObject:newObjectsData forKey:objectKey];
+ [[NSUserDefaults standardUserDefaults] synchronize];
+ 
+ }
+ */
 @end

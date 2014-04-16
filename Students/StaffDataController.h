@@ -12,6 +12,8 @@
 
 @interface StaffDataController : NSObject
 
+#pragma mark - Public Methods
+
 -(NSUInteger)staffCount;
 
 -(Staff*)staffAtIndex: (NSUInteger)index;

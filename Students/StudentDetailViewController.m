@@ -9,7 +9,9 @@
 #import "StudentDetailViewController.h"
 
 @interface StudentDetailViewController ()
+
 - (void)configureView;
+
 @end
 
 @implementation StudentDetailViewController
@@ -28,8 +30,6 @@
 
 - (void)configureView
 {
-
-	
 	if (self.detailItem) {
 	    self.studentNameLabel.text = [NSString stringWithFormat:@"%@ %@", self.detailItem.firstName, self.detailItem.lastName];
 		self.studentNumberLabel.text = [NSString stringWithFormat:@"%01.0d", self.detailItem.studentIDNumber];
@@ -39,10 +39,9 @@
 		} else {
 			self.studentGenderLabel.text = @"Female";
 		}
-		
 		self.studentTeacherLabel.text = [StaffDataController getStaffNameWithID:self.detailItem.homeroomTeacherID];
+		// Photo importing is not yet a feature, so...
 		self.studentImagePic.image = [UIImage imageNamed:@"placeholder.png"]; // uses a string of the image file name
-		
 	}
 }
 

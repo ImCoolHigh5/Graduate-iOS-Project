@@ -9,82 +9,9 @@
 #import "Schedule.h"
 
 @implementation Schedule
-/*
--(id) initWithScheduleIDNumber:(int)scheduleIDNumber
-				   andPersonID:(int)personID
-				 andAMHomeroom:(ScheduleItem*)amHomeroom
-					andPeriod1:(ScheduleItem*)period1
-					andPeriod2:(ScheduleItem*)period2
-					andPeriod3:(ScheduleItem*)period3
-					andPeriod4:(ScheduleItem*)period4
-					andPeriod5:(ScheduleItem*)period5
-					andPeriod6:(ScheduleItem*)period6
-				 andPMHomeroom:(ScheduleItem*)pmHomeroom {
-	
-	self = [super init];
-    if (self) {
-		_scheduleIDNumber = scheduleIDNumber;
-		_personID = personID;
-		_amHomeroom = amHomeroom;
-		_period1 = period1;
-		_period2 = period2;
-		_period3 = period3;
-		_period4 = period4;
-		_period5 = period5;
-		_period6 = period6;
-        _pmHomeroom = pmHomeroom;
-        return self;
-    }
-    return nil;
-	
-}
-*/
 
--(id)initWithPlistDictionary:(NSDictionary*)entity {
-	self = [super init];
-	if (self) {
-	
-	if ([entity count] != 0) {
-		_scheduleIDNumber = [entity[ID_NUMBER] intValue];
-		_personID = [entity[SCHEDULE_OWNER_ID] intValue];
-		_amHomeroomSessionID = [entity[AM_HOMEROOM_SESSION_ID] intValue];
-		_period1SessionID = [entity[PERIOD_1_SESSION_ID] intValue];
-		_period2SessionID = [entity[PERIOD_2_SESSION_ID] intValue];
-		_period3SessionID = [entity[PERIOD_3_SESSION_ID] intValue];
-		_period4SessionID = [entity[PERIOD_4_SESSION_ID] intValue];
-		_period5SessionID = [entity[PERIOD_5_SESSION_ID] intValue];
-		_period6SessionID = [entity[PERIOD_6_SESSION_ID] intValue];
-        	_pmHomeroomSessionID = [entity[PM_HOMEROOM_SESSION_ID] intValue];
-        	
-
-		return self;
-	}
-    }
-    return nil;
-
-}
-
--(NSDictionary*)prepareForUpload {
-	
-	NSNumber *scheduleIDNumber = [[NSNumber alloc] initWithInt:_scheduleIDNumber];
-	NSNumber *personID = [[NSNumber alloc] initWithInt:_personID];
-	NSNumber *amHomeroom = [[NSNumber alloc] initWithInt:_amHomeroomSessionID];
-	NSNumber *period1 = [[NSNumber alloc] initWithInt:_period1SessionID];
-	NSNumber *period2 = [[NSNumber alloc] initWithInt:_period2SessionID];
-	NSNumber *period3 = [[NSNumber alloc] initWithInt:_period3SessionID];
-	NSNumber *period4 = [[NSNumber alloc] initWithInt:_period4SessionID];
-	NSNumber *period5 = [[NSNumber alloc] initWithInt:_period5SessionID];
-	NSNumber *period6 = [[NSNumber alloc] initWithInt:_period6SessionID];
-	NSNumber *pmHomeroom = [[NSNumber alloc] initWithInt:_pmHomeroomSessionID];
-	
-	NSArray *keys = [[NSArray alloc] initWithObjects: ID_NUMBER, SCHEDULE_OWNER_ID, AM_HOMEROOM_SESSION_ID, PERIOD_1_SESSION_ID, PERIOD_2_SESSION_ID, PERIOD_3_SESSION_ID, PERIOD_4_SESSION_ID, PERIOD_5_SESSION_ID, PERIOD_6_SESSION_ID, PM_HOMEROOM_SESSION_ID, nil];
-	NSArray*objects = [[NSArray alloc] initWithObjects: scheduleIDNumber, personID, amHomeroom, period1, period2, period3, period4, period5, period6, pmHomeroom, nil];
-	NSDictionary *newSchedule = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
-	
-	return newSchedule;
-}
-
-
+#pragma mark - Custom Initialization
+// Initializing by passing each value
 -(id) initWithScheduleIDNumber:(int)scheduleIDNumber
 				   andPersonID:(int)personID
 		andAMHomeroomSessionID:(int)amHomeroomSessionID
@@ -112,7 +39,99 @@
         return self;
     }
     return nil;
-	
 }
 
+//Create a new instance using the appropriate Dictionay
+// An alternative to having the DataController handling the brunt of the work
+-(id)initWithPlistDictionary:(NSDictionary*)entity {
+	self = [super init];
+	if (self) {
+		
+		if ([entity count] != 0) {
+			_scheduleIDNumber = [entity[ID_NUMBER] intValue];
+			_personID = [entity[SCHEDULE_OWNER_ID] intValue];
+			_amHomeroomSessionID = [entity[AM_HOMEROOM_SESSION_ID] intValue];
+			_period1SessionID = [entity[PERIOD_1_SESSION_ID] intValue];
+			_period2SessionID = [entity[PERIOD_2_SESSION_ID] intValue];
+			_period3SessionID = [entity[PERIOD_3_SESSION_ID] intValue];
+			_period4SessionID = [entity[PERIOD_4_SESSION_ID] intValue];
+			_period5SessionID = [entity[PERIOD_5_SESSION_ID] intValue];
+			_period6SessionID = [entity[PERIOD_6_SESSION_ID] intValue];
+        	_pmHomeroomSessionID = [entity[PM_HOMEROOM_SESSION_ID] intValue];
+			
+			return self;
+		}
+    }
+    return nil;
+}
+
+#pragma mark - Data Reversion
+// Transforms the Schedule instance into an NSDictionary object to upload
+-(NSDictionary*)prepareForUpload {
+	
+	// First integers must be turned into objects that the NSDictionary can work with
+	NSNumber *scheduleIDNumber = [[NSNumber alloc] initWithInt:_scheduleIDNumber];
+	NSNumber *personID = [[NSNumber alloc] initWithInt:_personID];
+	NSNumber *amHomeroom = [[NSNumber alloc] initWithInt:_amHomeroomSessionID];
+	NSNumber *period1 = [[NSNumber alloc] initWithInt:_period1SessionID];
+	NSNumber *period2 = [[NSNumber alloc] initWithInt:_period2SessionID];
+	NSNumber *period3 = [[NSNumber alloc] initWithInt:_period3SessionID];
+	NSNumber *period4 = [[NSNumber alloc] initWithInt:_period4SessionID];
+	NSNumber *period5 = [[NSNumber alloc] initWithInt:_period5SessionID];
+	NSNumber *period6 = [[NSNumber alloc] initWithInt:_period6SessionID];
+	NSNumber *pmHomeroom = [[NSNumber alloc] initWithInt:_pmHomeroomSessionID];
+	
+	// Each object is then put into an array in the same order as their keys, placed in another array
+	NSArray *keys = [[NSArray alloc] initWithObjects:
+					 ID_NUMBER, SCHEDULE_OWNER_ID, AM_HOMEROOM_SESSION_ID, PERIOD_1_SESSION_ID, PERIOD_2_SESSION_ID, PERIOD_3_SESSION_ID, PERIOD_4_SESSION_ID, PERIOD_5_SESSION_ID, PERIOD_6_SESSION_ID, PM_HOMEROOM_SESSION_ID, nil];
+	NSArray*objects = [[NSArray alloc] initWithObjects:
+					   scheduleIDNumber, personID, amHomeroom, period1, period2, period3, period4, period5, period6, pmHomeroom, nil];
+	
+	//These two arrays are used to make a new NSDictionary...
+	NSDictionary *newSchedule = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
+	
+	// ...which is sent back to be used for uploading to a Plist
+	return newSchedule;
+}
 @end
+
+#pragma mark Old Interface Code
+/*
+ 
+ // Removed mm-dd-yyyy
+ 
+ */
+#pragma mark Old Implementation Code
+/*
+ 
+ // Removed 04--yyyy
+ 
+ -(id) initWithScheduleIDNumber:(int)scheduleIDNumber
+ andPersonID:(int)personID
+ andAMHomeroom:(ScheduleItem*)amHomeroom
+ andPeriod1:(ScheduleItem*)period1
+ andPeriod2:(ScheduleItem*)period2
+ andPeriod3:(ScheduleItem*)period3
+ andPeriod4:(ScheduleItem*)period4
+ andPeriod5:(ScheduleItem*)period5
+ andPeriod6:(ScheduleItem*)period6
+ andPMHomeroom:(ScheduleItem*)pmHomeroom {
+ 
+ self = [super init];
+ if (self) {
+ _scheduleIDNumber = scheduleIDNumber;
+ _personID = personID;
+ _amHomeroom = amHomeroom;
+ _period1 = period1;
+ _period2 = period2;
+ _period3 = period3;
+ _period4 = period4;
+ _period5 = period5;
+ _period6 = period6;
+ _pmHomeroom = pmHomeroom;
+ return self;
+ }
+ return nil;
+ 
+ }
+ */

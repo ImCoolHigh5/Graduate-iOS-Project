@@ -10,6 +10,7 @@
 #import "Staff.h"
 #import "StaffDataController.h"
 
+#pragma mark - Protocols
 @protocol SelectAStaffTableViewControllerDelegate <NSObject>
 
 -(void)didCancelStaff;
@@ -19,7 +20,12 @@
 
 @interface SelectAStaffTableViewController : UITableViewController
 
+#pragma mark - Public Properties
+
 @property (weak, nonatomic) id <SelectAStaffTableViewControllerDelegate> addStaffDelegate;
+
+#pragma mark - IBActions
+
 - (IBAction)cancelButtonPressed:(UIBarButtonItem *)sender;
 
 @end

@@ -75,21 +75,6 @@
     return YES;
 }
 
-// Sends the selected Student object to the StudentMenuView
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-	// If we are seguing to the AddTaskViewController...
-	if ([segue.destinationViewController isKindOfClass:[AddStudentViewController class]]) {
-		AddStudentViewController *addStudentViewController = segue.destinationViewController;
-		addStudentViewController.addStudentDelegate = self;
-	}
-	else if ([[segue identifier] isEqualToString:@"ShowStudentMenu"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-		Student *student = self.studentArray[indexPath.row];
-        [[segue destinationViewController] setSelectedStudent:student];
-    }
-}
-
 // Allows items in the list to be deleted by swiping
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 	
@@ -109,11 +94,28 @@
 		[[NSUserDefaults standardUserDefaults] setObject:updatedArray forKey:STUDENT_PLIST_TITLE];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 		
-		
 		// Make the delete look fancy instead of just reloading the table
 		[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 	}
-	//				[plistDC removeObjectFromObjectArray:self.studentArray  atIndex:index];
+	// Passing the index to the method below was an issue so the update is done locally instead
+	//	[plistDC removeObjectFromObjectArray:self.studentArray atIndex:index];
+}
+
+#pragma mark - Segues
+// Sends the selected Student object to the StudentMenuView
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	// If we are seguing to the AddTaskViewController...
+	if ([segue.destinationViewController isKindOfClass:[AddStudentViewController class]]) {
+		AddStudentViewController *addStudentViewController = segue.destinationViewController;
+		addStudentViewController.addStudentDelegate = self;
+	}
+		// If we are seguing to the StudentMenuViewController...
+	else if ([[segue identifier] isEqualToString:@"ShowStudentMenu"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+		Student *student = self.studentArray[indexPath.row];
+        [[segue destinationViewController] setSelectedStudent:student];
+    }
 }
 
 

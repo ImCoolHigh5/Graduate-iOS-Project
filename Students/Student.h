@@ -12,6 +12,8 @@
 
 @interface Student : NSObject
 
+#pragma mark - Public Properties
+
 @property (nonatomic, assign) int studentIDNumber;
 @property (nonatomic, strong) NSString* firstName;
 @property (nonatomic, strong) NSString* lastName;
@@ -20,18 +22,17 @@
 @property (nonatomic) NSArray *guardianIDArray;
 @property (nonatomic) int scheduleID;
 
+#pragma mark - Public Methods
 
 -(id) initWithStudentIDNumber:(int)studentIDNumber
 				 andFirstName:(NSString*)firstName
 				  andLastName: (NSString*) lastName
 			   andAreTheyMale:(BOOL)isMale
 		 andHomeroomTeacherID:(int) homeroomTeacherID
-				andGuardianIDArray:(NSArray*) guardianIDArray
+		   andGuardianIDArray:(NSArray*) guardianIDArray
 				andScheduleID:(int) scheduleID;
 
--(void) printStudent;
 -(NSDictionary*)prepareForUpload;
+-(NSString*)stringForIsMale;
 
-
-//-(NSArray*)prepareForUploadTest; /********/
 @end

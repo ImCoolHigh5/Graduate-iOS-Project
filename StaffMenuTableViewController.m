@@ -43,6 +43,9 @@
 {
     [super didReceiveMemoryWarning];
 }
+
+#pragma mark - Navigation Control
+
 // Sends the received Staff object to the chosen view
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

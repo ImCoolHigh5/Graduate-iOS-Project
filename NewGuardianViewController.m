@@ -38,15 +38,15 @@
 	
 	self.firstNameTextField.delegate = self;
 	self.lastNameTextField.delegate = self;
-	//	self.genderSegmentedControl;
+//	self.genderSegmentedControl.delegate = self;
 	self.phoneNumberTextField.delegate = self;
 	self.houseNumberTextField.delegate = self;
 	self.streetTextField.delegate = self;
 	self.cityTextField.delegate = self;
 	self.stateTextField.delegate = self;
 	self.zipcodeTextField.delegate = self;
-	//	self.contactTypeSegmentedControl;
-	//	self.residentSegmentedControl;
+//	self.contactTypeSegmentedControl.delegate = self;
+//	self.residentSegmentedControl.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,36 +55,35 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+// The private returnNewGuardianObject is called to fill a new Guardian object
+// The delegate is used to return the object to SelectAGuardianViewController
+- (IBAction)addBarButtonPressed:(UIBarButtonItem *)sender {
+	Guardian *newGuardian = [[Guardian alloc] init];
+	newGuardian = [self returnNewGuardianObject];
+
+#warning Guardian is not updating properly
+	// The Guardian is added to the database but the values are not preserved for some reason
+	[plistDC addToPlistObject:newGuardian];
+	[self.createdGuardianDelegate didSelectNewGuardian:[self returnNewGuardianObject]];
+}
+
+// A new Guardian object is not passed
+- (IBAction)cancelBarButtonPressed:(UIBarButtonItem *)sender {
+	
+	[self.createdGuardianDelegate didCancelNewGuardian];
+}
+
+#warning Checks should be made that proper values are entered into the form
+// Assigns values within form to a new Guardian object
 -(Guardian*)returnNewGuardianObject {
 	
 	Guardian *createdGuardian = [[Guardian alloc] init];
-	
 	IDNumberDatabaseController *idNumDB = [[IDNumberDatabaseController alloc] init]; // For new idNumber
 	
+	// A new ID number is made with the IDNumDB and this value is added to that list to prevent reuse
 	createdGuardian.guardianIDNumber = [idNumDB getIDNumberForNewEntityWithType:@"person"];
 	createdGuardian.firstName = self.firstNameTextField.text;
 	createdGuardian.lastName = self.lastNameTextField.text;
-	switch (self.genderSegmentedControl.selectedSegmentIndex) {
-		case 0:
-			createdGuardian.isMale = YES;
-			break;
-		case 1:
-			createdGuardian.isMale = NO;
-			break;
-			
-		default:
-			break;
-	}
 	createdGuardian.phoneNumber = self.phoneNumberTextField.text;
 	createdGuardian.houseNumber = self.houseNumberTextField.text;
 	createdGuardian.street = self.streetTextField.text;
@@ -94,6 +93,19 @@
 	createdGuardian.isMainContact = NO;
 	createdGuardian.isEmergencyContact = NO;
 	createdGuardian.isResidenceOfStudent = NO;
+	
+	// Segmented Controlls
+	switch (self.genderSegmentedControl.selectedSegmentIndex) {
+		case 0:
+			createdGuardian.isMale = YES;
+			break;
+		case 1:
+			createdGuardian.isMale = NO;
+			break;
+		default:
+			break;
+	}
+	
 	switch (self.contactTypeSegmentedControl.selectedSegmentIndex) {
 		case 0:
 			break;
@@ -106,6 +118,7 @@
 		default:
 			break;
 	}
+	
 	switch (self.residentSegmentedControl.selectedSegmentIndex) {
 		case 0:
 			createdGuardian.isResidenceOfStudent = YES;
@@ -121,20 +134,9 @@
 	
 	return createdGuardian;
 }
-- (IBAction)addBarButtonPressed:(UIBarButtonItem *)sender {
-	Guardian *newGuardian = [[Guardian alloc] init];
-	newGuardian = [self returnNewGuardianObject];
-#warning Guardian is not updating properly
-	[plistDC addToPlistObject:newGuardian];
-	[self.createdGuardianDelegate didSelectNewGuardian:[self returnNewGuardianObject]];
-}
-
-- (IBAction)cancelBarButtonPressed:(UIBarButtonItem *)sender {
-	[self.createdGuardianDelegate didCancelNewGuardian];
-}
 
 #pragma mark - UITextFieldDelegate
-
+// Dismisses the keyboard when Return is pressed
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
 	
 	[self.firstNameTextField resignFirstResponder];
@@ -148,12 +150,4 @@
 	return YES;
 }
 
-//-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
-//	
-//	if ([text isEqualToString:@"\n"]) {
-//		[_textView resignFirstResponder];
-//		return NO;
-//	}
-//	return YES;
-//}
 @end

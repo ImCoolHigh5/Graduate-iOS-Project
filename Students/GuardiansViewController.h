@@ -11,6 +11,6 @@
 
 @interface GuardiansViewController : UITableViewController
 
-@property (strong, nonatomic) Student *selectedStudent;
+@property (strong, nonatomic) Student *selectedStudent; // Stores selection for segue
 
 @end

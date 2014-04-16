@@ -15,7 +15,8 @@
 
 @implementation WelcomeMenuViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibName:(NSString *)nibNameOrNil
+			   bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -27,12 +28,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
 	// Loads the button graphics behind the buttons
 	self.studentsMenuButton.backgroundColor = [UIColor clearColor];
 	self.staffMenuButton.backgroundColor = [UIColor clearColor];
 	self.testMenuButton.backgroundColor = [UIColor clearColor];
+	
 	UIEdgeInsets insets = UIEdgeInsetsMake(12.0f, 12.0f, 12.0f, 12.0f);
 	UIImage *buttonImage = [[UIImage imageNamed:@"buttonbg"] resizableImageWithCapInsets:insets];
+	
 	[self.studentsMenuButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
 	[self.staffMenuButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
 	[self.testMenuButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
@@ -48,7 +52,7 @@
 	
 	TestButtonDataController *testing = [[TestButtonDataController alloc] init];
 	
-	[testing runTests];
+	[testing runTests]; // Now used to generate sample data from plists
 	
 }
 

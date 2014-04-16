@@ -7,29 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+
 @class Guardian;
 
 @interface GuardianDataController : NSObject
+
+#pragma mark - Public Methods
 
 -(NSUInteger)guardianCount;
 
 -(Guardian *)guardianAtIndex: (NSUInteger)index;
 
--(Guardian*)makeGuardianFromNSDictionary:(NSDictionary*)guardianRaw;
-
 +(NSArray*)getGuardiansForStudentWithGuardianIDArray:(NSArray*)guardianIDs;
 
-//-(void) addGuardianWithGuardianIDNumber:(int)guardianIDNumber
-//						   andFirstName:(NSString*)firstName
-//							andLastName: (NSString*) lastName
-//						 andAreTheyMale:(BOOL)isMale
-//						 andPhoneNumber:(NSString*) phoneNumber
-//						 andHouseNumber:(NSString*) houseNumber
-//							  andStreet:(NSString*) street
-//								andCity:(NSString*) city
-//							   andState:(NSString*) state
-//							 andZipCode:(int) zipCode
-//					   andIsMainContact:(BOOL) isMainContact
-//				  andIsEmergencyContact:(BOOL) isEmergencyContact
-//				andIsResidenceOfStudent:(BOOL) isResidenceOfStudent;
+
 @end

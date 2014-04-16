@@ -59,7 +59,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-	
 	Staff *staff = [self.staffDC staffAtIndex:indexPath.row];
 	
 	// Fills each row with a staff
@@ -74,20 +73,24 @@
     return NO;
 }
 
+#pragma mark - SelectAStaff Delegation
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	// Sets the staff to be chosen
 	self.selectedStaff = [self.staffDC staffAtIndex:indexPath.row];
 	[self.addStaffDelegate didSelectStaff:self.selectedStaff];
 	
 }
-// Select that Staff and get outta there
+// If Disclosure Indicator is tapped instead
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+	
 	self.selectedStaff = [self.staffDC staffAtIndex:indexPath.row];
 	[self.addStaffDelegate didSelectStaff:self.selectedStaff];
 	
 }
 
 - (IBAction)cancelButtonPressed:(UIBarButtonItem *)sender {
+	
 	[self.addStaffDelegate didCancelStaff];
 }
 

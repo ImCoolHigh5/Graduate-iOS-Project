@@ -5,7 +5,7 @@
 //
 
 #import <Availability.h>
-#import "PlistDataController.h"
+#import "PlistDataController.h" // Makes this data controller universal
 
 #ifndef __IPHONE_5_0
 #warning "This project uses features only available in iOS SDK 5.0 and later."
@@ -15,6 +15,8 @@
 	#import <UIKit/UIKit.h>
 	#import <Foundation/Foundation.h>
 #endif
+
+// Added by Jason Welch on 4/6/14.
 
 #pragma mark Short hand for wordy objects
 

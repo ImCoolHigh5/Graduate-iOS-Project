@@ -42,7 +42,6 @@
     [super didReceiveMemoryWarning];
 }
 
-
 #pragma mark - Table View
 
 // Grouping isn't used
@@ -59,7 +58,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-	
 	Guardian *guardian = [self.guardianDC guardianAtIndex:indexPath.row];
 	
 	// Fills each row with a guardian in a Last, First format
@@ -74,26 +72,42 @@
     return NO;
 }
 
+// If the user scrolls all the way down they can choose to create a new Guardian
+- (IBAction)createNewGuardianPressed:(UIBarButtonItem *)sender {
+	[self performSegueWithIdentifier:@"toNewGuardianSegue" sender:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	// If we are seguing to the SelectAGuardianTableViewController...
+	if ([segue.destinationViewController isKindOfClass:[NewGuardianViewController class]]) {
+		NewGuardianViewController *createGuardian = segue.destinationViewController;
+		createGuardian.createdGuardianDelegate = self;
+	}
+}
+
+#pragma mark - SelectAGuardian Delegation
+// Assigns selected Guardian to delegate for AddStudentView
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	// Sets the guardian to be chosen
 	self.selectedGuardian = [self.guardianDC guardianAtIndex:indexPath.row];
 	[self.addGuardianDelegate didSelectGuardian:self.selectedGuardian];
 	
 }
-// Select that Guardian and get outta there
+// If the Disclosure Indicator is tapped instead
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
 	self.selectedGuardian = [self.guardianDC guardianAtIndex:indexPath.row];
 	[self.addGuardianDelegate didSelectGuardian:self.selectedGuardian];
 	
 }
 
+// Okay button was renamed to Cancel
 - (IBAction)okayBarButtonPressed:(UIBarButtonItem *)sender {
 	[self.addGuardianDelegate didCancelGuardian];
 }
 
-- (IBAction)createNewGuardianPressed:(UIBarButtonItem *)sender {
-	[self performSegueWithIdentifier:@"toNewGuardianSegue" sender:nil];
-}
+
+#pragma mark - NewGuardianViewController Delegates
 
 -(void)didSelectNewGuardian:(Guardian *)createdGuardian {
 	// Updates the Guardian list
@@ -108,12 +122,4 @@
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-	// If we are seguing to the SelectAGuardianTableViewController...
-	if ([segue.destinationViewController isKindOfClass:[NewGuardianViewController class]]) {
-		NewGuardianViewController *createGuardian = segue.destinationViewController;
-		createGuardian.createdGuardianDelegate = self;
-	}
-}
 @end

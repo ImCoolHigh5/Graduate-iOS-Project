@@ -12,6 +12,8 @@
 
 @interface Staff : NSObject
 
+#pragma mark - Public Properties
+
 @property (nonatomic, assign) int staffIDNumber;
 @property (nonatomic, copy) NSString* firstName;
 @property (nonatomic, copy) NSString* lastName;
@@ -20,7 +22,7 @@
 @property (nonatomic) int roomID;
 @property (nonatomic) int scheduleID;
 
-
+#pragma mark - Public Methods
 
 -(id) initWithStaffIDNumber:(int)staffIDNumber
 			   andFirstName:(NSString*)firstName
@@ -30,5 +32,7 @@
 			  andRoomID:(int) roomID
 			  andScheduleID:(int) scheduleID;
 
+// Returns a full name with gender indicating prefix
 -(NSString*)getFullName;
+
 @end

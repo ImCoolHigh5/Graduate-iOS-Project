@@ -10,6 +10,8 @@
 
 @interface IDNumberDatabaseController : NSObject
 
+#pragma mark - Public Methods
+
 -(int)getIDNumberForNewEntityWithType:(NSString*)entityType;
 
 @end

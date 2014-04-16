@@ -11,10 +11,14 @@
 
 @interface Session : NSObject
 
+#pragma mark - Public Properties
+
 @property (nonatomic, assign) int sessionIDNumber;
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, assign) int roomID;
 @property (nonatomic, assign) int staffID;
+
+#pragma mark - Public Methods
 
 -(id) initWithSessionIDNumber:(int)sessionIDNumber
 				 andName:(NSString*)name

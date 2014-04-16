@@ -18,7 +18,10 @@
 @end
 
 @implementation GuardiansViewController
-// Assigns selected Student object from preview view
+
+#pragma mark - Generate GUI
+
+// Assigns selected Student object from previous view (called in prepareForSegue)
 - (void)setSelectedStudent:(id)newDetailItem
 {
     if (_selectedStudent != newDetailItem) {
@@ -34,7 +37,8 @@
 	// Update the user interface for the detail item.
 	self.guardianDC = [[GuardianDataController alloc] init];
 	if (self.selectedStudent) {
-		_guardians = [GuardianDataController getGuardiansForStudentWithGuardianIDArray:_selectedStudent.guardianIDArray];
+		_guardians = [GuardianDataController getGuardiansForStudentWithGuardianIDArray:
+					  _selectedStudent.guardianIDArray];
 		
 	}
 }
@@ -73,13 +77,16 @@
 // Loads the cells into the sections
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	
-	Guardian *guardianItem = [_guardians objectAtIndex:section]; // Guardian object used for this section
+	// Guardian object used for this section
+	Guardian *guardianItem = [_guardians objectAtIndex:section];
+	
 	// Strings for BOOLS used to make titles (Main Contact / Emergency Contact / Resident)
 	NSString *isMain = @"";
 	NSString *isEmergency =  @"";
 	NSString *isResident =  @"";
 	BOOL slashNeeded = NO; // Is a Main/Emergency and Resident
 	
+	// Guardian can be a Main Contact or an Emergency Contact, but not both
 	if (guardianItem.isMainContact) {
 		isMain = @"Main Contact ";
 		slashNeeded = YES;
@@ -89,24 +96,25 @@
 	}
 	if (guardianItem.isMainContact && guardianItem.isEmergencyContact) {
 		return nil;
-	}
+	} // A Guardian can be a Main/Emergency contact and also be a Resident
+	
 	if (guardianItem.isResidenceOfStudent ) {
 		if (slashNeeded) {
 			isResident = @"/ Resident";
 		} else isResident = @"Resident";
-		NSString *sectionName = [[NSString alloc] init];
-		
-		sectionName = [NSString stringWithFormat:@"%@%@%@", isMain, isEmergency, isResident];
-		
-		
-		return sectionName;
 	}
-	return nil;
+	
+	// Those not needed will fill the string with nothing
+	NSString *sectionName = [[NSString alloc] init];
+	sectionName = [NSString stringWithFormat:@"%@%@%@", isMain, isEmergency, isResident];
+	
+	return sectionName;
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView
+		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 	
 	// Makes a new guardianItem from the student's guardianIDArray at the index specified by the tableView
@@ -114,23 +122,28 @@
 	
 	NSString *cellTitle = [[NSString alloc] init];
 	NSString *namePrefix = [[NSString alloc] initWithString:[self stringForGender:guardianItem.isMale]];
+	
 	// Tests to see which element needs to be pulled, depending on the cell in this section
 	// Assumes only five cells are needed per section
 	switch (indexPath.row) {
 		case 0:
-			cellTitle = [NSString stringWithFormat:@"%@ %@ %@", namePrefix, guardianItem.firstName, guardianItem.lastName];
+			cellTitle = [NSString stringWithFormat:@"%@ %@ %@",
+						 namePrefix, guardianItem.firstName, guardianItem.lastName];
 			break;
 		case 1:
-			cellTitle = [NSString stringWithFormat:@"Phonenumber: %@", guardianItem.phoneNumber];
+			cellTitle = [NSString stringWithFormat:@"Phonenumber: %@",
+						 guardianItem.phoneNumber];
 			break;
 		case 2:
 			cellTitle = [NSString stringWithFormat:@"Address:"];
 			break;
 		case 3:
-			cellTitle = [NSString stringWithFormat:@"%@ %@", guardianItem.houseNumber, guardianItem.street];
+			cellTitle = [NSString stringWithFormat:@"%@ %@",
+						 guardianItem.houseNumber, guardianItem.street];
 			break;
 		case 4:
-			cellTitle = [NSString stringWithFormat:@"%@, %@ %i", guardianItem.city, guardianItem.state, guardianItem.zipCode];
+			cellTitle = [NSString stringWithFormat:@"%@, %@ %i",
+						 guardianItem.city, guardianItem.state, guardianItem.zipCode];
 			break;
 		default:
 			cellTitle = @"Oops!";
@@ -158,9 +171,16 @@
 }
 
 - (IBAction)addGuardianButtonPressed:(UIButton *)sender {
+	
 	[self performSegueWithIdentifier:@"toSelectAGuardianViewSegue" sender:nil];
 	
 }
+
+#pragma mark Old Implementation Code
+/*
+
+// Removed 04-13-2014
+
 
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 //{
@@ -179,7 +199,7 @@
 ////	[self displayAllNewGuardians];
 //	// dismisses this view from the stack
 //	[self dismissViewControllerAnimated:YES completion:nil];
-//	
+//
 //}
 //
 //
@@ -188,7 +208,7 @@
 //}
 //
 
-/* // Grouping isn't used
+ // Grouping isn't used
  - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
  {
  return 1;

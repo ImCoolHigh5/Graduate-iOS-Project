@@ -8,9 +8,6 @@
 
 #import "StudentMenuViewController.h"
 
-@interface StudentMenuViewController ()
-
-@end
 
 @implementation StudentMenuViewController
 
@@ -44,6 +41,9 @@
 {
     [super didReceiveMemoryWarning];
 }
+
+#pragma mark - Segues
+
 // Sends the received Student object to the chosen view
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -55,6 +55,5 @@
 		[[segue destinationViewController] setSelectedStudent:_selectedStudent];
 	}
 }
-
 
 @end

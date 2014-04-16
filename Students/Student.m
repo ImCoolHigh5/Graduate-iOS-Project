@@ -11,6 +11,8 @@
 
 @implementation Student
 
+#pragma mark - Custom Initialization
+// Initializing by passing each value
 -(id) initWithStudentIDNumber:(int)studentIDNumber
 				 andFirstName:(NSString*)firstName
 				  andLastName: (NSString*) lastName
@@ -35,36 +37,38 @@
 	
 }
 
-// Prints all of the elements of a Student to NSLog
--(void) printStudent {
-	// Since BOOL is primitave, we need to convert _isMale to an NSString
-	NSString *maleOrNo = [self stringForBool:_isMale];
+#pragma mark - Helper Methods
 
-    NSLog(@"\n FirstName: %@ \n LastName: %@ \n IsMale: %@ \n StaffID: %d \n ScheduleID: %d \n GuardianID(s): %@", _firstName, _lastName, maleOrNo, _homeroomTeacherID, _scheduleID, _guardianIDArray);
-}
-
--(NSDictionary*)prepareForUpload {
-    // Create a dictionary with all the right keys
-	NSNumber *studentIDNumber = [[NSNumber alloc] initWithInt:_studentIDNumber];
-	NSString *isMale = [self stringForBool:_isMale];
-	NSNumber *homeroomTeacherID = [[NSNumber alloc] initWithInt:_homeroomTeacherID];
-	NSNumber *scheduleID = [[NSNumber alloc] initWithInt:_scheduleID];
-	
-    NSArray *objects = [[NSArray alloc] initWithObjects:studentIDNumber, self.firstName, self.lastName, isMale, homeroomTeacherID, scheduleID, self.guardianIDArray, nil];
-	NSArray *keys = [[NSArray alloc] initWithObjects: ID_NUMBER, FIRST_NAME, LAST_NAME, GENDER_IS_MALE, STAFF_ID_FOR_STUDENT, SCHEDULE_ID_FOR_STUDENT, GUARDIAN_ARRAY_FOR_STUDENT, nil];
-	NSDictionary *newStudentForPlist = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
-    
-    return newStudentForPlist;
-}
-
--(NSString*)stringForBool:(BOOL)boolValue {
-	
-	if (boolValue) {
+// Converting bools into objects
+-(NSString*)stringForIsMale {
+	if (_isMale) {
 		return @"YES";
 	} else {
 		return @"NO";
 	}
+}
+
+#pragma mark - Data Reversion
+// Transforms the Student instance into an NSDictionary object to upload
+-(NSDictionary*)prepareForUpload {
+    
+	// First integers and bools must be turned into objects that the NSDictionary can work with
+	NSNumber *studentIDNumber = [[NSNumber alloc] initWithInt:_studentIDNumber];
+	NSString *isMale = [self stringForIsMale];
+	NSNumber *homeroomTeacherID = [[NSNumber alloc] initWithInt:_homeroomTeacherID];
+	NSNumber *scheduleID = [[NSNumber alloc] initWithInt:_scheduleID];
 	
+	// Each object is then put into an array in the same order as their keys, placed in another array
+    NSArray *objects = [[NSArray alloc] initWithObjects:
+						studentIDNumber, self.firstName, self.lastName, isMale, homeroomTeacherID, scheduleID, self.guardianIDArray, nil];
+	NSArray *keys = [[NSArray alloc] initWithObjects:
+					 ID_NUMBER, FIRST_NAME, LAST_NAME, GENDER_IS_MALE, STAFF_ID_FOR_STUDENT, SCHEDULE_ID_FOR_STUDENT, GUARDIAN_ARRAY_FOR_STUDENT, nil];
+	
+	//These two arrays are used to make a new NSDictionary...
+	NSDictionary *newStudentForPlist = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
+    
+	// ...which is sent back to be used for uploading to a Plist
+    return newStudentForPlist;
 }
 
 #pragma mark Old Interface Code

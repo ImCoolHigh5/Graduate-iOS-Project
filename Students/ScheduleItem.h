@@ -12,16 +12,18 @@
 
 @interface ScheduleItem : NSObject
 
+#pragma mark - Public Properties
+
 @property (nonatomic, assign) int period;
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, copy) NSString* teacher;
 @property (nonatomic, copy) NSString* roomNumber;
 
+#pragma mark - Public Methods
 
 -(id) initWithPeriod:(int)aPeriod
                name:(NSString*)aName
 			 teacher:(NSString*)aTeacher
 		  roomNumber:(NSString*)aRoomNumber;
 
- 
  @end

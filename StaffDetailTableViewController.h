@@ -11,6 +11,8 @@
 
 @interface StaffDetailTableViewController : UITableViewController
 
+#pragma mark - IBOutlets
+
 @property (strong, nonatomic) Staff *detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *staffNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *staffNameLabel;

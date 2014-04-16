@@ -12,6 +12,8 @@
 #import "SelectAGuardianTableViewController.h"
 #import "SelectAStaffTableViewController.h"
 
+#pragma mark - Protocols
+
 @protocol AddStudentViewControllerDelegate <NSObject>
 
 -(void)didCancel;
@@ -45,10 +47,5 @@
 - (IBAction)cancelBarButtonPressed:(UIBarButtonItem *)sender;
 - (IBAction)selectTeacherButtonPressed:(UIButton *)sender;
 - (IBAction)addGuardianButtonPressed:(UIButton *)sender;
-
-#pragma mark - Public Methods
-
-
-
 
 @end

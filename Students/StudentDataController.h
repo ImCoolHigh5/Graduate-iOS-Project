@@ -9,16 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @class Student;
+
 @interface StudentDataController : NSObject
 
+#pragma mark - Public Methods
+
 -(NSUInteger)studentCount;
-
 -(Student *)studentAtIndex: (NSUInteger)index;
-
--(Student*)makeStudentFromNSDictionary:(NSDictionary*)studentInfo;
-
 -(NSArray*)getStudentsInSession:(int)sessionID fromScheduleItem:(NSString*)sessionTime;
-
 -(NSArray*) getArrayOfStudents;
 
 @end

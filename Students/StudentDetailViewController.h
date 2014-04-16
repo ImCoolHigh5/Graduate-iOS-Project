@@ -12,12 +12,16 @@
 
 @interface StudentDetailViewController : UITableViewController
 
-@property (strong, nonatomic) Student *detailItem;
+#pragma mark - IBOutlets
+
 @property (weak, nonatomic) IBOutlet UILabel *studentNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *studentNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *studentGenderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *studentTeacherLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *studentImagePic;
 
+#pragma mark - Public Properties
+
+@property (strong, nonatomic) Student *detailItem;
 
 @end

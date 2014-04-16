@@ -11,8 +11,12 @@
 
 @interface StudentListViewController : UITableViewController <AddStudentViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 
+#pragma mark - IBOutlets
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+#pragma mark - IBActions
 
 - (IBAction)addStudentBarButtonPressed:(UIBarButtonItem *)sender;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

@@ -10,6 +10,8 @@
 
 @interface StaffListTableViewController : UITableViewController
 
+#pragma mark - IBOutlets
+
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

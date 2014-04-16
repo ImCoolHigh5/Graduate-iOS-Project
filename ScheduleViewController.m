@@ -11,7 +11,6 @@
 
 @interface ScheduleViewController ()
 
-//@property (nonatomic, strong) ScheduleDataController *scheduleDataController;
 @property (nonatomic, strong) NSArray *schedule;
 
 @end
@@ -20,7 +19,7 @@
 
 
 #pragma mark - Managing the detail item
-
+// Attempt to reuse this view for both students and staff
 - (void)setSelectedStudent:(id)newDetailItem
 {
     if (_selectedStudent != newDetailItem) {
@@ -44,7 +43,6 @@
 - (void)configureView
 {
 	// Update the user interface for the detail item.
-	
 	if (self.selectedStudent) {
 		_schedule = [ScheduleDataController createScheduleForScheduleID:_selectedStudent.scheduleID];
 		
@@ -54,18 +52,14 @@
 	}
 }
 
-
-
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-	//	self.scheduleDataController = [[ScheduleDataController alloc] init];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,13 +78,13 @@
 	return [_schedule count];
 }
 
-// This may need to be more extensive but for now there room for Name, Teacher, and Room
+// This may need to be more extensive but for now there is room for Name, Teacher, and Room
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	return 3;
 }
 
-// Loads the cells into the sections
+// Sets the title for each of the sections
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	
 	NSString *sectionName = [[NSString alloc] init];

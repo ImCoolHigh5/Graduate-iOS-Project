@@ -11,6 +11,8 @@
 #import "Guardian.h"
 #import "NewGuardianViewController.h"
 
+#pragma mark - Protocols
+// For use with AddStudentView
 @protocol SelectAGuardianTableViewControllerDelegate <NSObject>
 
 -(void)didCancelGuardian;
@@ -20,7 +22,12 @@
 
 @interface SelectAGuardianTableViewController : UITableViewController <NewGuardianViewControllerDelegate>
 
+#pragma mark - Public Properties
+
 @property (weak, nonatomic) id <SelectAGuardianTableViewControllerDelegate> addGuardianDelegate;
+
+#pragma mark - IBActions
+
 - (IBAction)okayBarButtonPressed:(UIBarButtonItem *)sender;
 - (IBAction)createNewGuardianPressed:(UIBarButtonItem *)sender;
 

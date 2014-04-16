@@ -14,6 +14,8 @@
 
 @interface ScheduleViewController : UITableViewController
 
+#pragma mark - Public Properties
+
 @property (strong, nonatomic) Student *selectedStudent;
 @property (strong, nonatomic) Staff *selectedStaff;
 

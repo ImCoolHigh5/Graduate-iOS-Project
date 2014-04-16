@@ -12,6 +12,8 @@
 
 @interface Guardian : NSObject
 
+#pragma mark - Public Properties
+
 @property (nonatomic, assign) int guardianIDNumber;
 @property (nonatomic, copy) NSString* firstName;
 @property (nonatomic, copy) NSString* lastName;
@@ -26,7 +28,7 @@
 @property (nonatomic, assign) BOOL isEmergencyContact;
 @property (nonatomic, assign) BOOL isResidenceOfStudent;
 
-
+#pragma mark - Public Methods
 
 -(id) initWithGuardianIDNumber:(int)guardianIDNumber
 				  andFirstName:(NSString*)firstName
@@ -47,4 +49,5 @@
 -(NSString*)getFullName;
 
 -(NSDictionary*)prepareForUpload;
+
 @end

@@ -12,10 +12,13 @@
 
 @interface Room : NSObject
 
+#pragma mark - Public Properties
+
 @property (nonatomic, assign) int roomIDNumber;
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, copy) NSString* phoneNumber;
 
+#pragma mark - Public Methods
 
 -(id) initWithRoomIDNumber:(int)roomIDNumber
 				   andName:(NSString*)name

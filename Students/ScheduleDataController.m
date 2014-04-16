@@ -21,6 +21,124 @@
 
 @implementation ScheduleDataController
 
+
+#pragma mark - Class Methods
+
+// The schedule view is currently handled by this method (and its helper) alone
+// Using the scheduleID number of a Student/Staff property, an Array of schedule items is assembled
++(NSArray*)createScheduleForScheduleID:(int)idNumber {
+	
+	// To be be filled with ScheduleItem objects
+	NSMutableArray *scheduleItems = [[NSMutableArray alloc] init];
+	
+	// uses the Schedule ID number passed to find the coorsponding schedule in the "Schedule.plist"
+	NSDictionary *scheduleFromPlist = [[NSDictionary alloc] initWithDictionary:
+									   [plistDC getEntityWithIDNumber:idNumber
+															  inPlist:SCHEDULE_PLIST_TITLE]];
+	
+	// Creates the number of Sessions in a given day,
+	// accouting for the extra properties of a Schedule object (idNumber and personID)
+	int totalSessions = (int)[scheduleFromPlist count];
+	totalSessions -= 2;
+	
+	ScheduleItem* newItem = [[ScheduleItem alloc] init]; // Will be reused to fill the array
+	
+	// Using the sessionID stored in each Schedule item, we can gather up the information needed to display a schedule
+	for (int i = 0; i < totalSessions; i++) {
+		if (i == 0) {
+			//amHomeroom
+			newItem = [self getScheduleItemWithSessionID:[scheduleFromPlist[AM_HOMEROOM_SESSION_ID] intValue]];
+			
+		} else if (i == (totalSessions-1)) {
+			//pmHomeroom
+			newItem = [self getScheduleItemWithSessionID:[scheduleFromPlist[PM_HOMEROOM_SESSION_ID] intValue]];
+			
+		} else {
+			// periods
+			#warning Using the current count as the period name
+			// ...since it currently matches up as such
+			NSString *periodName = [[NSString alloc] initWithString:[NSString stringWithFormat:@"period%i", i]];
+			
+			newItem = [self getScheduleItemWithSessionID:[scheduleFromPlist[periodName] intValue]];
+		}
+		
+		// The for loop count is used to assign the period property
+		newItem.period = i;
+		
+		// This newly created ScheduleItem is added to to mutable array
+		[scheduleItems addObject:newItem];
+	}
+	
+	// The completed collection of ScheduleItem objects is put into an array
+	// for memory conservation and returned
+	NSArray *toBeReturned = [[NSArray alloc] initWithArray:scheduleItems];
+	return toBeReturned;
+}
+
+// Returns an array of Schedule objects, holding the reference idNumbers stored in the Plist
++(NSArray*)getArrayOfSchedules {
+	
+	// Since the class method does not have access to private instance properties
+	NSMutableArray *scheduleList = [[NSMutableArray alloc] init];
+	
+	// Use PlistDataController to create an array of dictionaries
+	NSArray *defaultSchedulePList = [[NSArray alloc] initWithArray:[plistDC makeNSArrayFromPlistTitle:
+																	SCHEDULE_PLIST_TITLE]];
+	
+	// Cycle through each dictionary to convert to a Schedule and add to our scheduleList
+	for (NSDictionary *scheduleInfo in defaultSchedulePList) {
+		
+		// Use the Schedule instance to create a new object using the dictionary
+		// and add that object to our sessionList
+		Schedule *newSchedule = [[Schedule alloc]initWithPlistDictionary:scheduleInfo];
+		[scheduleList addObject:newSchedule];
+	}
+	
+	// Transer to an NSArray for better memory management
+	// and send it on back full of Sessions from Session.plist
+	NSArray *arrayOfSessions = [[NSArray alloc] initWithArray:scheduleList];
+	return arrayOfSessions;
+}
+
+#pragma mark - Helper Methods
+
+// Used in createScheduleForScheduleID: to make Schedule items from session reference numbers
++(ScheduleItem*)getScheduleItemWithSessionID:(int)idNumber {
+	
+	// Our returnable object
+	ScheduleItem* newItem = [[ScheduleItem alloc] init];
+	
+	// The PlistDataController returns a NSDictionary matching the Entity specified, which in this case is a Session.
+	// This is nested in a custom init allowing you to transform the NSDictionary into a Session object
+	Session *newSession = [[Session alloc] initWithPlistDictionary:
+						   [plistDC getEntityWithIDNumber:idNumber
+												  inPlist:SESSION_PLIST_TITLE]];
+	
+	// Properties are assigned using the Session information
+	newItem.name = newSession.name;
+	
+	// The method getStaffNameWithID: dynamically creates a string for the staff name,
+	// avoiding the creation of a complex Staff object
+	newItem.teacher = [StaffDataController getStaffNameWithID:newSession.staffID];
+	
+	// The PlistDataController is enlisted to avoid the need to import Room.h
+	newItem.roomNumber = [plistDC getValueUsingKeyValue:ROOM_NAME
+								  forEntityWithIDNumber:newSession.roomID
+												inPlist:ROOM_PLIST_TITLE];
+	return newItem;
+}
+
+// Creates a new Schedule object from methods passed to it, using the Schedule custom init
+-(Schedule*)makeScheduleFromNSDictionary:(NSDictionary*)scheduleInfo {
+	
+	// Using this custom init of the Schedule object, this method is greatly simplified
+	Schedule *newSchedule = [[Schedule alloc]  initWithPlistDictionary:scheduleInfo];
+	
+	return newSchedule;
+}
+
+#pragma mark - Custom Initialization
+// Initialization is overridden to make in instance something like an array
 -(id) init {
 	self = [super init];
 	
@@ -33,105 +151,24 @@
 }
 
 -(void) initializeDefaultSchedules {
-	NSArray *defaultSchedulePList = [[NSArray alloc] initWithArray:[plistDC makeNSArrayFromPlistTitle:SCHEDULE_PLIST_TITLE]];
+	NSArray *defaultSchedulePList = [[NSArray alloc] initWithArray:[plistDC makeNSArrayFromPlistTitle:
+																	SCHEDULE_PLIST_TITLE]];
 	for (NSDictionary *scheduleInfo in defaultSchedulePList) {
 		[_scheduleList addObject:[self makeScheduleFromNSDictionary:scheduleInfo]];
 	}
 }
 
--(Session*)makeScheduleFromNSDictionary:(NSDictionary*)scheduleInfo {
-	Session *newSchedule = [[Session alloc]  initWithPlistDictionary:scheduleInfo];
-	
-	return newSchedule;
-	
-}
+// The schedule list is kept private, but data can be accessed through the following methods
+#pragma mark - Instance Methods
 
-// If just creating an NSArray is easier...
-+(NSArray*)getArrayOfSchedules {
-	// Since the class method does not have access to private instance properties
-	NSMutableArray *scheduleList = [[NSMutableArray alloc] init];
-	// Use PlistDataController to create an array of dictionaries
-	NSArray *defaultSchedulePList = [[NSArray alloc] initWithArray:[plistDC makeNSArrayFromPlistTitle:SCHEDULE_PLIST_TITLE]];
-	// Cycle through each dictionary to convert to a session and add to our sessionList
-	for (NSDictionary *scheduleInfo in defaultSchedulePList) {
-		// Use the Session instance to create a new object using the dictionary
-		Schedule *newSchedule = [[Schedule alloc]initWithPlistDictionary:scheduleInfo];
-		// And add that object to our sessionList
-		[scheduleList addObject:newSchedule];
-	}
-	
-	// transer to an NSArray for better memory management
-	NSArray *arrayOfSessions = [[NSArray alloc] initWithArray:scheduleList];
-	// and send it on back full of Sessions from Session.plist
-	return arrayOfSessions;
-}
-
-// how many students are there?
--(NSUInteger)sessionCount {
+// How many sessions are there?
+-(NSUInteger)scheduleCount {
 	return [self.scheduleList count];
 }
 
-// which student is this??
--(Session *)sessionAtIndex:(NSUInteger)index {
+// Which Schedule is this?
+-(Schedule *)scheduleAtIndex:(NSUInteger)index {
 	return [self.scheduleList objectAtIndex:index];
-}
-
-+(NSArray*)createScheduleForScheduleID:(int)idNumber {
-	
-	NSMutableArray *scheduleItems = [[NSMutableArray alloc] init]; // this will be filled with ScheduleItem objects
-	
-	NSDictionary *scheduleFromPlist = [[NSDictionary alloc] initWithDictionary:[plistDC getEntityWithIDNumber:idNumber inPlist:SCHEDULE_PLIST_TITLE]]; // uses the Schedule ID number passed in (taken from the Person object in question) to find the coorsponding schedule in the "Schedule.plist"
-	
-	// Accouting for the extra properties of Schedule (idNumber and personID)
-	int totalSessions = (int)[scheduleFromPlist count];
-	totalSessions -= 2;
-	
-	ScheduleItem* newItem = [[ScheduleItem alloc] init]; // Will be reused to fill the array
-	
-	//get the name of a session
-	//get the room name
-	//get the teacher name
-	//set the period number (why I'm not sure)
-	
-	for (int i = 0; i < totalSessions; i++) { // Uses the total amount of sessions
-		if (i == 0) {
-			//amHomeroom
-			newItem = [self getSessionWithIDNumber:[scheduleFromPlist[AM_HOMEROOM_SESSION_ID] intValue] /*andPeriodNumber:i */]; // Using the sessionID stored in each Schedule item, we can gather up the information needed to display a schedule
-			
-		} else if (i == (totalSessions-1)) {
-			//pmHomeroom
-			newItem = [self getSessionWithIDNumber:[scheduleFromPlist[PM_HOMEROOM_SESSION_ID] intValue] /*andPeriodNumber:totalSessions */];
-		} else {
-			// periods
-			NSString *periodName = [[NSString alloc] initWithString:[NSString stringWithFormat:@"period%i", i]]; // using the current count as the period name, since it currently matches up as such **** will need to ammend ****
-			
-			newItem = [self getSessionWithIDNumber:[scheduleFromPlist[periodName] intValue] /*andPeriodNumber:i */];
-		}
-		newItem.period = i;
-		[scheduleItems addObject:newItem];
-		
-		NSLog(@"Period %i added", i); // For testing purposes
-	}
-	NSLog(@"%i total sessions added",totalSessions);// For testing purposes
-	
-	NSArray *toBeReturned = [[NSArray alloc] initWithArray:scheduleItems]; // put into an array for memory conservation
-	
-	return toBeReturned;
-}
-
-+(ScheduleItem*)getSessionWithIDNumber:(int)idNumber /*andPeriodNumber:(int)period */{
-	
-	ScheduleItem* newItem = [[ScheduleItem alloc] init];
-	
-	// The PlistDataController returns a NSDictionary matching the Entity specified, which in this case is a Session. This is nested in a custom init allowing you to transform the NSDictionary into a Session object
-	Session *newSession = [[Session alloc] initWithPlistDictionary:[plistDC getEntityWithIDNumber:idNumber inPlist:SESSION_PLIST_TITLE]];
-	
-	newItem.name = newSession.name;
-	newItem.roomNumber = [plistDC getValueUsingKeyValue:ROOM_NAME forEntityWithIDNumber:newSession.roomID inPlist:ROOM_PLIST_TITLE];
-	
-	newItem.teacher = [StaffDataController getStaffNameWithID:newSession.staffID]; // Dynamically creates a string for the staff name, avoiding the creation of a complex Staff object
-	return newItem;
-	
 }
 
 #pragma mark Old Interface Code
@@ -193,13 +230,7 @@
  -(ScheduleItem *)scheduleItemAtIndex: (NSUInteger)index {
  return [self.studentSchedule objectAtIndex:index];
  }
- // When the Test button is pressed, it prints each Period on a student's schedule in the log
- #pragma mark - Testing Purposes
- -(void) printScheduleToLog:(NSArray *)printableSchedule {
- for (ScheduleItem *scheduleItem in printableSchedule) {
- MyLog(@"%d\n %@\n %@\n %@\n", scheduleItem.period, scheduleItem.name, scheduleItem.teacher, scheduleItem.roomNumber);
- }
- }
+
  ****** Old way *******/
 
 @end

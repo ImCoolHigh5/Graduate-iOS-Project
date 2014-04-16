@@ -235,15 +235,15 @@
 		960A72F418C2627A0096033A /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				9673038B18C012500075823E /* ScheduleItems.plist */,
-				964B86E618BAFB880022917D /* ListOfStudents.plist */,
-				9682091918F1BF40008857C9 /* Student.plist */,
-				9682091B18F1CD02008857C9 /* Staff.plist */,
 				9682091D18F1CD0B008857C9 /* Guardian.plist */,
 				9682091F18F1CD1A008857C9 /* IDNumDB.plist */,
+				964B86E618BAFB880022917D /* ListOfStudents.plist */,
 				9682092118F1CD21008857C9 /* Room.plist */,
-				9682092318F1CD32008857C9 /* Session.plist */,
 				9682092518F1CD3C008857C9 /* Schedule.plist */,
+				9673038B18C012500075823E /* ScheduleItems.plist */,
+				9682092318F1CD32008857C9 /* Session.plist */,
+				9682091B18F1CD02008857C9 /* Staff.plist */,
+				9682091918F1BF40008857C9 /* Student.plist */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -288,23 +288,22 @@
 		964B86A118BAD9E60022917D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9673039318C01A110075823E /* ScheduleDataController.h */,
-				9673039418C01A110075823E /* ScheduleDataController.m */,
+				96B6748A18FEFB5D00E1595E /* Ignore For Now */,
 				964B86B618BAD9E60022917D /* Images.xcassets */,
-				964B86E218BADC550022917D /* StudentDataController.h */,
-				964B86E318BADC550022917D /* StudentDataController.m */,
-				9682093518F1E1DA008857C9 /* StaffDataController.h */,
-				9682093618F1E1DA008857C9 /* StaffDataController.m */,
 				9682093818F1E1EE008857C9 /* GuardianDataController.h */,
 				9682093918F1E1EE008857C9 /* GuardianDataController.m */,
-				9682093B18F1E1FD008857C9 /* RoomDataController.h */,
-				9682093C18F1E1FD008857C9 /* RoomDataController.m */,
-				9682093E18F1E207008857C9 /* SessionDataController.h */,
-				9682093F18F1E207008857C9 /* SessionDataController.m */,
-				9682094118F1E9BE008857C9 /* PlistDataController.h */,
-				9682094218F1E9BE008857C9 /* PlistDataController.m */,
 				964424FE18F75A79002ABC59 /* IDNumberDatabaseController.h */,
 				964424FF18F75A79002ABC59 /* IDNumberDatabaseController.m */,
+				9682094118F1E9BE008857C9 /* PlistDataController.h */,
+				9682094218F1E9BE008857C9 /* PlistDataController.m */,
+				9673039318C01A110075823E /* ScheduleDataController.h */,
+				9673039418C01A110075823E /* ScheduleDataController.m */,
+				9682093E18F1E207008857C9 /* SessionDataController.h */,
+				9682093F18F1E207008857C9 /* SessionDataController.m */,
+				9682093518F1E1DA008857C9 /* StaffDataController.h */,
+				9682093618F1E1DA008857C9 /* StaffDataController.m */,
+				964B86E218BADC550022917D /* StudentDataController.h */,
+				964B86E318BADC550022917D /* StudentDataController.m */,
 			);
 			name = Controllers;
 			path = Students;
@@ -367,35 +366,68 @@
 		9688560F18BFECF5002C6DCC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				960A72EF18C25CD70096033A /* WelcomeMenuViewController.h */,
+				960A72F018C25CD70096033A /* WelcomeMenuViewController.m */,
+				964B86AD18BAD9E60022917D /* Main.storyboard */,
+				96C8320C18FDF6A000B44BCC /* Guardians */,
+				96C8320D18FDF6BA00B44BCC /* Staff */,
+				96C8320B18FDF67800B44BCC /* Students */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		96B6748A18FEFB5D00E1595E /* Ignore For Now */ = {
+			isa = PBXGroup;
+			children = (
+				9682093B18F1E1FD008857C9 /* RoomDataController.h */,
+				9682093C18F1E1FD008857C9 /* RoomDataController.m */,
+			);
+			name = "Ignore For Now";
+			sourceTree = "<group>";
+		};
+		96C8320B18FDF67800B44BCC /* Students */ = {
+			isa = PBXGroup;
+			children = (
 				96687F3D18FAFB4200219905 /* AddStudentViewController.h */,
 				96687F3E18FAFB4200219905 /* AddStudentViewController.m */,
-				96855EAB18F61EBB00B80637 /* GuardiansViewController.h */,
-				96855EAC18F61EBB00B80637 /* GuardiansViewController.m */,
-				964B86AD18BAD9E60022917D /* Main.storyboard */,
-				9669739618FB6CAC007AEC67 /* NewGuardianViewController.h */,
-				9669739718FB6CAC007AEC67 /* NewGuardianViewController.m */,
 				960A72F918C2848D0096033A /* ScheduleViewController.h */,
 				960A72FA18C2848D0096033A /* ScheduleViewController.m */,
-				9669739018FB2FE7007AEC67 /* SelectAGuardianTableViewController.h */,
-				9669739118FB2FE7007AEC67 /* SelectAGuardianTableViewController.m */,
-				9669739318FB5D32007AEC67 /* SelectAStaffTableViewController.h */,
-				9669739418FB5D32007AEC67 /* SelectAStaffTableViewController.m */,
 				964B86B318BAD9E60022917D /* StudentDetailViewController.h */,
 				964B86B418BAD9E60022917D /* StudentDetailViewController.m */,
 				964B86B018BAD9E60022917D /* StudentListViewController.h */,
 				964B86B118BAD9E60022917D /* StudentListViewController.m */,
 				9688560B18BFECD9002C6DCC /* StudentMenuViewController.h */,
 				9688560C18BFECD9002C6DCC /* StudentMenuViewController.m */,
-				960A72EF18C25CD70096033A /* WelcomeMenuViewController.h */,
-				960A72F018C25CD70096033A /* WelcomeMenuViewController.m */,
+			);
+			name = Students;
+			sourceTree = "<group>";
+		};
+		96C8320C18FDF6A000B44BCC /* Guardians */ = {
+			isa = PBXGroup;
+			children = (
+				96855EAB18F61EBB00B80637 /* GuardiansViewController.h */,
+				96855EAC18F61EBB00B80637 /* GuardiansViewController.m */,
+				9669739618FB6CAC007AEC67 /* NewGuardianViewController.h */,
+				9669739718FB6CAC007AEC67 /* NewGuardianViewController.m */,
+				9669739018FB2FE7007AEC67 /* SelectAGuardianTableViewController.h */,
+				9669739118FB2FE7007AEC67 /* SelectAGuardianTableViewController.m */,
+			);
+			name = Guardians;
+			sourceTree = "<group>";
+		};
+		96C8320D18FDF6BA00B44BCC /* Staff */ = {
+			isa = PBXGroup;
+			children = (
+				9669739318FB5D32007AEC67 /* SelectAStaffTableViewController.h */,
+				9669739418FB5D32007AEC67 /* SelectAStaffTableViewController.m */,
+				96B0752B18FC86B00069084A /* StaffDetailTableViewController.h */,
+				96B0752C18FC86B00069084A /* StaffDetailTableViewController.m */,
 				96B0752518FC86750069084A /* StaffListTableViewController.h */,
 				96B0752618FC86750069084A /* StaffListTableViewController.m */,
 				96B0752818FC86950069084A /* StaffMenuTableViewController.h */,
 				96B0752918FC86950069084A /* StaffMenuTableViewController.m */,
-				96B0752B18FC86B00069084A /* StaffDetailTableViewController.h */,
-				96B0752C18FC86B00069084A /* StaffDetailTableViewController.m */,
 			);
-			name = Views;
+			name = Staff;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
