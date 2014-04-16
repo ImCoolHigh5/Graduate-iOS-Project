@@ -92,18 +92,4 @@
 	return arrayOfSessions;
 }
 
-#pragma mark - Work In Progress
-
-#warning Add period property to Sessions
-//-(void)printSessionIDsWithTheirPeriodNumbers {
-//
-//	NSArray *scheduleIDs = [[NSArray alloc] initWithArray:[plistDC getIDsFromPlist:SCHEDULE_PLIST_TITLE]];
-//	for (int i =0; i < [scheduleIDs count]; i++) {
-//		NSArray *thisSchedule = [[NSArray alloc] initWithArray:[ScheduleDataController createScheduleForScheduleID:[scheduleIDs[i] intValue]];
-//		for (int i =0; i < [thisSchedule count]; i++) {
-//			ScheduleItem *thisScheduleItem = [[ScheduleItem alloc] init];
-//			thisScheduleItem = thisSchedule[i];
-//	}
-//}
-
 @end

@@ -17,13 +17,15 @@
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, assign) int roomID;
 @property (nonatomic, assign) int staffID;
+@property (nonatomic, assign) int periodNumber;
 
 #pragma mark - Public Methods
 
 -(id) initWithSessionIDNumber:(int)sessionIDNumber
 				 andName:(NSString*)name
 				andRoomID:(int) roomID
-				 andStaffID:(int) staffID;
+				 andStaffID:(int) staffID
+			  andPeriodNumber:(int) periodNumber;
 
 // Used to pull a specific Session from the Plist and assign the correct properties
 -(id) initWithPlistDictionary:(NSDictionary*)entity;

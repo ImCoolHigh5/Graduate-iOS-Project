@@ -72,6 +72,7 @@
 #define SESSION_NAME @"name"
 #define ROOM_SESSION_HELD_IN_ID @"roomID"
 #define STAFFING_ID_FOR_SESSION @"staffID"
+#define SESSION_PERIOD_NUMBER @"periodNumber"
 
 #define SCHEDULE_PLIST_TITLE @"Schedule"
 /* #define ID_NUMBER @"idNumber" */

@@ -62,9 +62,6 @@
 			newItem = [self getScheduleItemWithSessionID:[scheduleFromPlist[periodName] intValue]];
 		}
 		
-		// The for loop count is used to assign the period property
-		newItem.period = i;
-		
 		// This newly created ScheduleItem is added to to mutable array
 		[scheduleItems addObject:newItem];
 	}
@@ -81,7 +78,7 @@
 	// Since the class method does not have access to private instance properties
 	NSMutableArray *scheduleList = [[NSMutableArray alloc] init];
 	
-	// Use PlistDataController to create an array of dictionaries
+	// Use PlistDataController to create an array of Schedule dictionaries
 	NSArray *defaultSchedulePList = [[NSArray alloc] initWithArray:[plistDC makeNSArrayFromPlistTitle:
 																	SCHEDULE_PLIST_TITLE]];
 	
@@ -125,6 +122,8 @@
 	newItem.roomNumber = [plistDC getValueUsingKeyValue:ROOM_NAME
 								  forEntityWithIDNumber:newSession.roomID
 												inPlist:ROOM_PLIST_TITLE];
+	newItem.period = newSession.periodNumber;
+	
 	return newItem;
 }
 

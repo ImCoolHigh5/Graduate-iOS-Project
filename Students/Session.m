@@ -15,7 +15,8 @@
 -(id) initWithSessionIDNumber:(int)sessionIDNumber
 					  andName:(NSString*)name
 					andRoomID:(int) roomID
-				 andStaffID:(int) staffID {
+				   andStaffID:(int) staffID
+			  andPeriodNumber:(int) periodNumber {
 	
 	self = [super init];
     if (self) {
@@ -23,6 +24,7 @@
 		_name = name;
 		_roomID = roomID;
 		_staffID = staffID;
+		_periodNumber = periodNumber;
         
         return self;
     }
@@ -37,10 +39,11 @@
     if (self) {
 		if ([entity count] != 0) {
 			
-			_sessionIDNumber = [entity[@"idNumber"] intValue];
-			_name = entity[@"name"];
-			_roomID = [entity[@"roomID"] intValue];
-			_staffID = [entity[@"staffID"] intValue];
+			_sessionIDNumber = [entity[ID_NUMBER] intValue];
+			_name = entity[SESSION_NAME];
+			_roomID = [entity[ROOM_SESSION_HELD_IN_ID] intValue];
+			_staffID = [entity[STAFFING_ID_FOR_SESSION] intValue];
+			_periodNumber = [entity[SESSION_PERIOD_NUMBER] intValue];
 			return self;
 		}
     }
@@ -56,12 +59,13 @@
 	NSNumber *sessionIDNumber = [[NSNumber alloc] initWithInt:_sessionIDNumber];
 	NSNumber *roomID = [[NSNumber alloc] initWithInt:_roomID];
 	NSNumber *staffID = [[NSNumber alloc] initWithInt:_staffID];
+	NSNumber *periodNumber = [[NSNumber alloc] initWithInt:_periodNumber];
 	
 	// Create keys and corisponding objects
 	NSArray *keys = [[NSArray alloc] initWithObjects:
-					 ID_NUMBER, SESSION_NAME, ROOM_SESSION_HELD_IN_ID, STAFFING_ID_FOR_SESSION, nil];
+					 ID_NUMBER, SESSION_NAME, ROOM_SESSION_HELD_IN_ID, STAFFING_ID_FOR_SESSION, SESSION_PERIOD_NUMBER, nil];
 	NSArray *objects = [[NSArray alloc] initWithObjects:
-						sessionIDNumber, _name, roomID, staffID, nil];
+						sessionIDNumber, _name, roomID, staffID, periodNumber, nil];
 	
 	// Fill the dictionary with the objects and their keys
 	NSDictionary *newSessionForPlist = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];

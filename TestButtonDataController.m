@@ -18,9 +18,17 @@
 #import "Student.h"
 #import "StudentDataController.h"
 #import "IDNumberDatabaseController.h"
+#import "Session.h"
 
 #warning Change MyLog value to 1 before release
 #define MyLog if(0); else NSLog
+
+@interface TestButtonDataController ()
+
+@property (nonatomic, strong) NSString *periodNumberAssignment;
+@property (nonatomic, strong) NSString *staffNumberAssignment;
+
+@end
 
 @implementation TestButtonDataController
 
@@ -29,7 +37,7 @@
 -(void)runTests {
 	
 	[self makeNSUerDefaults]; // The test button has been repurposed for generating sample data within in the app
-	[self testRosterCreation];
+	
 }
 
 
