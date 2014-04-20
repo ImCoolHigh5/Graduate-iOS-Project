@@ -8,9 +8,7 @@
 
 #import "StudentMenuViewController.h"
 
-
 @implementation StudentMenuViewController
-
 
 #pragma mark - Managing the detail item
 // Handles the selected Student object sent in the segue, placing it in newDetailItem

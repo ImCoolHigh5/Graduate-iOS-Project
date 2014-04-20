@@ -344,20 +344,20 @@
 		9673038A18C0112F0075823E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				964B86DE18BADAFC0022917D /* Student.h */,
-				964B86DF18BADAFC0022917D /* Student.m */,
-				9673038D18C0167D0075823E /* ScheduleItem.h */,
-				9673038E18C0167D0075823E /* ScheduleItem.m */,
-				9673039018C016910075823E /* Schedule.h */,
-				9673039118C016910075823E /* Schedule.m */,
-				9682092918F1D9C4008857C9 /* Staff.h */,
-				9682092A18F1D9C4008857C9 /* Staff.m */,
 				9682092C18F1D9D7008857C9 /* Guardian.h */,
 				9682092D18F1D9D7008857C9 /* Guardian.m */,
 				9682092F18F1D9E4008857C9 /* Room.h */,
 				9682093018F1D9E4008857C9 /* Room.m */,
+				9673039018C016910075823E /* Schedule.h */,
+				9673039118C016910075823E /* Schedule.m */,
+				9673038D18C0167D0075823E /* ScheduleItem.h */,
+				9673038E18C0167D0075823E /* ScheduleItem.m */,
 				9682093218F1D9F0008857C9 /* Session.h */,
 				9682093318F1D9F0008857C9 /* Session.m */,
+				9682092918F1D9C4008857C9 /* Staff.h */,
+				9682092A18F1D9C4008857C9 /* Staff.m */,
+				964B86DE18BADAFC0022917D /* Student.h */,
+				964B86DF18BADAFC0022917D /* Student.m */,
 			);
 			name = Models;
 			path = Students;

@@ -34,7 +34,6 @@
         return self;
     }
     return nil;
-	
 }
 
 #pragma mark - Helper Methods
@@ -71,6 +70,8 @@
     return newStudentForPlist;
 }
 
+@end
+
 #pragma mark Old Interface Code
 // Removed mm-dd-yyyy
 
@@ -94,4 +95,4 @@
 
 
 
-@end
+

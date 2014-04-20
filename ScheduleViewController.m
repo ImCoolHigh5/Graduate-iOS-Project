@@ -8,7 +8,6 @@
 
 #import "ScheduleViewController.h"
 
-
 @interface ScheduleViewController ()
 
 @property (nonatomic, strong) NSArray *schedule;
@@ -16,7 +15,6 @@
 @end
 
 @implementation ScheduleViewController
-
 
 #pragma mark - Managing the detail item
 // Attempt to reuse this view for both students and staff
@@ -135,7 +133,5 @@
 {
     return NO;
 }
-
-
 
 @end

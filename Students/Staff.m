@@ -33,9 +33,7 @@
         return self;
     }
     return nil;
-	
 }
-
 
 #pragma mark - Helper Methods
 // Returns a full name with gender indicating prefix
