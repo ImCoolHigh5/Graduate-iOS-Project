@@ -101,7 +101,7 @@
 													andAreTheyMale:[studentInfo[GENDER_IS_MALE] boolValue]
 											  andHomeroomTeacherID:[studentInfo[STAFF_ID_FOR_STUDENT] intValue]
 												andGuardianIDArray:studentInfo[GUARDIAN_ARRAY_FOR_STUDENT]
-													 andScheduleID:[studentInfo[SCHEDULE_ID_FOR_STUDENT] intValue]];
+													 andScheduleID:[studentInfo[SCHEDULE_ID_FOR_STUDENT] intValue] andCounty:studentInfo[COUNTY_FOR_STUDENT]];
 	return newStudent;
 }
 

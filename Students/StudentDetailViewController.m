@@ -42,6 +42,7 @@
 		self.studentTeacherLabel.text = [StaffDataController getStaffNameWithID:self.detailItem.homeroomTeacherID];
 		// Photo importing is not yet a feature, so...
 		self.studentImagePic.image = [UIImage imageNamed:@"placeholder.png"]; // uses a string of the image file name
+		self.countyLabel.text = self.detailItem.county;
 	}
 }
 

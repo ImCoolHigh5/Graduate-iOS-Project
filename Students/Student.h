@@ -21,6 +21,7 @@
 @property (nonatomic) int homeroomTeacherID;
 @property (nonatomic) NSArray *guardianIDArray;
 @property (nonatomic) int scheduleID;
+@property (strong, nonatomic) NSString *county;
 
 #pragma mark - Public Methods
 
@@ -30,7 +31,8 @@
 			   andAreTheyMale:(BOOL)isMale
 		 andHomeroomTeacherID:(int) homeroomTeacherID
 		   andGuardianIDArray:(NSArray*) guardianIDArray
-				andScheduleID:(int) scheduleID;
+				andScheduleID:(int) scheduleID
+					andCounty:(NSString*) county;
 
 -(NSDictionary*)prepareForUpload;
 -(NSString*)stringForIsMale;

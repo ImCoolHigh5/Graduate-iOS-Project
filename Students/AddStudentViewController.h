@@ -11,6 +11,7 @@
 #import "Guardian.h"
 #import "SelectAGuardianTableViewController.h"
 #import "SelectAStaffTableViewController.h"
+#import "SelectCountyTableViewController.h"
 
 #pragma mark - Protocols
 
@@ -21,7 +22,7 @@
 
 @end
 
-@interface AddStudentViewController : UIViewController <SelectAGuardianTableViewControllerDelegate, SelectAStaffTableViewControllerDelegate>
+@interface AddStudentViewController : UIViewController <SelectAGuardianTableViewControllerDelegate, SelectAStaffTableViewControllerDelegate, SelectCountyTableViewControllerDelegate>
 
 #pragma mark - IBOutlets
 
@@ -36,6 +37,9 @@
 @property (strong, nonatomic) IBOutlet UIButton *selectTeacherButton;
 @property (strong, nonatomic) IBOutlet UIButton *addGuardianButton;
 
+@property (strong, nonatomic) IBOutlet UIButton *selectCountyButton;
+@property (strong, nonatomic) IBOutlet UILabel *countyLabel;
+
 
 #pragma mark - Public Properties
 
@@ -47,5 +51,7 @@
 - (IBAction)cancelBarButtonPressed:(UIBarButtonItem *)sender;
 - (IBAction)selectTeacherButtonPressed:(UIButton *)sender;
 - (IBAction)addGuardianButtonPressed:(UIButton *)sender;
+
+- (IBAction)selectCountyButtonPressed:(UIButton *)sender;
 
 @end

@@ -32,6 +32,7 @@
 #define STAFF_ID_FOR_STUDENT @"staffID"
 #define GUARDIAN_ARRAY_FOR_STUDENT @"guardianIDs"
 #define SCHEDULE_ID_FOR_STUDENT @"scheduleID"
+#define COUNTY_FOR_STUDENT @"county"
 
 #define STAFF_PLIST_TITLE @"Staff"
 /* #define ID_NUMBER @"idNumber"

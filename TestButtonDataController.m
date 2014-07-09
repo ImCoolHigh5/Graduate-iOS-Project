@@ -19,6 +19,7 @@
 #import "StudentDataController.h"
 #import "IDNumberDatabaseController.h"
 #import "Session.h"
+#import "MSStudent.h"
 
 #warning Change MyLog value to 1 before release
 #define MyLog if(0); else NSLog
@@ -36,6 +37,7 @@
 // Any test methods should be called from here
 -(void)runTests {
 	
+	[self testAddingNewStudents];
 	[self makeNSUerDefaults]; // The test button has been repurposed for generating sample data within in the app
 	
 }
@@ -56,20 +58,20 @@
 
 -(void)testAddingNewStudents {
 	NSArray *newStudentGuardians = [[NSArray alloc] initWithObjects:@14, nil];
-	Student *newStudent = [[Student alloc] initWithStudentIDNumber:505 andFirstName:@"Paul" andLastName:@"Dean" andAreTheyMale:YES andHomeroomTeacherID:27 andGuardianIDArray:newStudentGuardians andScheduleID:16];
+	MSStudent *newStudent = [[MSStudent alloc] initWithStudentIDNumber:505 andFirstName:@"Paul" andLastName:@"Dean" andAreTheyMale:YES andHomeroomTeacherID:27 andGuardianIDArray:newStudentGuardians andScheduleID:16 andCounty:@"AAC"];
 	
 	[self printStudent:newStudent];
-	[plistDC addToPlistObject:newStudent];
+//	[plistDC addToPlistObject:newStudent];
 }
 
 // Prints all of the elements of a Student to MyLog
--(void) printStudent:(Student*)student {
+-(void) printStudent:(MSStudent*)student {
 	
 	// Since BOOL is primitave, we need to convert _isMale to an NSString
 	NSString *maleOrNo = [student stringForIsMale];
 	
-    NSLog(@"\n FirstName: %@ \n LastName: %@ \n IsMale: %@ \n StaffID: %d \n ScheduleID: %d \n GuardianID(s): %@",
-		  student.firstName, student.lastName, maleOrNo, student.homeroomTeacherID, student.scheduleID, student.guardianIDArray);
+    NSLog(@"\n FirstName: %@ \n LastName: %@ \n IsMale: %@ \n StaffID: %d \n ScheduleID: %d \n GuardianID(s): %@ \n Stuff: %@",
+		  student.firstName, student.lastName, maleOrNo, student.homeroomTeacherID, student.scheduleID, student.guardianIDArray, student.requirements);
 }
 
 

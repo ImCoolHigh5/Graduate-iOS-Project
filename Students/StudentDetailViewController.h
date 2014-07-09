@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *studentNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *studentGenderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *studentTeacherLabel;
+@property (weak, nonatomic) IBOutlet UILabel *countyLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *studentImagePic;
 
 #pragma mark - Public Properties

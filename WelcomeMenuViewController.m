@@ -34,6 +34,9 @@
 	self.staffMenuButton.backgroundColor = [UIColor clearColor];
 	self.testMenuButton.backgroundColor = [UIColor clearColor];
 	
+	self.staffMenuButton.hidden = YES;
+	self.testMenuButton.hidden = YES;
+	
 	UIEdgeInsets insets = UIEdgeInsetsMake(12.0f, 12.0f, 12.0f, 12.0f);
 	UIImage *buttonImage = [[UIImage imageNamed:@"buttonbg"] resizableImageWithCapInsets:insets];
 	

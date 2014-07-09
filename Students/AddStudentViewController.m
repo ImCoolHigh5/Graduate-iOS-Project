@@ -10,9 +10,13 @@
 #import "IDNumberDatabaseController.h"
 
 @interface AddStudentViewController ()
+
 -(void)configureView;
+
 @property (nonatomic, strong) NSMutableArray *addedGuardians;
 @property (nonatomic) int addedStaffID;
+@property (nonatomic, strong) NSString *addedCounty;
+
 @end
 
 @implementation AddStudentViewController
@@ -40,6 +44,7 @@
 	
 	// So we hide the placeholder name until it is assigned
 	self.homeroomTeacherLabel.hidden = YES;
+	self.countyLabel.hidden = YES;
 	
 	// These labels will only appear once a Guardian has been added
 	self.firstGuardianLabel.hidden = YES;
@@ -83,6 +88,7 @@
 	newStudent.lastName = self.lastNameTextField.text;
 	newStudent.homeroomTeacherID = _addedStaffID;
 	newStudent.guardianIDArray = guardians;
+	newStudent.county = _addedCounty;
 	// Segmented Control sets the gender
 	switch (self.genderSegmentedControl.selectedSegmentIndex) {
 		case 0:
@@ -133,6 +139,11 @@
 	
 }
 
+- (IBAction)selectCountyButtonPressed:(UIButton *)sender {
+	
+	[self performSegueWithIdentifier:@"toSelectCountyViewSegue" sender:nil];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 	// If we are seguing to the SelectAGuardianTableViewController...
@@ -145,7 +156,13 @@
 		SelectAStaffTableViewController *selectStaff = segue.destinationViewController;
 		selectStaff.addStaffDelegate = self;
 	}
+	// If we are seguing to the SelectCountyTableViewController...
+	else if ([segue.destinationViewController isKindOfClass:[SelectCountyTableViewController class]]) {
+		SelectCountyTableViewController *selectCounty = segue.destinationViewController;
+		selectCounty.addCountyDelegate = self;
+	}
 }
+
 
 #pragma mark - Delegates
 
@@ -181,6 +198,26 @@
 }
 
 -(void)didCancelStaff {
+	
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+// Selecting County
+-(void)didSelectCounty:(NSString *)county {
+	
+	// Don't want them picking multiple counties
+	self.selectCountyButton.hidden = YES;
+	
+	// Update the County Name
+	self.countyLabel.hidden = NO;
+	self.countyLabel.text = county;
+	self.addedCounty = county;
+	
+	// dismisses this view from the stack
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)didCancelCounty {
 	
 	[self dismissViewControllerAnimated:YES completion:nil];
 }

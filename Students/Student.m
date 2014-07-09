@@ -19,7 +19,8 @@
 			   andAreTheyMale:(BOOL)isMale
 		 andHomeroomTeacherID:(int) homeroomTeacherID
 		   andGuardianIDArray:(NSArray*) guardianIDArray
-				andScheduleID:(int) scheduleID {
+				andScheduleID:(int) scheduleID
+					andCounty:(NSString*) county{
 	
 	self = [super init];
     if (self) {
@@ -30,6 +31,7 @@
 		_homeroomTeacherID = homeroomTeacherID;
 		_guardianIDArray = guardianIDArray;
 		_scheduleID = scheduleID;
+		_county = county;
         
         return self;
     }
@@ -59,9 +61,9 @@
 	
 	// Each object is then put into an array in the same order as their keys, placed in another array
     NSArray *objects = [[NSArray alloc] initWithObjects:
-						studentIDNumber, self.firstName, self.lastName, isMale, homeroomTeacherID, scheduleID, self.guardianIDArray, nil];
+						studentIDNumber, self.firstName, self.lastName, isMale, homeroomTeacherID, scheduleID, self.guardianIDArray, _county, nil];
 	NSArray *keys = [[NSArray alloc] initWithObjects:
-					 ID_NUMBER, FIRST_NAME, LAST_NAME, GENDER_IS_MALE, STAFF_ID_FOR_STUDENT, SCHEDULE_ID_FOR_STUDENT, GUARDIAN_ARRAY_FOR_STUDENT, nil];
+					 ID_NUMBER, FIRST_NAME, LAST_NAME, GENDER_IS_MALE, STAFF_ID_FOR_STUDENT, SCHEDULE_ID_FOR_STUDENT, GUARDIAN_ARRAY_FOR_STUDENT, COUNTY_FOR_STUDENT, nil];
 	
 	//These two arrays are used to make a new NSDictionary...
 	NSDictionary *newStudentForPlist = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];

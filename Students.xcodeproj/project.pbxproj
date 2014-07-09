@@ -16,6 +16,11 @@
 		960A72FB18C2848D0096033A /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960A72FA18C2848D0096033A /* ScheduleViewController.m */; };
 		960A72FC18C2848D0096033A /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960A72FA18C2848D0096033A /* ScheduleViewController.m */; };
 		9614298B18F994B000C48D4A /* TestButtonDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9614298A18F994B000C48D4A /* TestButtonDataController.m */; };
+		963699A6196C91340036FC24 /* MSStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 963699A5196C91340036FC24 /* MSStudent.m */; };
+		963699A9196C917B0036FC24 /* MSSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 963699A8196C917B0036FC24 /* MSSubject.m */; };
+		963699AC196C91A80036FC24 /* MSCommonCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 963699AB196C91A80036FC24 /* MSCommonCore.m */; };
+		963699AF196C91DF0036FC24 /* MSCounty.m in Sources */ = {isa = PBXBuildFile; fileRef = 963699AE196C91DF0036FC24 /* MSCounty.m */; };
+		963699B2196CC1440036FC24 /* SelectCountyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 963699B1196CC1440036FC24 /* SelectCountyTableViewController.m */; };
 		9644250018F75A79002ABC59 /* IDNumberDatabaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 964424FF18F75A79002ABC59 /* IDNumberDatabaseController.m */; };
 		964B869C18BAD9E60022917D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964B869B18BAD9E60022917D /* Foundation.framework */; };
 		964B869E18BAD9E60022917D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964B869D18BAD9E60022917D /* CoreGraphics.framework */; };
@@ -99,6 +104,16 @@
 		960A72FA18C2848D0096033A /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 		9614298918F994B000C48D4A /* TestButtonDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestButtonDataController.h; sourceTree = "<group>"; };
 		9614298A18F994B000C48D4A /* TestButtonDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestButtonDataController.m; sourceTree = "<group>"; };
+		963699A4196C91340036FC24 /* MSStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSStudent.h; sourceTree = "<group>"; };
+		963699A5196C91340036FC24 /* MSStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSStudent.m; sourceTree = "<group>"; };
+		963699A7196C917B0036FC24 /* MSSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSubject.h; sourceTree = "<group>"; };
+		963699A8196C917B0036FC24 /* MSSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSubject.m; sourceTree = "<group>"; };
+		963699AA196C91A80036FC24 /* MSCommonCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCommonCore.h; sourceTree = "<group>"; };
+		963699AB196C91A80036FC24 /* MSCommonCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCommonCore.m; sourceTree = "<group>"; };
+		963699AD196C91DF0036FC24 /* MSCounty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCounty.h; sourceTree = "<group>"; };
+		963699AE196C91DF0036FC24 /* MSCounty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCounty.m; sourceTree = "<group>"; };
+		963699B0196CC1440036FC24 /* SelectCountyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCountyTableViewController.h; sourceTree = "<group>"; };
+		963699B1196CC1440036FC24 /* SelectCountyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCountyTableViewController.m; sourceTree = "<group>"; };
 		964424FE18F75A79002ABC59 /* IDNumberDatabaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDNumberDatabaseController.h; sourceTree = "<group>"; };
 		964424FF18F75A79002ABC59 /* IDNumberDatabaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDNumberDatabaseController.m; sourceTree = "<group>"; };
 		964B869818BAD9E60022917D /* Students.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Students.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,9 +263,25 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
+		963699A3196C91150036FC24 /* MasterScheduler */ = {
+			isa = PBXGroup;
+			children = (
+				963699A4196C91340036FC24 /* MSStudent.h */,
+				963699A5196C91340036FC24 /* MSStudent.m */,
+				963699A7196C917B0036FC24 /* MSSubject.h */,
+				963699A8196C917B0036FC24 /* MSSubject.m */,
+				963699AA196C91A80036FC24 /* MSCommonCore.h */,
+				963699AB196C91A80036FC24 /* MSCommonCore.m */,
+				963699AD196C91DF0036FC24 /* MSCounty.h */,
+				963699AE196C91DF0036FC24 /* MSCounty.m */,
+			);
+			name = MasterScheduler;
+			sourceTree = "<group>";
+		};
 		964B868F18BAD9E60022917D = {
 			isa = PBXGroup;
 			children = (
+				963699A3196C91150036FC24 /* MasterScheduler */,
 				9614298918F994B000C48D4A /* TestButtonDataController.h */,
 				9614298A18F994B000C48D4A /* TestButtonDataController.m */,
 				964B86AA18BAD9E60022917D /* AppDelegate.h */,
@@ -398,6 +429,8 @@
 				964B86B118BAD9E60022917D /* StudentListViewController.m */,
 				9688560B18BFECD9002C6DCC /* StudentMenuViewController.h */,
 				9688560C18BFECD9002C6DCC /* StudentMenuViewController.m */,
+				963699B0196CC1440036FC24 /* SelectCountyTableViewController.h */,
+				963699B1196CC1440036FC24 /* SelectCountyTableViewController.m */,
 			);
 			name = Students;
 			sourceTree = "<group>";
@@ -558,12 +591,15 @@
 				964B86AC18BAD9E60022917D /* AppDelegate.m in Sources */,
 				96B0752A18FC86950069084A /* StaffMenuTableViewController.m in Sources */,
 				964B86B218BAD9E60022917D /* StudentListViewController.m in Sources */,
+				963699AC196C91A80036FC24 /* MSCommonCore.m in Sources */,
 				964B86E018BADAFC0022917D /* Student.m in Sources */,
 				960A72F118C25CD70096033A /* WelcomeMenuViewController.m in Sources */,
 				9682092E18F1D9D7008857C9 /* Guardian.m in Sources */,
 				9614298B18F994B000C48D4A /* TestButtonDataController.m in Sources */,
 				9669739518FB5D32007AEC67 /* SelectAStaffTableViewController.m in Sources */,
+				963699A9196C917B0036FC24 /* MSSubject.m in Sources */,
 				9682093718F1E1DA008857C9 /* StaffDataController.m in Sources */,
+				963699A6196C91340036FC24 /* MSStudent.m in Sources */,
 				9673039218C016910075823E /* Schedule.m in Sources */,
 				9682094318F1E9BE008857C9 /* PlistDataController.m in Sources */,
 				964B86E418BADC550022917D /* StudentDataController.m in Sources */,
@@ -579,6 +615,8 @@
 				9682092B18F1D9C4008857C9 /* Staff.m in Sources */,
 				9673039518C01A110075823E /* ScheduleDataController.m in Sources */,
 				9688560D18BFECD9002C6DCC /* StudentMenuViewController.m in Sources */,
+				963699B2196CC1440036FC24 /* SelectCountyTableViewController.m in Sources */,
+				963699AF196C91DF0036FC24 /* MSCounty.m in Sources */,
 				9682093D18F1E1FD008857C9 /* RoomDataController.m in Sources */,
 				96687F3F18FAFB4200219905 /* AddStudentViewController.m in Sources */,
 				9644250018F75A79002ABC59 /* IDNumberDatabaseController.m in Sources */,
