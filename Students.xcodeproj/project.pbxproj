@@ -16,6 +16,8 @@
 		960A72FB18C2848D0096033A /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960A72FA18C2848D0096033A /* ScheduleViewController.m */; };
 		960A72FC18C2848D0096033A /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960A72FA18C2848D0096033A /* ScheduleViewController.m */; };
 		9614298B18F994B000C48D4A /* TestButtonDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9614298A18F994B000C48D4A /* TestButtonDataController.m */; };
+		963199CD1975C5FD00D1B885 /* StudentRequirements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963199CC1975C5FD00D1B885 /* StudentRequirements.plist */; };
+		963199CF1975C80A00D1B885 /* MSStudent.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963199CE1975C80A00D1B885 /* MSStudent.plist */; };
 		963699A6196C91340036FC24 /* MSStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 963699A5196C91340036FC24 /* MSStudent.m */; };
 		963699A9196C917B0036FC24 /* MSSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 963699A8196C917B0036FC24 /* MSSubject.m */; };
 		963699AC196C91A80036FC24 /* MSCommonCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 963699AB196C91A80036FC24 /* MSCommonCore.m */; };
@@ -83,6 +85,8 @@
 		96B0752718FC86750069084A /* StaffListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B0752618FC86750069084A /* StaffListTableViewController.m */; };
 		96B0752A18FC86950069084A /* StaffMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B0752918FC86950069084A /* StaffMenuTableViewController.m */; };
 		96B0752D18FC86B00069084A /* StaffDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B0752C18FC86B00069084A /* StaffDetailTableViewController.m */; };
+		96CF6E0C1971A9BD005779CF /* MSMasterSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CF6E0B1971A9BD005779CF /* MSMasterSchedule.m */; };
+		96F90A5B19707554007A8769 /* MSAcademicNeedsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F90A5A19707554007A8769 /* MSAcademicNeedsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +108,8 @@
 		960A72FA18C2848D0096033A /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 		9614298918F994B000C48D4A /* TestButtonDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestButtonDataController.h; sourceTree = "<group>"; };
 		9614298A18F994B000C48D4A /* TestButtonDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestButtonDataController.m; sourceTree = "<group>"; };
+		963199CC1975C5FD00D1B885 /* StudentRequirements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StudentRequirements.plist; sourceTree = "<group>"; };
+		963199CE1975C80A00D1B885 /* MSStudent.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MSStudent.plist; sourceTree = "<group>"; };
 		963699A4196C91340036FC24 /* MSStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSStudent.h; sourceTree = "<group>"; };
 		963699A5196C91340036FC24 /* MSStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSStudent.m; sourceTree = "<group>"; };
 		963699A7196C917B0036FC24 /* MSSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSubject.h; sourceTree = "<group>"; };
@@ -202,6 +208,10 @@
 		96B0752918FC86950069084A /* StaffMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaffMenuTableViewController.m; sourceTree = "<group>"; };
 		96B0752B18FC86B00069084A /* StaffDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaffDetailTableViewController.h; sourceTree = "<group>"; };
 		96B0752C18FC86B00069084A /* StaffDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaffDetailTableViewController.m; sourceTree = "<group>"; };
+		96CF6E0A1971A9BD005779CF /* MSMasterSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMasterSchedule.h; sourceTree = "<group>"; };
+		96CF6E0B1971A9BD005779CF /* MSMasterSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMasterSchedule.m; sourceTree = "<group>"; };
+		96F90A5919707554007A8769 /* MSAcademicNeedsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAcademicNeedsTableViewController.h; sourceTree = "<group>"; };
+		96F90A5A19707554007A8769 /* MSAcademicNeedsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAcademicNeedsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +260,8 @@
 		960A72F418C2627A0096033A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				963199CE1975C80A00D1B885 /* MSStudent.plist */,
+				963199CC1975C5FD00D1B885 /* StudentRequirements.plist */,
 				9682091D18F1CD0B008857C9 /* Guardian.plist */,
 				9682091F18F1CD1A008857C9 /* IDNumDB.plist */,
 				964B86E618BAFB880022917D /* ListOfStudents.plist */,
@@ -274,6 +286,10 @@
 				963699AB196C91A80036FC24 /* MSCommonCore.m */,
 				963699AD196C91DF0036FC24 /* MSCounty.h */,
 				963699AE196C91DF0036FC24 /* MSCounty.m */,
+				96F90A5919707554007A8769 /* MSAcademicNeedsTableViewController.h */,
+				96F90A5A19707554007A8769 /* MSAcademicNeedsTableViewController.m */,
+				96CF6E0A1971A9BD005779CF /* MSMasterSchedule.h */,
+				96CF6E0B1971A9BD005779CF /* MSMasterSchedule.m */,
 			);
 			name = MasterScheduler;
 			sourceTree = "<group>";
@@ -545,9 +561,11 @@
 				964B86F418BEA07A0022917D /* bart.jpg in Resources */,
 				964B86F618BEA07A0022917D /* abe.jpg in Resources */,
 				964B86E718BAFB880022917D /* ListOfStudents.plist in Resources */,
+				963199CF1975C80A00D1B885 /* MSStudent.plist in Resources */,
 				9682092618F1CD3C008857C9 /* Schedule.plist in Resources */,
 				9673038C18C012500075823E /* ScheduleItems.plist in Resources */,
 				964B86F818BEA07A0022917D /* babs.jpg in Resources */,
+				963199CD1975C5FD00D1B885 /* StudentRequirements.plist in Resources */,
 				9682091E18F1CD0B008857C9 /* Guardian.plist in Resources */,
 				9682092418F1CD32008857C9 /* Session.plist in Resources */,
 				964B86A618BAD9E60022917D /* InfoPlist.strings in Resources */,
@@ -584,6 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96CF6E0C1971A9BD005779CF /* MSMasterSchedule.m in Sources */,
 				9682093A18F1E1EE008857C9 /* GuardianDataController.m in Sources */,
 				9682093118F1D9E4008857C9 /* Room.m in Sources */,
 				9669739818FB6CAC007AEC67 /* NewGuardianViewController.m in Sources */,
@@ -609,6 +628,7 @@
 				9682094018F1E207008857C9 /* SessionDataController.m in Sources */,
 				960A72FB18C2848D0096033A /* ScheduleViewController.m in Sources */,
 				96B0752718FC86750069084A /* StaffListTableViewController.m in Sources */,
+				96F90A5B19707554007A8769 /* MSAcademicNeedsTableViewController.m in Sources */,
 				9673038F18C0167D0075823E /* ScheduleItem.m in Sources */,
 				96B0752D18FC86B00069084A /* StaffDetailTableViewController.m in Sources */,
 				964B86B518BAD9E60022917D /* StudentDetailViewController.m in Sources */,

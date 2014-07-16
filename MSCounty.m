@@ -75,8 +75,7 @@
 									 @"ELECTIVE":	@1.0,
 //									 @"MUSIC":	@0,
 //									 @"FLANG":	@0,
-//									 @"FinancLit":	@0,
-//									 @"OTHER":	@0
+//									 @"FinancLit":	@0
 									 };
 	}
 	else if ([self.name isEqualToString:@"BCO"]) {
@@ -93,8 +92,7 @@
 //									 @"ELECTIVE":	@0,
 //									 @"MUSIC":	@0,
 //									 @"FLANG":	@0,
-//									 @"FinancLit":	@0,
-//									 @"OTHER":	@0
+//									 @"FinancLit":	@0
 									 };
 	}
 	else if ([self.name isEqualToString:@"CITY"]) {
@@ -111,8 +109,7 @@
 									 @"ELECTIVE":	@1.0,
 //									 @"MUSIC":	@0,
 //									 @"FLANG":	@0,
-//									 @"FinancLit":	@0,
-//									 @"OTHER":	@0
+//									 @"FinancLit":	@0
 									 };
 	}
 	else if ([self.name isEqualToString:@"CAL"]) {
@@ -126,11 +123,10 @@
 //									 @"TECH":	@1.0,
 //									 @"ART":	@1.0,
 //									 @"CAREER":	@4.0,
-									 @"ELECTIVE":	@1.0,
+									 @"ELECTIVE":	@2.0,
 //									 @"MUSIC":	@0,
 //									 @"FLANG":	@0,
-									 @"FinancLit":	@0.5,
-									 @"OTHER":	@1.0
+									 @"FinancLit":	@0.5
 									 };
 	}
 	else if ([self.name isEqualToString:@"CARO"]) {
@@ -144,11 +140,10 @@
 //									 @"TECH":	@1.0,
 //									 @"ART":	@1.0,
 									 @"CAREER":	@5.0,
-//									 @"ELECTIVE":	@0,
+									 @"ELECTIVE":	@2.0,
 //									 @"MUSIC":	@0,
 //									 @"FLANG":	@0,
-//									 @"FinancLit":	@0,
-									 @"OTHER":	@2.0
+//									 @"FinancLit":	@0
 									 };
 	}
 	else if ([self.name isEqualToString:@"CARR"]) {
@@ -165,8 +160,7 @@
 									 @"ELECTIVE":	@4.0,
 //									 @"MUSIC":	@0,
 //									 @"FLANG":	@0,
-									 @"FinancLit":	@0.5,
-//									 @"OTHER":	@0
+									 @"FinancLit":	@0.5
 									 };
 	}
 	else if ([self.name isEqualToString:@"CEC"]) {
@@ -183,8 +177,7 @@
 									 @"ELECTIVE":	@3.0,
 //									 @"MUSIC":	@0,
 //									 @"FLANG":	@0,
-//									 @"FinancLit":	@0,
-//									 @"OTHER":	@0
+//									 @"FinancLit":	@0
 									 };
 	}
 	else if ([self.name isEqualToString:@"CHR"]) {
@@ -201,8 +194,7 @@
 									 @"ELECTIVE":	@3.0,
 //									 @"MUSIC":	@0,
 //									 @"FLANG":	@0,
-									 @"FinancLit":	@0.5,
-//									 @"OTHER":	@0
+									 @"FinancLit":	@0.5
 									 };
 	}
 	else if ([self.name isEqualToString:@"DSPS"]) {
@@ -219,8 +211,7 @@
 									 @"ELECTIVE":	@1.5,
 									 @"MUSIC":	@0.5,
 									 @"FLANG":	@2.0,
-//									 @"FinancLit":	@0,
-//									 @"OTHER":	@0
+//									 @"FinancLit":	@0
 									 };
 	}
 	else if ([self.name isEqualToString:@"FRD"]) {
@@ -234,11 +225,10 @@
 //									 @"TECH":	@1.0,
 //									 @"ART":	@1.0,
 //									 @"CAREER":	@4.0,
-									 @"ELECTIVE":	@1.0,
+									 @"ELECTIVE":	@3.5,
 //									 @"MUSIC":	@0,
 //									 @"FLANG":	@0,
-									 @"FinancLit":	@0.5,
-									 @"OTHER":	@2.5
+									 @"FinancLit":	@0.5
 									 };
 	}
 	else if ([self.name isEqualToString:@"HAR"]) {
@@ -253,11 +243,10 @@
 //									 @"TECH":	@1.0,
 //									 @"ART":	@1.0,
 //									 @"CAREER":	@4.0,
-									 @"ELECTIVE":	@0.5, // Career Completer
+									 @"ELECTIVE":	@4.5, // Career Completer
 //									 @"MUSIC":	@0,
 									 @"FLANG":	@0, // Career Completer
-//									 @"FinancLit":	@0,
-									 @"OTHER":	@4.0 // Career Completer
+//									 @"FinancLit":	@0
 									 };
 	}
 	else if ([self.name isEqualToString:@"HOW"]) {
@@ -274,8 +263,7 @@
 									 @"ELECTIVE":	@1.0,
 //									 @"MUSIC":	@0,
 //									 @"FLANG":	@0,
-//									 @"FinancLit":	@0,
-//									 @"OTHER":	@0
+//									 @"FinancLit":	@0
 									 };
 	}
 	else if ([self.name isEqualToString:@"MON"]) {
@@ -292,8 +280,7 @@
 									 @"ELECTIVE":	@0.5,
 //									 @"MUSIC":	@0,
 //									 @"FLANG":	@0,
-//									 @"FinancLit":	@0,
-//									 @"OTHER":	@0
+//									 @"FinancLit":	@0
 									 };
 	}
 	else if ([self.name isEqualToString:@"PGC"]) {
@@ -310,8 +297,7 @@
 									 @"ELECTIVE":	@1.0,
 //									 @"MUSIC":	@0,
 //									 @"FLANG":	@0,
-//									 @"FinancLit":	@0,
-//									 @"OTHER":	@0
+//									 @"FinancLit":	@0
 									 };
 	}
 	else if ([self.name isEqualToString:@"QUA"]) {
@@ -328,8 +314,7 @@
 									 @"ELECTIVE":	@6.0,
 //									 @"MUSIC":	@0,
 //									 @"FLANG":	@0,
-//									 @"FinancLit":	@0,
-//									 @"OTHER":	@0
+//									 @"FinancLit":	@0
 									 };
 	}
 	else if ([self.name isEqualToString:@"WAS"]) {
@@ -346,12 +331,11 @@
 									 @"ELECTIVE":	@2.0,
 //									 @"MUSIC":	@0,
 //									 @"FLANG":	@0,
-//									 @"FinancLit":	@0,
-//									 @"OTHER":	@0
+//									 @"FinancLit":	@0
 									 };
 	}
 	else {
-		NSLog(@"An invalid County was provided");
+		MyLog(@"An invalid County was provided");
 	}
 }
 

@@ -11,8 +11,8 @@
 @interface MSSubject : NSObject
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic) int creditsEarned;
-@property (nonatomic) int creditsNeeded;
+@property (nonatomic) float creditsEarned;
+@property (nonatomic) float creditsNeeded;
 @property (strong, nonatomic) NSNumber *delayedMatriculation;
 
 @end

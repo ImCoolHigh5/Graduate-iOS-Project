@@ -20,9 +20,7 @@
 #import "IDNumberDatabaseController.h"
 #import "Session.h"
 #import "MSStudent.h"
-
-#warning Change MyLog value to 1 before release
-#define MyLog if(0); else NSLog
+#import "MSMasterSchedule.h"
 
 @interface TestButtonDataController ()
 
@@ -37,8 +35,9 @@
 // Any test methods should be called from here
 -(void)runTests {
 	
-	[self testAddingNewStudents];
+//	[self testAddingNewStudents];
 	[self makeNSUerDefaults]; // The test button has been repurposed for generating sample data within in the app
+	[self printClassNeeds];
 	
 }
 
@@ -97,13 +96,33 @@
 }
 -(void)makeNSUerDefaults {
 	
-	[plistDC convertPListsToNSUserDefaults:(NSString*)STUDENT_PLIST_TITLE];
+//	[plistDC convertPListsToNSUserDefaults:(NSString*)STUDENT_PLIST_TITLE];
+	[plistDC convertPListsToNSUserDefaults:(NSString*)MSSTUDENT_PLIST_TITLE];
+	[plistDC convertPListsToNSUserDefaults:(NSString*)MSSTUENT_REQUIREMENTS_PLIST_TITLE];
 	[plistDC convertPListsToNSUserDefaults:(NSString*)STAFF_PLIST_TITLE];
 	[plistDC convertPListsToNSUserDefaults:(NSString*)GUARDIAN_PLIST_TITLE];
 	[plistDC convertPListsToNSUserDefaults:(NSString*)ID_NUMBER_DATABASE_PLIST_TITLE];
 	[plistDC convertPListsToNSUserDefaults:(NSString*)ROOM_PLIST_TITLE];
 	[plistDC convertPListsToNSUserDefaults:(NSString*)SESSION_PLIST_TITLE];
 	[plistDC convertPListsToNSUserDefaults:(NSString*)SCHEDULE_PLIST_TITLE];
+}
+
+-(void)printClassNeeds {
+	
+	NSMutableArray *collectingStudentIDs = [[NSMutableArray alloc] init];
+	NSArray *defaultMSStudentPList = [[NSArray alloc] initWithArray:[plistDC makeNSArrayFromPlistTitle:MSSTUDENT_PLIST_TITLE]];
+	for (NSDictionary *studentInfo in defaultMSStudentPList) {
+		MSStudent *newStudent = [[MSStudent alloc] initWithPlistDictionary:studentInfo];
+		NSNumber *studentID = [[NSNumber alloc] initWithInt:newStudent.studentIDNumber];
+		
+		[collectingStudentIDs addObject:studentID];
+	}
+	
+	NSArray *studentIDs = [[NSArray alloc] initWithArray:collectingStudentIDs];
+	
+	MSMasterSchedule *masterSchedule = [[MSMasterSchedule alloc] init];
+	[masterSchedule configureScheduleForStudents:studentIDs];
+
 }
 
 @end

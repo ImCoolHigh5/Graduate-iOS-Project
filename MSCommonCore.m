@@ -46,7 +46,6 @@
 						  @"MUSIC":		@0.0,
 						  @"FLANG":		@0.0,
 						  @"FinancLit":	@0.0,
-						  @"OTHER":		@0.0,
 						  };
 }
 
@@ -82,7 +81,7 @@
 			}
 			
 			subject.creditsNeeded = neededCredits;
-			student.totalCreditsNeeded += [updatedValue floatValue];
+			student.totalCreditsNeeded += neededCredits;
 			
 			[updatedRequirements setObject:subject forKey:subjectKey];
 		}
@@ -92,7 +91,7 @@
 	}
 	else {
 		
-		NSLog(@"No County!!!");
+		MyLog(@"No County!!!");
 		return nil;
 	}
 }

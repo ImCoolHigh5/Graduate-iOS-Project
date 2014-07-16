@@ -17,12 +17,18 @@
 #endif
 
 // Added by Jason Welch on 4/6/14.
+/****** These items are for test purposes only and may be unneccessary later ****/
 
+#define MyLog if(0); else NSLog
+/****** ^^^^Change to 1 before Release^^^^^ ****/
 #pragma mark Short hand for wordy objects
 
 #define plistDC PlistDataController
 
 #pragma mark Data types used in Plists
+
+#define MSSTUDENT_PLIST_TITLE @"MSStudent"
+#define MSSTUENT_REQUIREMENTS_PLIST_TITLE @"StudentRequirements"
 
 #define STUDENT_PLIST_TITLE @"Student"
 #define ID_NUMBER @"idNumber"
